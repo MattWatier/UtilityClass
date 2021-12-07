@@ -18,7 +18,10 @@
 // End loops
 // End Each
 
-
+.flex_auto{
+  @extend .flex-grow_1; 
+  @extend .flex-shrink_1;
+}
 .ul_none{
   @extend .m_0 !optional;
   @extend .p_0 !optional;
