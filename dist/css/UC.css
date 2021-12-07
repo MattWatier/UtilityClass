@@ -61,7 +61,7 @@
   --white-l: 99.2156862745%;
 }
 
-[class*=br_] {
+[class*=br] {
   border-width: 0px;
 }
 
