@@ -22,7 +22,7 @@ $css-properties:(
 'float':('direction':null,'name':'float','property':('float',),'unit':('float',),),
 'font-color':('direction':null,'loopMode':'color','name':'c','property':('color',),'responsive':false,'states':true,'unit':('decimal-negative','decimal-positive'),),
 'font-family':('direction':null,'name':'font','property':('font-family',),'unit':('font-family',),),
-'font-size-adjust':('direction':null,'name':'font-size','property':('font-size',),'responsive':true,'unit':('font-size',),),
+'font-size-adjust':('direction':null,'name':'font-size','property':('font-size',),'responsive':true,'unit':('font-size-adjust',),),
 'font-size':('direction':null,'name':'font','property':('font-size',),'responsive':true,'unit':('font-size',),),
 'font-weight':('direction':null,'name':'font','property':('font-weight',),'states':true,'unit':('font-weight',),),
 'grid-column-gap':('direction':null,'name':'gap-x','property':('grid-column-gap','column-gap',),'responsive':true,'unit':('size-positive',),),
