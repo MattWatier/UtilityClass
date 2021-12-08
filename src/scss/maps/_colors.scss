@@ -3,6 +3,7 @@ $acc-blue:#1935af;
 $teal: #3182bd;
 $dark-grey: #676a72;
 $orange: #e6550d;
+$purple: #7d0de6;
 $black: #101010;
 $white: #fdfdfd;
 $contrast-threshold: 60%;
@@ -11,6 +12,7 @@ $theme-palette: (
     'primary': $teal,
     'secondary': $dark-grey,
     'accent': $orange,
+    'highlight': $purple,
     'black': $black,
     'white': $white,
     );
