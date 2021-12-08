@@ -1,3 +1,64 @@
+@charset "UTF-8";
+.icon-after::after, a.link[target=_blank]::after, a.link[href^=http]::after, a.link[href^=https]::after, .icon-before:before, a.link:before {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+.icon-before:before, a.link:before {
+  margin-right: 0.25em;
+  width: 1.28571429em;
+  text-align: center;
+}
+
+.icon-after::after, a.link[target=_blank]::after, a.link[href^=http]::after, a.link[href^=https]::after {
+  margin-left: 0.25em;
+  width: 1.28571429em;
+  text-align: center;
+}
+
+a.link[href$=".pdf"]:before {
+  content: "";
+}
+a.link[href$=".doc"]:before, a.link[href$=".docx"]:before, a.link[href$=".txt"]:before {
+  content: "";
+}
+a.link[href$=".zip"]:before {
+  content: "";
+}
+a.link[href*=".ppt"]:before, a.link[href*=".pptx"]:before {
+  content: "";
+}
+a.link[href$=".csv"]:before, a.link[href$=".xls"]:before, a.link[href$=".xlsx"]:before {
+  content: "";
+}
+a.link[href$=".mp4"]:before, a.link[href$=".mov"]:before {
+  content: "";
+}
+a.link[target=_blank]::after, a.link[href^=http]::after, a.link[href^=https]::after {
+  content: "";
+}
+a.link[href^="mailto:"]::after {
+  content: "";
+}
+a.link[href^="tel:"]::after {
+  content: "";
+}
+a.link[href^="fax:"]::after {
+  content: "";
+}
+a.link:hover {
+  text-decoration: underline;
+}
+a.link.website::before {
+  content: "";
+}
+
 .c_light {
   color: #fdfdfd;
 }

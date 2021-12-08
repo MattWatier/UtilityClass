@@ -1,0 +1,79 @@
+%font-awesome-pro {
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 900;
+}
+.icon-before:before {
+	@extend %font-awesome-pro;
+	margin-right: 0.25em;
+	width: 1.28571429em;
+	text-align: center;
+}
+.icon-after::after {
+	@extend %font-awesome-pro;
+	margin-left: 0.25em;
+	width: 1.28571429em;
+	text-align: center;
+}
+
+a.link {
+	@extend .icon-before;
+	&[href$=".pdf"]:before {
+		content: "\f1c1";
+	}
+	&[href$=".doc"]:before,
+	&[href$=".docx"]:before,
+	&[href$=".txt"]:before {
+		content: "\f1c2";
+	}
+
+	&[href$=".zip"]:before {
+		content: "\f1c6";
+	}
+
+	&[href*=".ppt"]:before,
+	&[href*=".pptx"]:before {
+		content: "\f685";
+	}
+	&[href$=".csv"]:before,
+	&[href$=".xls"]:before,
+	&[href$=".xlsx"]:before {
+		content: "\f0ce";
+	}
+
+	&[href$=".mp4"]:before,
+	&[href$=".mov"]:before {
+		content: "\f03d";
+	}
+
+	&[target="_blank"]::after,
+	&[href^="http"]::after,
+	&[href^="https"]::after {
+		@extend .icon-after;
+		content: "\f14c";
+	}
+
+	&[href^="mailto:"]::after {
+		content: "\f1fa";
+	}
+
+	&[href^="tel:"]::after {
+		content: "\f095";
+	}
+
+	&[href^="fax:"]::after {
+		content: "\f1ac";
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
+    &.website::before{
+        content: "\f0ac";
+    }
+}
