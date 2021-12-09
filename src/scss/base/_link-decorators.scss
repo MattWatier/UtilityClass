@@ -23,6 +23,9 @@
 
 a.link {
 	color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
+	h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+		color: inherit;
+	}
 	@extend .icon-before;
 	&[href$=".pdf"]:before {
 		content: "\f1c1";

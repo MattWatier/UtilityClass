@@ -25,6 +25,9 @@
 a.link {
   color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
 }
+h1 a.link, h2 a.link, h3 a.link, h4 a.link, h5 a.link, h6 a.link {
+  color: inherit;
+}
 a.link[href$=".pdf"]:before {
   content: "";
 }
