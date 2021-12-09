@@ -22,6 +22,9 @@
   text-align: center;
 }
 
+a.link {
+  color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
+}
 a.link[href$=".pdf"]:before {
   content: "";
 }
@@ -54,6 +57,7 @@ a.link[href^="fax:"]::after {
 }
 a.link:hover {
   text-decoration: underline;
+  color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.50 )));
 }
 a.link.website::before {
   content: "";
@@ -86,6 +90,7 @@ a.link.website::before {
 .reading-typography h5,
 .reading-typography h6 {
   color: hsla(var(--primary-h) var(--primary-s) var(--primary-l)/1);
+  font-family: Maven Pro, Open Sans, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif;
 }
 .reading-typography h1:not(:first-child),
 .reading-typography h2:not(:first-child),
@@ -113,6 +118,7 @@ a.link.website::before {
 .reading-typography h6, .reading-typography p, .reading-typography ul, .reading-typography ol, .reading-typography dl, .reading-typography table {
   font-size: var(--font_0);
   margin-top: var(--margin-top);
+  font-family: Open Sans, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif;
 }
 .reading-typography tfoot, .reading-typography cite {
   font-size: var(--font_down-1);
@@ -122,6 +128,10 @@ a.link.website::before {
 }
 .reading-typography thead {
   border-bottom: 1px solid hsla(var(--primary-h) var(--primary-s) var(--primary-l)/0.5);
+}
+.reading-typography pre, .reading-typography code {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: var(--font_up-1);
 }
 
 :root {

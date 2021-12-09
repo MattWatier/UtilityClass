@@ -22,6 +22,7 @@
 }
 
 a.link {
+	color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
 	@extend .icon-before;
 	&[href$=".pdf"]:before {
 		content: "\f1c1";
@@ -72,6 +73,7 @@ a.link {
 
 	&:hover {
 		text-decoration: underline;
+		color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.50 )));
 	}
     &.website::before{
         content: "\f0ac";

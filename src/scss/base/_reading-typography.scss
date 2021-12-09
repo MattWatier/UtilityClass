@@ -23,6 +23,7 @@
     h5,
     h6 {
         color:  hsla(var(--primary-h) var(--primary-s)  var( --primary-l )/1);
+        font-family:#{map.get(map.get(maps.$units, font-family),'display')};
     }
     h1:not(:first-child),
     h2:not(:first-child),
@@ -55,6 +56,7 @@
     h6,p,ul,ol,dl,table{
         font-size: var(--font_0);
         margin-top: var(--margin-top);
+        font-family:#{map.get(map.get(maps.$units, font-family),'copy')};
     } 
     tfoot,cite{font-size: var(--font_down-1);}
     table{
@@ -64,5 +66,9 @@
     thead{
         border-bottom: 1px solid  hsla( var(--primary-h)  var(--primary-s) var( --primary-l ) / .5);
     };
+    pre,code{
+        font-family:#{map.get(map.get(maps.$units, font-family),'mono')};
+        font-size: var(--font_up-1);
+    }
     
 }
