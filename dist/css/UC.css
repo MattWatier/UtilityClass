@@ -67,7 +67,7 @@ a.link.website::before {
   color: #101010;
 }
 
-::root {
+:root {
   --vertical-space: 1rem;
   --headline-color: #3182bd;
   --font_up-4: 2.44140625em;

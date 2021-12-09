@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../maps/index" as maps;
 
-::root{
+:root{
     --vertical-space: 1rem;
     --headline-color: #{map.get(maps.$theme-palette, 'primary')};
     --font_up-4: #{map.get(map.get(maps.$units, font-size-adjust),'up-4')};
