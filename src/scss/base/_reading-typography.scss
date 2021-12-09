@@ -15,6 +15,7 @@
 
 
 .reading-typography {
+    a{@extend  .link  !optional;}
     // a and links are taken care of in the _link-decoration.scss
     h1,
     h2,

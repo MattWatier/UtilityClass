@@ -8,7 +8,7 @@
 	font-family: "Font Awesome 5 Pro";
 	font-weight: 900;
 }
-.icon-before:before {
+.icon-before::before {
 	@extend %font-awesome-pro;
 	margin-right: 0.25em;
 	width: 1.28571429em;
@@ -21,37 +21,37 @@
 	text-align: center;
 }
 
-a.link {
+.link {
 	color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
 	h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
 		color: inherit;
 	}
 	@extend .icon-before;
-	&[href$=".pdf"]:before {
+	&[href$=".pdf"]::before {
 		content: "\f1c1";
 	}
-	&[href$=".doc"]:before,
-	&[href$=".docx"]:before,
-	&[href$=".txt"]:before {
+	&[href$=".doc"]::before,
+	&[href$=".docx"]::before,
+	&[href$=".txt"]::before {
 		content: "\f1c2";
 	}
 
-	&[href$=".zip"]:before {
+	&[href$=".zip"]::before {
 		content: "\f1c6";
 	}
 
-	&[href*=".ppt"]:before,
-	&[href*=".pptx"]:before {
+	&[href*=".ppt"]::before,
+	&[href*=".pptx"]::before {
 		content: "\f685";
 	}
-	&[href$=".csv"]:before,
-	&[href$=".xls"]:before,
-	&[href$=".xlsx"]:before {
+	&[href$=".csv"]::before,
+	&[href$=".xls"]::before,
+	&[href$=".xlsx"]::before {
 		content: "\f0ce";
 	}
 
-	&[href$=".mp4"]:before,
-	&[href$=".mov"]:before {
+	&[href$=".mp4"]::before,
+	&[href$=".mov"]::before {
 		content: "\f03d";
 	}
 

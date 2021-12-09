@@ -1,2 +1,4 @@
 @use "link-decorators";
 @use "reading-typography";
+
+.reading-typography a{@extend .link;}
