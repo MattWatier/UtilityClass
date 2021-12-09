@@ -36,8 +36,13 @@ $modularscale: (
 }
 @mixin directionModifierLoop($directionsMap,$base) {
   //create the base all unit version first
+  @if($base != 'grid' and $directionsMap != null ) {
+    @content ( '', '' );
+  }@else{
+    @if($debug){@debug( 'grid template found');}
+  }
+
   $separatorMarker: '';
-  @content ( '', '' );
   @if($base != ''){  
     $separatorMarker: '-';
   }
