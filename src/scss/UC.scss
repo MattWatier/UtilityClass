@@ -18,7 +18,10 @@
 // else loop through units
 // End loops
 // End Each
-
+:root{
+  --bg_texture-dark: url(../img/dark-honeycomb.png);
+  --bg_texture-light: url(../img/worn_dots.png);
+}
 .flex_auto{
   @extend .flex-grow_1; 
   @extend .flex-shrink_1;
@@ -27,6 +30,8 @@
   @extend .m_0 !optional;
   @extend .p_0 !optional;
 }
-
+.bg_texture-dark{
+ background-image: var( --bg_texture-light, none );
+}
 
 @debug ('build complete');
