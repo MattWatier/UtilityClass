@@ -23,36 +23,43 @@
 
 .link {
 	color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
+	text-decoration: underline;
 	h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
 		color: inherit;
 	}
-	@extend .icon-before;
+	
 	&[href$=".pdf"]::before {
 		content: "\f1c1";
+		@extend .icon-before;
 	}
 	&[href$=".doc"]::before,
 	&[href$=".docx"]::before,
 	&[href$=".txt"]::before {
 		content: "\f1c2";
+		@extend .icon-before;
 	}
 
 	&[href$=".zip"]::before {
 		content: "\f1c6";
+		@extend .icon-before;
 	}
 
 	&[href*=".ppt"]::before,
 	&[href*=".pptx"]::before {
 		content: "\f685";
+		@extend .icon-before;
 	}
 	&[href$=".csv"]::before,
 	&[href$=".xls"]::before,
 	&[href$=".xlsx"]::before {
 		content: "\f0ce";
+		@extend .icon-before;
 	}
 
 	&[href$=".mp4"]::before,
 	&[href$=".mov"]::before {
 		content: "\f03d";
+		@extend .icon-before;
 	}
 
 	&[target="_blank"]::after,
@@ -64,18 +71,21 @@
 
 	&[href^="mailto:"]::after {
 		content: "\f1fa";
+		@extend .icon-after;
 	}
 
 	&[href^="tel:"]::after {
 		content: "\f095";
+		@extend .icon-after;
 	}
 
 	&[href^="fax:"]::after {
 		content: "\f1ac";
+		@extend .icon-after;
 	}
 
 	&:hover {
-		text-decoration: underline;
+		text-decoration: none;
 		color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.50 )));
 	}
     &.website::before{

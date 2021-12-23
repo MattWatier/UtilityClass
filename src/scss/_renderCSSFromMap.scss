@@ -51,10 +51,14 @@ $modularscale: (
     @content ( $separatorMarker+$direction,$propertyDirectionMap );
   }
 }
-@mixin propertyDirectionMapLoop($propertyDirectionMap) {
+@mixin propertyDirectionMapLoop($propertyDirectionMap, $type) {
   //loop through the variations second
+  $propertySeparatorMark: '-';
+  @if($type == 'grid'){
+    $propertySeparatorMark: '';
+  }
   @each $label, $propertyDirection in $propertyDirectionMap {
-    @content ( "-"+$propertyDirection );
+    @content ( $propertySeparatorMark+$propertyDirection );
   }
 }
 @function alphaColor($propertyValue,$propertyValueModifier){
@@ -215,7 +219,11 @@ $modularscale: (
                     $prop: 'border';
                     $prop-post: '-width';
                   }
-                  @include propertyDirectionMapLoop($propertyDirectionMap) using ($propertyDirection) {
+                  @if ($prop == 'gap') {
+                    $prop: '';
+                    $prop-post: '-gap';
+                  }
+                  @include propertyDirectionMapLoop($propertyDirectionMap, $type) using ($propertyDirection) {
                     #{ $prop + $propertyDirection + $prop-post }: #{$propertyValue};
                   }
                 } @else {
