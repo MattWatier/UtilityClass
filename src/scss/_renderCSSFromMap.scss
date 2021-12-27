@@ -216,6 +216,12 @@
                     $prop-post: '-gap';
                   }
                   @include propertyDirectionMapLoop($propertyDirectionMap, $type) using ($propertyDirection) {
+                    @if($prop-post == '-gap' and $propertyDirection == '-row'){
+                      $propertyDirection: 'row';
+                    }
+                    @if($prop-post == '-gap' and $propertyDirection == '-column'){
+                      $propertyDirection: 'column';
+                    }
                     #{ $prop + $propertyDirection + $prop-post }: #{$propertyValue};
                   }
                 } @else {
