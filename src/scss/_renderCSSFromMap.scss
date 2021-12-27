@@ -7,21 +7,12 @@
 @use "modularscale-sass/stylesheets/_modularscale.scss" as *;
 @use "maps";
 @use "sass:meta";
+@use "variables" as global;
 
-$debug:true;
-$colon: '\\3A ';
-$modularscale: (
-  base: 16px,
-  ratio: 1.25,
-);
-:root {
-@each $color, $value in maps.$theme-palette {
-  --#{$color}-h: #{ color.hue($value) };
-  --#{$color}-s: #{ color.saturation($value) };
-  --#{$color}-l: #{ color.lightness($value) };
-}
 
-}
+
+
+
 
 
 @mixin breakpointLoop($breakpoints) {
@@ -30,16 +21,17 @@ $modularscale: (
   // loop through the rules with media queries going up.
   @each $breakpointLabel, $value in $breakpoints {
     @media screen and (min-width: #{$value}) {
-      @content ( $colon+$breakpointLabel );
+      @content ( global.$colon+$breakpointLabel );
     }
   }
 }
+
 @mixin directionModifierLoop($directionsMap,$base) {
   //create the base all unit version first
   @if($base != 'grid' and $directionsMap != null ) {
     @content ( '', '' );
   }@else{
-    @if($debug){@debug( 'grid template found');}
+    @if(global.$debug){@debug( 'grid template found');}
   }
 
   $separatorMarker: '';
@@ -81,7 +73,7 @@ $modularscale: (
     $range: math.div($lightness,1%);
   }
   $shift: $range * math.div($propertyValueModifier,100);
-  @if($debug){@debug( $lightness , $range, $propertyValueModifier, $shift , $lightness + $shift );}
+  @if(global.$debug){@debug( $lightness , $range, $propertyValueModifier, $shift , $lightness + $shift );}
   @return  calc(var( --#{$unitLabel}-l) + #{$shift});
 }
 @function calcLightnessCSSvar($unitLabel,$propertyValueModifier){
@@ -145,21 +137,21 @@ $modularscale: (
     @if ($pseudoLabelModifier == active) {
       $stateClass: '.active >';
       $pseudoLabel: '';
-      @content ($stateClass, $stateLabelModifier + $colon  , $pseudoLabel );
+      @content ($stateClass, $stateLabelModifier + global.$colon  , $pseudoLabel );
       $stateClass: '.active';
       $pseudoLabel: '';
-      @content ($stateClass, $stateLabelModifier + $colon  , $pseudoLabel );
+      @content ($stateClass, $stateLabelModifier + global.$colon  , $pseudoLabel );
     } @else {
       $stateClass: '';
       $pseudoLabel: ':' + $pseudoLabelModifier;
-      @content ($stateClass, $stateLabelModifier + $colon  , $pseudoLabel );
+      @content ($stateClass, $stateLabelModifier + global.$colon  , $pseudoLabel );
     }
   }
 }
 @mixin renderCSSFromMap( $cssPropertiesMap ){
   @each $type, $map in $cssPropertiesMap {
     $base: map.get($map, name);
-    @if($debug){@debug( $type, $base );}
+    @if(global.$debug){@debug( $type, $base );}
     $separator: '_';
     @if ($base == '') {
       $separator: '';
@@ -188,7 +180,7 @@ $modularscale: (
           ($unitLabel, $propertyValue, $luminance) {
           // Error check if there is no base or labelDirectionMod and $unitLabel is a number skip or $unitLabel starts with the letter 'n'
           @if ($base == '' and $labelDirectionMod == '' and ( helpers.is-number($unitLabel) or helpers.is-negativeUnitLabel($unitLabel))) {
-            @if($debug){
+            @if(global.$debug){
               @debug( "skip this unit because it would produce an improper class name"+ '.' + $base + $labelDirectionMod + $separator + $unitLabel );
             }
           }

@@ -5,6 +5,10 @@ module.exports = {
         }),
         require('postcss-combine-media-query')({
             preset: 'default',
-        })
+        }),
+        require('postcss-merge-rules-plus')({
+            preset: 'default',
+        }),
+        
     ],
 };

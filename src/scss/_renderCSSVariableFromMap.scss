@@ -1,0 +1,38 @@
+//globally importing the modular scale to make development easier;
+@use "sass:map";
+@use "sass:selector";
+@use "sass:color";
+@use "sass:math";
+@use "sass:string";
+@use "helpers";
+@use "modularscale-sass/stylesheets/_modularscale.scss" as *;
+@use "maps";
+@use "sass:meta";
+@use "variables" as global;
+
+:root {
+	@each $color, $value in maps.$theme-palette {
+		--#{$color}-h: #{color.hue($value)};
+		--#{$color}-s: #{color.saturation($value)};
+		--#{$color}-l: #{color.lightness($value)};
+	}
+}
+
+@mixin renderCSSVariablesFromMap($cssPropertiesMap) {
+	:root {
+		@each $type, $map in $cssPropertiesMap {
+			$base: map.get($map, name);
+			@if (map.get($map, cssVar)) {
+				@if (global.$debug) {
+					@debug ("CSS VAR Writing for " + $base);
+					@debug (map.get($map, unit));
+					@each $unitType in map.get($map, unit) {
+						@each $unit, $value in map.get(maps.$units, $unitType) {
+							--#{$base}_#{$unit}: #{$value};
+						}
+					}
+				}
+			}
+		}
+	}
+}

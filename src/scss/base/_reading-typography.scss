@@ -3,14 +3,11 @@
 
 :root{
     --vertical-space: 1rem;
-    --headline-color: #{map.get(maps.$theme-palette, 'primary')};
-    --font_up-4: #{map.get(map.get(maps.$units, font-size-adjust),'up-4')};
-    --font_up-3: #{map.get(map.get(maps.$units, font-size-adjust),'up-3')};
-    --font_up-2: #{map.get(map.get(maps.$units, font-size-adjust),'up-2')};
-    --font_up-1: #{map.get(map.get(maps.$units, font-size-adjust),'up-1')};
-    --font_0: 1em;
-    --font_down-1: #{map.get(map.get(maps.$units, font-size-adjust),'down-1')};
     --margin-top: #{map.get(map.get(maps.$units, size-positive),'3')};
+    --font-family_headline: var(--font-family_display);
+    --font-family_headline-alt: var(--font-family_accent);
+    --font-family_content: var(--font-family_copy);
+    --font-family_code: var(--font-family_mono);
 }
 
 
@@ -40,26 +37,32 @@
 
     h1 {
         @extend %lh_1;
-        font-size: var(--font_up-4);
+        font-size: var(--font-size_up-4);
     }
     h2 {
         @extend %lh_1;
-        font-size: var(--font_up-3);
+        font-size: var(--font-size_up-3);
     }
     h3 {
         @extend %lh_1;
-        font-size: var(--font_up-2);
+        font-size: var(--font-size_up-2);
     }
     h4,h5,blockquote {
-        @extend %lh_1;
-        font-size: var(--font_up-1);
+        @extend %lh_2;
+        font-size: var(--font-size_up-1);
     }
-    h6,p,ul,ol,dl,table{
-        font-size: var(--font_0);
-        margin-top: var(--margin-top);
-        font-family:#{map.get(map.get(maps.$units, font-family),'copy')};
+    h6{
+        @extend %lh_3;
+        font-size: var(--font-size_0);
+    }
+    p,ul,ol,dl,table{
+        font-size: var(--font-size_0);
+        font-family:var(--font-family_copy);
     } 
-    tfoot,cite{font-size: var(--font_down-1);}
+    p + p,ul,ol,dl,table{
+        margin-top: var(--vertical-space);
+    }
+    tfoot,cite{font-size: var(--font-size_down-1);}
     table{
         width:100%;
     
@@ -68,8 +71,8 @@
         border-bottom: 1px solid  hsla( var(--primary-h)  var(--primary-s) var( --primary-l ) / .5);
     };
     pre,code{
-        font-family:#{map.get(map.get(maps.$units, font-family),'mono')};
-        font-size: var(--font_up-1);
+        font-family:var(--font-family_mono);
+        font-size: var(--font-size_up-1);
     }
     
 }
