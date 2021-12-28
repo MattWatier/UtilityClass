@@ -45,7 +45,7 @@ $units: (
 	justify-content: ( flex-start: flex-start, flex-end: flex-end, center: center, space-between: space-between, space-around: space-around, space-evenly: space-evenly,),
 	line-height: ( 0: 1, 1: 1.125, 2: 1.35, 3: 1.6, 4: 1.8, 5: 2.5,),
 	list-type: ( none: none, bullet: disc, circle: circle, square: square, lowercase: lower-alpha, uppercase: upper-alpha,),
-	max-width: ( 0: 0, 5: 5rem, 10: 10rem, 15: 15rem, 20: 20rem, 25: 25rem, 30: 30rem, 35: 35rem, 40: 40rem, 45: 45rem, 50: 50rem, 55: 55rem, 60: 60rem, 65: 65rem, 70: 70rem, 75: 75rem, 80: 80rem, 85: 85rem, 90: 90rem, 95: 95rem,),
+	max-width: ( none:none, 0: 0, 5: 5rem, 10: 10rem, 15: 15rem, 20: 20rem, 25: 25rem, 30: 30rem, 35: 35rem, 40: 40rem, 45: 45rem, 50: 50rem, 55: 55rem, 60: 60rem, 65: 65rem, 70: 70rem, 75: 75rem, 80: 80rem, 85: 85rem, 90: 90rem, 95: 95rem,),
 	opacity: ( 0: 0, _01: 0.005, _05: 0.0075, 1: 0.025, 2: 0.1, 3: 0.25, 4: 0.38, 5: 0.5, 6: 0.62, 7: 0.75, 8: 0.9, 9: 0.975, 10: 1,),
 	percent-10: ( 0: 0%, 1: 5%, 2: 12%, 3: 25%, 4: 38%, 5: 50%, 6: 62%, 7: 75%, 8: 88%, 9: 95%, none: 100%,),
 	percent-negative: ( n1: -15%, n2: -37%, n3: -60%, n4: -78%, n5: -90%,),

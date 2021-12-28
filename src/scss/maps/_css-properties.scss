@@ -29,7 +29,7 @@ $css-properties:(
 'grid-template': ( "direction": "direction-grid-plural", "name": "grid", "property": ( "grid-template", ), "responsive": true,"unit": ( "grid-template", ),),
 'grid-width':('direction':null,'name':'w-grid','property':('width',),'unit':('grid',),),
 'height-viewport':('direction':null,'name':'h','property':('height',),'unit':('height-viewport',),),
-'inset':('direction':'direction-edge','name':'','property':('inset',),'unit':('unset','auto','size-negative','size-positive',),),
+'inset':('direction':'direction-edge','name':'','property':('inset',),'responsive':true,'unit':('unset','auto','size-negative','size-positive',),),
 'justify-content':('direction':null,'name':'justify','property':('justify-content',),'responsive':true,'unit':('justify-content',),),
 'left':('direction':null,'name':'l','property':('left',),'responsive':true,'unit':('sizeAlt',),),
 'line-height':('direction':null,'name':'lh','property':('line-height',),'unit':('line-height',),),
