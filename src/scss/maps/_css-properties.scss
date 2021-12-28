@@ -45,7 +45,7 @@ $css-properties:(
 'padding-horizontal':('direction':null,'name':'p-x','property':('padding-left','padding-right','padding-inline-start','padding-inline-end',),'responsive':true,'unit':('size-positive',),),
 'padding-vertical':('direction':null,'name':'p-y','property':('padding-bottom','padding-top','padding-block-start','padding-block-end',),'responsive':true,'unit':('size-positive',),),
 'padding':('direction':'direction-edge','name':'p','property':('padding',),'responsive':true,'unit':('size-positive',),),
-'position':('direction':null,'name':'','property':('position',),'unit':('position',),),
+'position':('direction':null,'name':'','property':('position',), 'responsive': true, 'unit':('position',),),
 'rich-shadow':('direction':null,'name':'shadow','property':('box-shadow',),'unit':('rich-shadow',),),
 'right':('direction':null,'name':'r','property':('right',),'responsive':true,'unit':('sizeAlt',),),
 'scale':('direction':null,'name':'scale','property':('transform',),'unit':('scale',),),
