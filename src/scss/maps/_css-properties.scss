@@ -50,7 +50,7 @@ $css-properties:(
 'right':('direction':null,'name':'r','property':('right',),'responsive':true,'unit':('sizeAlt',),),
 'scale':('direction':null,'name':'scale','property':('transform',),'unit':('scale',),),
 'text-align':('direction':null,'name':'text','property':('text-align',),'unit':('text-align',),),
-'text-decoration':('direction':null,'name':'','property':('text-decoration',),'responsive':false,'unit':('text-decoration',),),
+'text-decoration':('direction':null,'name':'','property':('text-decoration',), 'states': true,'responsive':false,'unit':('text-decoration',),),
 'text-indent':('direction':null,'name':'text-indent','property':('text-indent',),'unit':('text-indent',),),
 'text-shadow':('direction':null,'name':'text-shadow','property':('text-shadow',),'unit':('text-shadow',),),
 'text-transform':('direction':null,'name':'','property':('text-transform',),'responsive':false,'unit':('text-transform',),),
