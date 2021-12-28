@@ -41,6 +41,7 @@ $css-properties:(
 'min-height':('direction':null,'name':'min-h','property':('min-height',),'unit':('height-viewport',),),
 'mix-blend-mode':('direction':null,'name':'font-blend','property':('mix-blend-mode',),'unit':('blend',),),
 'opacity':('direction':null,'name':'opacity','property':('opacity',),'states':true,'unit':('opacity',),),
+'overflow':('direction':null,'name':'overflow','property':('overflow',),'unit':('overflow',),),
 'padding-horizontal':('direction':null,'name':'p-x','property':('padding-left','padding-right','padding-inline-start','padding-inline-end',),'responsive':true,'unit':('size-positive',),),
 'padding-vertical':('direction':null,'name':'p-y','property':('padding-bottom','padding-top','padding-block-start','padding-block-end',),'responsive':true,'unit':('size-positive',),),
 'padding':('direction':'direction-edge','name':'p','property':('padding',),'responsive':true,'unit':('size-positive',),),
