@@ -9,6 +9,7 @@ $css-properties:(
 'border-radius':('direction':'direction-corner','name':'br','property':('border-radius',),'responsive':true,'unit':('radius',),),
 'border-style':('direction':null,'name':'br','property':('border-style',),'responsive':true,'unit':('border-style',),),
 'border-width':('direction':'direction-edge','name':'br','property':('border-width',),'unit':('border-width',),),
+'border-between-width':('direction':'direction-between','name':'br','property':('border-width',),'unit':('border-width',), 'postCSSSelector':' > * + * '),
 'bottom':('direction':null,'name':'b','property':('bottom',),'responsive':true,'unit':('sizeAlt',),),
 'box-shadow':('direction':null,'name':'shadow','property':('box-shadow',),'unit':('shadow',),),
 'cursor':('direction':null,'name':'','property':('cursor',),'responsive':false,'unit':('cursor',),),

@@ -151,6 +151,10 @@
 @mixin renderCSSFromMap( $cssPropertiesMap ){
   @each $type, $map in $cssPropertiesMap {
     $base: map.get($map, name);
+    $postCSSSelector: '';
+    @if(map.get($map, postCSSSelector)) {
+      $postCSSSelector: map.get($map, postCSSSelector);
+    }
     @if(global.$debug){@debug( $type, $base );}
     $separator: '_';
     @if ($base == '') {
@@ -199,6 +203,7 @@
               + $unitLabel
               + $breakpointLabel
               + $pseudoLabelModifier
+              + $postCSSSelector
               } {
               @each $prop in map.get($map, property) {
                 @if (type-of($propertyDirectionMap) == 'map') {
@@ -222,9 +227,10 @@
                     @if($prop-post == '-gap' and $propertyDirection == '-column'){
                       $propertyDirection: 'column';
                     }
-                    #{ $prop + $propertyDirection + $prop-post }: #{$propertyValue};
+                    #{ $prop + $propertyDirection + $prop-post }: #{$propertyValue};                                           
                   }
                 } @else {
+
                   #{ $prop }: #{$propertyValue};
                   // @if ($prop == 'background-color'){
                   //   @if($stateLabelModifier == '' ){

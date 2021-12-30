@@ -29,6 +29,7 @@ $units: (
 	direction-edge: (t: (logical: block-start,),l: (logical: inline-start,),r: (logical: inline-end,),b: (logical: block-end,),),
 	direction-grid: (x: (logical: column,),y: (logical: row,),),
     direction-grid-plural: (x: (logical: columns,),y: (logical: rows,),),
+	direction-between: (xx: (logical: inline-start,),yy: (logical: block-start,),),
     display: ( block: block, inline: inline, inline-block: inline-block, table-cell: table-cell, table: table, table-row: table-row, flex: flex, inline-flex: inline-flex, grid: grid, display_none: none,),
 	ease: ( linear: linear, out-in: ease, in: ease-in, out: ease-out, in-out: ease-in-out,),
 	flex-direction: ( row: row, column: column, row-reverse: row-reverse, column-reverse: column-reverse, inherit: inherit,),

@@ -30,55 +30,5 @@
   @extend .p_0 !optional;
 }
 
-.br-xx_1{
-  &> * + * {
-    @extend .br-l_1 !optional;
-  }
-}
-.br-xx_2{
-  &> * + * {
-    @extend .br-l_2 !optional;
-  }
-}
-.br-xx_3{
-  &> * + * {
-    @extend .br-l_3 !optional;
-  }
-}
-.br-xx_4{
-  &> * + * {
-    @extend .br-l_4 !optional;
-  }
-}
-.br-xx_5{
-  &> * + * {
-    @extend .br-l_5 !optional;
-  }
-}
-.br-yy_1{
-  &> * + * {
-    @extend .br-t_1 !optional;
-  }
-}
-.br-yy_2{
-  &> * + * {
-    @extend .br-t_2 !optional;
-  }
-}
-.br-yy_3{
-  &> * + * {
-    @extend .br-t_3 !optional;
-  }
-}
-.br-yy_4{
-  &> * + * {
-    @extend .br-t_4 !optional;
-  }
-}
-.br-yy_5{
-  &> * + * {
-    @extend .br-t_5 !optional;
-  }
-}
 
 @debug ('build complete');
