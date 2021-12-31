@@ -1,0 +1,5 @@
+@use "sass:map";
+
+@function cssVarProperty($base, $value ) {
+    @return unquote($string: "var(--#{$base}_#{$value})");
+}

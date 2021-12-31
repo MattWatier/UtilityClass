@@ -27,8 +27,8 @@
 					@debug ("CSS VAR Writing for " + $base);
 					@debug (map.get($map, unit));
 					@each $unitType in map.get($map, unit) {
-						@each $unit, $value in map.get(maps.$units, $unitType) {
-							--#{$base}_#{$unit}: #{$value};
+						@each $unitLabel, $propertyValue in map.get(maps.$units, $unitType) {
+							--#{$base}_#{$unitLabel}: #{$propertyValue};
 						}
 					}
 				}
@@ -36,3 +36,4 @@
 		}
 	}
 }
+

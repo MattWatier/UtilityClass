@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../maps/index" as maps;
+@use "../maps" as maps;
 
 :root{
     --vertical-space: 1rem;
