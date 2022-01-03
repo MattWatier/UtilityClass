@@ -1,15 +1,20 @@
 //globally importing the modular scale to make development easier;
 @use "sass:map";
-@use "base";
 @use "maps";
 @use "_renderCSSVariableFromMap.scss" as rootVariables;
 @use "renderCSSFromMap" as renderMap;
+@use "base";
 
+@include base.link-decorators();
+@include base.reading-typography();
+@include rootVariables.renderCSSVariablesFromMap(maps.$css-properties);
 
+// setting the default of border width to 0 so it doesn't interfere with the border width and utility classes.
 [class*="br"]{
   border-width: 0px;
 }
-@include rootVariables.renderCSSVariablesFromMap(maps.$css-properties);
+
+
 @include renderMap.renderCSSFromMap(maps.$css-properties);
 // Each CSS Utility Class
 // If it is responsive. If it is loop through breakpoints
@@ -21,6 +26,7 @@
 // End Each
 
  
+//  Adding helper classes for the utility classes. 
 .flex_auto{
   @extend .flex-grow_1; 
   @extend .flex-shrink_1;

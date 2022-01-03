@@ -312,18 +312,7 @@
 										}
 									} @else {
 										#{ $prop }: #{$propertyValue};
-										// @if ($prop == 'background-color'){
-										//   @if($stateLabelModifier == '' ){
-										//     // add the best contrast color for the background that don't use transparency
-										//     @if($luminance == 'light'){
-										//       @extend .c_dark;
-										//     }@else{
-										//       @extend .c_light;
-										//     }
-										//   }
-										// }
 									}
-									// if direction is  x , y duplicate.
 								}
 							}
 						}

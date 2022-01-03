@@ -17,9 +17,3 @@ $theme-palette: (
     'white': $white,
     );
 
-    .c_light{
-        color: map.get( $theme-palette ,'white');
-    }
-    .c_dark{
-        color: map.get( $theme-palette ,'black');
-    }
