@@ -20644,6 +20644,91 @@ a.not-link:before, a.not-link:after, nav a:before, nav a:after {
   text-align: justify;
 }
 
+@media screen and (min-width: 30rem) {
+  .text_center\:sm {
+    text-align: center;
+  }
+
+  .text_left\:sm {
+    text-align: start;
+  }
+
+  .text_right\:sm {
+    text-align: end;
+  }
+
+  .text_justify\:sm {
+    text-align: justify;
+  }
+}
+@media screen and (min-width: 50rem) {
+  .text_center\:md {
+    text-align: center;
+  }
+
+  .text_left\:md {
+    text-align: start;
+  }
+
+  .text_right\:md {
+    text-align: end;
+  }
+
+  .text_justify\:md {
+    text-align: justify;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .text_center\:lg {
+    text-align: center;
+  }
+
+  .text_left\:lg {
+    text-align: start;
+  }
+
+  .text_right\:lg {
+    text-align: end;
+  }
+
+  .text_justify\:lg {
+    text-align: justify;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .text_center\:xl {
+    text-align: center;
+  }
+
+  .text_left\:xl {
+    text-align: start;
+  }
+
+  .text_right\:xl {
+    text-align: end;
+  }
+
+  .text_justify\:xl {
+    text-align: justify;
+  }
+}
+@media screen and (min-width: 90rem) {
+  .text_center\:xxl {
+    text-align: center;
+  }
+
+  .text_left\:xxl {
+    text-align: start;
+  }
+
+  .text_right\:xxl {
+    text-align: end;
+  }
+
+  .text_justify\:xxl {
+    text-align: justify;
+  }
+}
 .underline {
   text-decoration: underline;
 }
