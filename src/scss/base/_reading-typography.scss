@@ -74,6 +74,9 @@
             font-family:var(--font-family_code);
             font-size: var(--font-size_up-1);
         }
+        li::marker{
+            color:hsla( var(--primary-h)  var(--primary-s) var( --primary-l ))
+        }
         
     }
 }

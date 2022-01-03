@@ -23,7 +23,7 @@
   --white-l: 99.2156862745%;
 }
 
-a:after, a:before {
+a::after, a::before {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-style: normal;
@@ -100,7 +100,7 @@ a.not-link, a.not-link:hover, nav a, nav a:hover {
   text-decoration: none;
   color: inherit;
 }
-a.not-link:before, a.not-link:after, nav a:before, nav a:after {
+a.not-link::before, a.not-link::after, nav a::before, nav a::after {
   content: "";
   font-family: inherit;
 }
@@ -176,6 +176,9 @@ a.not-link:before, a.not-link:after, nav a:before, nav a:after {
 .reading-typography pre, .reading-typography code {
   font-family: var(--font-family_code);
   font-size: var(--font-size_up-1);
+}
+.reading-typography li::marker {
+  color: hsla(var(--primary-h), var(--primary-s), var(--primary-l));
 }
 
 :root {
@@ -21793,6 +21796,22 @@ a.not-link:before, a.not-link:after, nav a:before, nav a:after {
 
 .z_5 {
   z-index: 9999;
+}
+
+.disabled {
+  opacity: 0.5;
+  color: hsl(var(--black-h), var(--black-s), 50%) !important;
+  border-color: hsl(var(--black-h), var(--black-s), 30%) !important;
+  cursor: not-allowed;
+}
+.disabled[class*=bg] {
+  background-color: hsl(var(--black-h), var(--black-s), 70%) !important;
+}
+.disabled .disabled {
+  opacity: 1;
+}
+.disabled:hover::before {
+  content: "f30d";
 }
 
 /*# sourceMappingURL=UC.css.map */
