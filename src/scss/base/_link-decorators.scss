@@ -128,7 +128,7 @@
 		@extend %super-script;
 		content: "\f1f9";
 	}
-	a.link-reset,a.button, a.btn , nav a{ 
+	.link-reset,.button, .btn , nav a{ 
 		&, &:hover {
 			text-decoration: none;
 			color: inherit;

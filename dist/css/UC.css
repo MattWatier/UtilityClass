@@ -114,11 +114,11 @@ a:hover {
   content: "";
 }
 
-a.link-reset, a.link-reset:hover, a.button, a.button:hover, a.btn, a.btn:hover, nav a, nav a:hover {
+.link-reset, .link-reset:hover, .button, .button:hover, .btn, .btn:hover, nav a, nav a:hover {
   text-decoration: none;
   color: inherit;
 }
-a.link-reset::before, a.link-reset::after, a.button::before, a.button::after, a.btn::before, a.btn::after, nav a::before, nav a::after {
+.link-reset::before, .link-reset::after, .button::before, .button::after, .btn::before, .btn::after, nav a::before, nav a::after {
   content: "";
   font-family: inherit;
   width: unset;
