@@ -96,9 +96,9 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-a.not-link, nav a {
-  color: inherit;
+a.not-link, a.not-link:hover, nav a, nav a:hover {
   text-decoration: none;
+  color: inherit;
 }
 a.not-link:before, a.not-link:after, nav a:before, nav a:after {
   content: "";
