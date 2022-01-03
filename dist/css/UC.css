@@ -114,13 +114,15 @@ a:hover {
   content: "";
 }
 
-a.not-link, a.not-link:hover, nav a, nav a:hover {
+a.link-reset, a.link-reset:hover, a.button, a.button:hover, a.btn, a.btn:hover, nav a, nav a:hover {
   text-decoration: none;
   color: inherit;
 }
-a.not-link::before, a.not-link::after, nav a::before, nav a::after {
+a.link-reset::before, a.link-reset::after, a.button::before, a.button::after, a.btn::before, a.btn::after, nav a::before, nav a::after {
   content: "";
   font-family: inherit;
+  width: unset;
+  margin: unset;
 }
 
 :root {

@@ -128,12 +128,12 @@
 		@extend %super-script;
 		content: "\f1f9";
 	}
-	a.not-link, nav a{ 
+	a.link-reset,a.button, a.btn , nav a{ 
 		&, &:hover {
 			text-decoration: none;
 			color: inherit;
 		}
-		&::before, &::after{ content: ""; font-family: inherit; }	
+		&::before, &::after{ content: ""; font-family: inherit; width:unset;margin:unset; }	
 	}
 }
 
