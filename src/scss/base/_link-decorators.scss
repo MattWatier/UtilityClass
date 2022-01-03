@@ -34,83 +34,87 @@
 	
 	
 	a {
-		&::after,&::before{
-			@extend %font-awesome-pro;
+		&.link, .reading-typography &{
+			&::after,&::before{
+				@extend %font-awesome-pro;
+			}
+			color: var( --link-color);
+			&:hover {
+				text-decoration: none;
+				color: var(--link-hover-color);
+			}
+			text-decoration: underline;
 		}
-		color: var( --link-color);
-		text-decoration: underline;
 		h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
 			color: inherit;
-		}
-		
-		&[href$=".pdf"]::before {
-			content: "\f1c1";
-			@extend .icon-before;
-		}
-		&[href$=".doc"]::before,
-		&[href$=".docx"]::before,
-		&[href$=".txt"]::before {
-			content: "\f1c2";
-			@extend .icon-before;
-		}
-	
-		&[href$=".zip"]::before {
-			content: "\f1c6";
-			@extend .icon-before;
-		}
-	
-		&[href*=".ppt"]::before,
-		&[href*=".pptx"]::before {
-			content: "\f685";
-			@extend .icon-before;
-		}
-		&[href$=".csv"]::before,
-		&[href$=".xls"]::before,
-		&[href$=".xlsx"]::before {
-			content: "\f0ce";
-			@extend .icon-before;
-		}
-	
-		&[href$=".mp4"]::before,
-		&[href$=".mov"]::before {
-			content: "\f03d";
-			@extend .icon-before;
-		}
-	
-		&[target="_blank"]::after,
-		&[href^="http"]::after,
-		&[href^="https"]::after {
-			@extend .icon-after;
-			content: "\f14c";
-		}
-	
-		&[href^="mailto:"]::after {
-			content: "\f1fa";
-			@extend .icon-after;
-		}
-	
-		&[href^="tel:"]::after {
-			content: "\f095";
-			@extend .icon-after;
-		}
-	
-		&[href^="fax:"]::after {
-			content: "\f1ac";
-			@extend .icon-after;
-		}
-	
-		&.website::before{
-			content: "\f0ac";
-		}
-		&:hover {
-			text-decoration: none;
-			color: var(--link-hover-color);
 		}
 		&::after,&::before{
 			h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
 				@extend %super-script !optional;
 			}
 		}
+		&.link, .reading-typography &{
+			&[href$=".pdf"]::before {
+				content: "\f1c1";
+				@extend .icon-before;
+			}
+			&[href$=".doc"]::before,
+			&[href$=".docx"]::before,
+			&[href$=".txt"]::before {
+				content: "\f1c2";
+				@extend .icon-before;
+			}
+		
+			&[href$=".zip"]::before {
+				content: "\f1c6";
+				@extend .icon-before;
+			}
+		
+			&[href*=".ppt"]::before,
+			&[href*=".pptx"]::before {
+				content: "\f685";
+				@extend .icon-before;
+			}
+			&[href$=".csv"]::before,
+			&[href$=".xls"]::before,
+			&[href$=".xlsx"]::before {
+				content: "\f0ce";
+				@extend .icon-before;
+			}
+		
+			&[href$=".mp4"]::before,
+			&[href$=".mov"]::before {
+				content: "\f03d";
+				@extend .icon-before;
+			}
+		
+			&[target="_blank"]::after,
+			&[href^="http"]::after,
+			&[href^="https"]::after {
+				@extend .icon-after;
+				content: "\f14c";
+			}
+		
+			&[href^="mailto:"]::after {
+				content: "\f1fa";
+				@extend .icon-after;
+			}
+		
+			&[href^="tel:"]::after {
+				content: "\f095";
+				@extend .icon-after;
+			}
+		
+			&[href^="fax:"]::after {
+				content: "\f1ac";
+				@extend .icon-after;
+			}
+		
+			&.website::before{
+				content: "\f0ac";
+			}	
+		}
+		
 	}
 	[aria-label="trademark"]::after{
 		@extend %font-awesome-pro;
@@ -128,12 +132,11 @@
 		@extend %super-script;
 		content: "\f1f9";
 	}
-	.link-reset,.button, .btn , nav a{ 
+	a, .button, .btn , nav a{ 
 		&, &:hover {
 			text-decoration: none;
 			color: inherit;
 		}
-		&::before, &::after{ content: ""; font-family: inherit; width:unset;margin:unset; }	
 	}
 }
 
