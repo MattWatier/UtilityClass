@@ -25,28 +25,13 @@
 		font-size: clamp(10px, .55em, 14px);
 		vertical-align: super;
 		opacity: .7;
-		margin:0 !important;
+		margin:0 2px !important;
 	}
 	:root{
 	--link-color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
 	--link-hover-color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.50 )));
 	}
-	[aria-label="trademark"]::after{
-		@extend %font-awesome-pro;
-		@extend %super-script;
-		@extend .icon-after;
-		content: "\f25c";
-	}
-	[aria-label="register"]::after{
-		@extend %font-awesome-pro;
-		@extend %super-script;
-		content: "\f25d";
-	}
-	[aria-label="copyright"]::after{
-		@extend %font-awesome-pro;
-		@extend %super-script;
-		content: "\f1f9";
-	}
+	
 	
 	a {
 		&::after,&::before{
@@ -127,7 +112,22 @@
 			}
 		}
 	}
-	
+	[aria-label="trademark"]::after{
+		@extend %font-awesome-pro;
+		@extend %super-script;
+		@extend .icon-after;
+		content: "\f25c";
+	}
+	[aria-label="register"]::after{
+		@extend %font-awesome-pro;
+		@extend %super-script;
+		content: "\f25d";
+	}
+	[aria-label="copyright"]::after{
+		@extend %font-awesome-pro;
+		@extend %super-script;
+		content: "\f1f9";
+	}
 	a.not-link, nav a{ 
 		&, &:hover {
 			text-decoration: none;

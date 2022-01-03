@@ -23,7 +23,7 @@
   --white-l: 99.2156862745%;
 }
 
-a::after, a::before, [aria-label=copyright]::after, [aria-label=register]::after, [aria-label=trademark]::after {
+[aria-label=copyright]::after, [aria-label=register]::after, [aria-label=trademark]::after, a::after, a::before {
   -webkit-font-smoothing: antialiased;
   display: inline-block;
   font-style: normal;
@@ -40,34 +40,22 @@ a::after, a::before, [aria-label=copyright]::after, [aria-label=register]::after
   text-align: center;
 }
 
-.icon-after::after, a[href^="fax:"]::after, a[href^="tel:"]::after, a[href^="mailto:"]::after, a[target=_blank]::after, a[href^=http]::after, a[href^=https]::after, [aria-label=trademark]::after {
+.icon-after::after, [aria-label=trademark]::after, a[href^="fax:"]::after, a[href^="tel:"]::after, a[href^="mailto:"]::after, a[target=_blank]::after, a[href^=http]::after, a[href^=https]::after {
   margin-left: 0.25em;
   width: 1.28571429em;
   text-align: center;
 }
 
-h1 a::after, h2 a::after, h3 a::after, h4 a::after, h5 a::after, h6 a::after, h1 a::before, h2 a::before, h3 a::before, h4 a::before, h5 a::before, h6 a::before, [aria-label=copyright]::after, [aria-label=register]::after, [aria-label=trademark]::after {
+[aria-label=copyright]::after, [aria-label=register]::after, [aria-label=trademark]::after, h1 a::after, h2 a::after, h3 a::after, h4 a::after, h5 a::after, h6 a::after, h1 a::before, h2 a::before, h3 a::before, h4 a::before, h5 a::before, h6 a::before {
   font-size: clamp(10px, .55em, 14px);
   vertical-align: super;
   opacity: 0.7;
-  margin: 0 !important;
+  margin: 0 2px !important;
 }
 
 :root {
   --link-color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
   --link-hover-color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.50 )));
-}
-
-[aria-label=trademark]::after {
-  content: "";
-}
-
-[aria-label=register]::after {
-  content: "";
-}
-
-[aria-label=copyright]::after {
-  content: "";
 }
 
 a {
@@ -114,6 +102,18 @@ a:hover {
   text-decoration: none;
   color: var(--link-hover-color);
 }
+[aria-label=trademark]::after {
+  content: "";
+}
+
+[aria-label=register]::after {
+  content: "";
+}
+
+[aria-label=copyright]::after {
+  content: "";
+}
+
 a.not-link, a.not-link:hover, nav a, nav a:hover {
   text-decoration: none;
   color: inherit;
@@ -21818,18 +21818,15 @@ a.not-link::before, a.not-link::after, nav a::before, nav a::after {
 
 .disabled {
   opacity: 0.5;
-  color: hsl(var(--black-h), var(--black-s), 50%) !important;
-  border-color: hsl(var(--black-h), var(--black-s), 30%) !important;
+  color: hsl(var(--black-h), var(--black-s), 80%) !important;
+  border-color: hsl(var(--black-h), var(--black-s), 50%) !important;
   cursor: not-allowed;
 }
 .disabled[class*=bg] {
-  background-color: hsl(var(--black-h), var(--black-s), 70%) !important;
+  background-color: hsl(var(--black-h), var(--black-s), 60%) !important;
 }
 .disabled .disabled {
   opacity: 1;
-}
-.disabled:hover::before {
-  content: "";
 }
 
 /*# sourceMappingURL=UC.css.map */
