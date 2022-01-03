@@ -47,7 +47,7 @@ a::after, a::before, [aria-label=copyright]::after, [aria-label=register]::after
 }
 
 h1 a::after, h2 a::after, h3 a::after, h4 a::after, h5 a::after, h6 a::after, h1 a::before, h2 a::before, h3 a::before, h4 a::before, h5 a::before, h6 a::before, [aria-label=copyright]::after, [aria-label=register]::after, [aria-label=trademark]::after {
-  font-size: clamp(.5em, 8px);
+  font-size: clamp(10px, .55em, 14px);
   vertical-align: super;
   opacity: 0.7;
   margin: 0 !important;
