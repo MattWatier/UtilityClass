@@ -2,11 +2,12 @@ $active-class-name:'active';
 $css-properties:(
 'align-items':('direction':null,'name':'items','property':('align-items',),'responsive':true,'unit':('align-items',),),
 'align-self':('direction':null,'name':'self','property':('align-self',),'responsive':true,'unit':('align-items',),),
+'aspect-ratio':('direction':null,'name':'aspect-ratio','property':('aspect-ratio',),'responsive':true,'unit':('aspect-ratio',),),
 'background-blend-mode':('direction':null,'name':'bg-blend','property':('background-blend-mode',),'unit':('blend',),),
 'background-color':('direction':null,'loopMode':'color','name':'bg','property':('background-color',),'responsive':false,'states':true,'unit':('decimal-negative','decimal-positive'),),
 'background-position':('direction':null,'name':'bg','property':('background-position',),'responsive':false,'unit':('background-position',),),
 'border-color':('direction':null,'loopMode':'color','name':'br','property':('border-color',),'responsive':false,'states':true,'unit':('decimal-negative','decimal-positive'),),
-'border-radius':('direction':'direction-corner','name':'br','property':('border-radius',),'responsive':true,'unit':('radius',),),
+'border-radius':('direction':'direction-corner','name':'br','property':('border-radius',),'responsive':true,'unit':('radius',),cssVar:true),
 'border-style':('direction':null,'name':'br','property':('border-style',),'responsive':true,'unit':('border-style',),),
 'border-width':('direction':'direction-edge','name':'br','property':('border-width',),'unit':('border-width',),),
 'border-between-width':('direction':'direction-between','name':'br','property':('border-width',),'unit':('border-width',), 'postCSSSelector':' > * + * '),

@@ -1,10 +1,11 @@
 @use "modularscale-sass/stylesheets/_modularscale.scss" as *;
 @use "../helpers" as helper;
 @use "sass:math";
+@use "sass:list";
 $base-font-size: 16px;
 $basicSizeMultiplier: 1rem;
-$global-border-radius: math.div(1rem, 4) !default;
-$global-border-round: 1rem !default;
+$global-border-radius: math.div(1rem, 4);
+$global-border-round: 1rem;
 $modularscale: (
   base: 1rem,
   ratio: 1.25,
@@ -17,6 +18,7 @@ $units: (
 	unset:(unset:unset),
 	active: ( dark: 100%, light: 100%,),
 	align-items: ( stretch: stretch, center: center, start: flex-start, end: flex-end, baseline: baseline,),
+	aspect-ratio:(1x1:list.slash(1,1),16x9:list.slash(16,9),4x3:list.slash(4,3),3x2:list.slash(3,2),3x1:list.slash(3,1),2x3:list.slash(2,3),1x2:list.slash(2,3)),
 	background-position: ( left: left center, right: right center, top: center top, bottom: center bottom, center: center center,),
 	blend: ( normal: normal, multiply: multiply, screen: screen, overlay: overlay, darken: darken, lighten: lighten, color-dodge: color-dodge, color-burn: color-burn, hard-light: hard-light, soft-light: soft-light, difference: difference, exclusion: exclusion, hue: hue, saturation: saturation, color: color, luminosity: luminosity, initial: initial, inherit: inherit, unset: unset,),
 	border-style: ( none: none, solid: solid, dashed: dashed, dotted: dotted,),
