@@ -6,6 +6,7 @@ $css-properties:(
 'background-blend-mode':('direction':null,'name':'bg-blend','property':('background-blend-mode',),'unit':('blend',),),
 'background-color':('direction':null,'loopMode':'color','name':'bg','property':('background-color',),'responsive':false,'states':true,'unit':('decimal-negative','decimal-positive'),),
 'background-position':('direction':null,'name':'bg','property':('background-position',),'responsive':false,'unit':('background-position',),),
+'background-size':('direction':null,'name':'bg','property':('background-size',),'responsive':false,'unit':('background-size',),),
 'border-color':('direction':null,'loopMode':'color','name':'br','property':('border-color',),'responsive':false,'states':true,'unit':('decimal-negative','decimal-positive'),),
 'border-radius':('direction':'direction-corner','name':'br','property':('border-radius',),'responsive':true,'unit':('radius',),cssVar:true),
 'border-style':('direction':null,'name':'br','property':('border-style',),'responsive':true,'unit':('border-style',),),

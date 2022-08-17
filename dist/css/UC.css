@@ -2694,6 +2694,18 @@ a, a:hover, .button, .button:hover, .btn, .btn:hover, nav a, nav a:hover {
   background-position: center center;
 }
 
+.bg_cover {
+  background-size: cover;
+}
+
+.bg_contain {
+  background-size: contain;
+}
+
+.bg_auto {
+  background-size: auto;
+}
+
 .br_brand {
   border-color: hsl(var(--brand-h), var(--brand-s), calc( 			var(--brand-l) + 				((100% - var(--brand-l)) * 0) 		));
 }
