@@ -4,7 +4,7 @@
 @use "_renderCSSVariableFromMap.scss" as rootVariables;
 @use "renderCSSFromMap" as renderMap;
 @use "base";
-
+@include base.form-decorators();
 @include base.link-decorators();
 @include base.reading-typography();
 @include rootVariables.renderCSSVariablesFromMap(maps.$css-properties);
@@ -27,6 +27,10 @@
 
  
 //  Adding helper classes for the utility classes. 
+
+
+
+
 .flex_auto{
   @extend .flex-grow_1; 
   @extend .flex-shrink_1;
