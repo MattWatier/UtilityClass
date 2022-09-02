@@ -215,7 +215,7 @@
 		@if (map.has-key($map, loopMode)) {
 			$unitLoopMode: map.get($map, loopMode);
 		}
-    $cssVar: null;
+    	$cssVar: null;
 		@if (map.has-key($map, cssVar)) {
 			$cssVar: map.get($map, cssVar);
 		}

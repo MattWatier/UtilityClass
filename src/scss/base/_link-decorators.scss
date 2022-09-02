@@ -132,7 +132,7 @@
 		@extend %super-script;
 		content: "\f1f9";
 	}
-	a, .button, .btn , nav a{ 
+	a, nav a{ 
 		&, &:hover {
 			text-decoration: none;
 			color: inherit;

@@ -16,6 +16,7 @@
 		--#{$color}-h: #{color.hue($value)};
 		--#{$color}-s: #{color.saturation($value)};
 		--#{$color}-l: #{color.lightness($value)};
+		--#{$color}: hsl( var(--#{$color}-h),var(--#{$color}-s),var(--#{$color}-l) );
 	}
 }
 
