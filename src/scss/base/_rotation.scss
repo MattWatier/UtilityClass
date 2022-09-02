@@ -1,4 +1,5 @@
 *[data-bs-toggle="collapse"] {
+	transition:transform .5s;
 	.a\:rotation {
 		&.fa-times,
 		&.fa-chevron-up,

@@ -42,6 +42,9 @@
   background-color: transparent;
 }
 
+*[data-bs-toggle=collapse] {
+  transition: transform 0.5s;
+}
 *[data-bs-toggle=collapse] .a\:rotation.fa-times, *[data-bs-toggle=collapse] .a\:rotation.fa-chevron-up, *[data-bs-toggle=collapse] .a\:rotation.fa-minus.rotate_90 {
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
