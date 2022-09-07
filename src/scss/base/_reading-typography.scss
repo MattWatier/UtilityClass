@@ -4,10 +4,10 @@
     :root {
         --vertical-space: 1rem;
         --margin-top: #{map.get(map.get(maps.$units, size-positive),'3')};
-        --font-family_headline: var(--font-family_display);
-        --font-family_headline-alt: var(--font-family_accent);
-        --font-family_content: var(--font-family_copy);
-        --font-family_code: var(--font-family_mono);
+        --font_headline: var(--font_display);
+        --font_headline-alt: var(--font_accent);
+        --font_content: var(--font_copy);
+        --font_code: var(--font_mono);
     }
     
     
@@ -19,7 +19,7 @@
         h5,
         h6 {
             color:  hsla(var(--primary-h) var(--primary-s)  var( --primary-l )/1);
-            font-family:var(--font-family_headline);
+            font-family:var(--font_headline);
         }
         h1:not(:first-child),
         h2:not(:first-child),
@@ -47,7 +47,7 @@
         }
         h4,h5,blockquote {
             @extend %lh_2;
-            font-family:var(--font-family_headline-alt);
+            font-family:var(--font_headline-alt);
             font-size: var(--font-size_up-1);
         }
         h6{
@@ -56,7 +56,7 @@
         }
         p,ul,ol,dl,table{
             font-size: var(--font-size_0);
-            font-family:var(--font-family_content);
+            font-family:var(--font_content);
         } 
         p + p,ul,ol,dl,table{
             margin-top: var(--vertical-space);
@@ -67,11 +67,11 @@
         
         }
         thead{
-            font-family:var(--font-family_headline-alt);
+            font-family:var(--font_headline-alt);
             border-bottom: 1px solid  hsla( var(--primary-h)  var(--primary-s) var( --primary-l ) / .5);
         };
         pre,code{
-            font-family:var(--font-family_code);
+            font-family:var(--font_code);
             font-size: var(--font-size_up-1);
         }
         li::marker{

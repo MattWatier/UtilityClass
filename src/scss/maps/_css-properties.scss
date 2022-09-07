@@ -52,6 +52,7 @@ $css-properties:(
 'overflow':('direction':null,'name':'overflow','property':('overflow',),'unit':('overflow',),),
 'padding-horizontal':('direction':null,'name':'p-x','property':('padding-left','padding-right','padding-inline-start','padding-inline-end',),'responsive':true,'unit':('size-positive',),),
 'padding-vertical':('direction':null,'name':'p-y','property':('padding-bottom','padding-top','padding-block-start','padding-block-end',),'responsive':true,'unit':('size-positive',),),
+'user-select':('direction':null,'name':'user-select','property':('user-select',),'unit':('user-select',),),
 'padding':('direction':'direction-edge','name':'p','property':('padding',),'responsive':true,'unit':('size-positive',),),
 'position':('direction':null,'name':'','property':('position',), 'responsive': true, 'unit':('position',),),
 'rich-shadow':('direction':null,'name':'shadow','property':('box-shadow',),'unit':('rich-shadow',),),

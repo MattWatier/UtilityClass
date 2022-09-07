@@ -10,7 +10,7 @@ Give a mini scroll bar to a content area.
 
 Markup:
 <div class="card shadow_2 cell small-6 large-4 max-w_30" >
-    <div class=" font_accent: border-top-left-square c_white font_3 p_4 texture_dust card-divider bg_primary card-header">
+    <div class=" font_highlight: border-top-left-square c_white font_3 p_4 texture_dust card-divider bg_primary card-header">
     This is a header
     </div>
     <div class="card-section card-body p_4 scrollbar-mini overflow_auto" style="max-height:300px;">
@@ -31,7 +31,8 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
 .scrollbar-mini{
     --scroll-bar-radius:var( --scroll-bar-radius, --br_radius );
     --scroll-bar-background-selected:var(--accent-h) var(--accent-s) var(--accent-l);
-    --scroll-bar-background:var(--secondary-h) var(--secondary-s) var(--secondary-l);
+    --scroll-bar-background-not-selected:var(--secondary-h) var(--secondary-s) var(--secondary-l);
+    --scroll-bar-background:var(--black-h) var(--black-s) var(--black-l);
 }
 
 .scrollbar-mini::-webkit-scrollbar {
@@ -41,17 +42,17 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
 /* Track */
 .scrollbar-mini::-webkit-scrollbar-track {
     box-shadow: helper.make-shadow(2, 'inset', #000, 0.2);
-    background-color: hsla( list.slash( var(--scroll-bar-background ), .1 )); 
+    background-color: hsla( list.slash( var(--scroll-bar-background ), .3 )); 
     //rgba(get-themecolor(shade, -3), 0.1);
 }
 /* Handle */
 .scrollbar-mini::-webkit-scrollbar-thumb {
     border-radius: var(--scroll-bar-radius);
-    background: hsla( list.slash( var(--scroll-bar-background-selected) , .2 ));
+    background: hsla( list.slash( var(--scroll-bar-background-selected) , 1 ));
     box-shadow: helper.make-shadow(2, 'inset', #000, 0.2);
 }
 .scrollbar-mini::-webkit-scrollbar-thumb:window-inactive {
-    background:  hsla( list.slash( var( --scroll-bar-background-selected) , .1 ));
+    background:  hsla( list.slash( var( --scroll-bar-background-not-selected) , .5 ));
 }
 .scrollbar-mini::-webkit-scrollbar-track:window-inactive {
     background:  hsla( list.slash( var(--scroll-bar-background ), .2 ));
