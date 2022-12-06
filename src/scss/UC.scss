@@ -7,13 +7,23 @@
 @include base.form-decorators();
 @include base.link-decorators();
 @include base.reading-typography();
+@include base.grid-timing();
+@include base.gradient();
 @include rootVariables.renderCSSVariablesFromMap(maps.$css-properties);
 
 // setting the default of border width to 0 so it doesn't interfere with the border width and utility classes.
 [class*="br"]{
   border-width: 0px;
 }
+// Setting default direction for flex to the common usage of column because system is built mobile first.
+.flex{
+	flex-direction: column;
+}
 
+.btn{
+  flex-direction: row;
+  white-space: nowrap;
+} 
 
 @include renderMap.renderCSSFromMap(maps.$css-properties);
 // Each CSS Utility Class
@@ -39,6 +49,7 @@
   @extend .m_0 !optional;
   @extend .p_0 !optional;
 }
+
 
 .disabled {
   opacity:.5;

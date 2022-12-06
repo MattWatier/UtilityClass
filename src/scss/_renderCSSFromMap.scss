@@ -9,6 +9,7 @@
 @use "sass:meta";
 @use "variables" as global;
 
+
 @mixin breakpointLoop($breakpoints) {
 	// create mobile first rule
 	@content ( '' );
@@ -97,10 +98,24 @@
 		);
 	}
 }
+@function calcSaturationCSSvar($unitLabel, $propertyValueModifier) {
+	@if ($propertyValueModifier <= 0) {
+		@return calc(
+			var(--#{$unitLabel}-s) +
+				((100% - var(--#{$unitLabel}-s)) * (#{$propertyValueModifier} *.1))
+		);
+	} @else {
+		@return calc(
+			var(--#{$unitLabel}-s) -
+				((var(--#{$unitLabel}-s)) * #{$propertyValueModifier} * .1 )
+		);
+	}
+}
 @function shadeColorCSSVar($unitLabel, $propertyValue, $propertyValueModifier) {
 	@return hsl(
 		var(--#{$unitLabel}-h),
-		var(--#{$unitLabel}-s),
+		/* var(--#{$unitLabel}-s), */
+		calcSaturationCSSvar($unitLabel, $propertyValueModifier),
 		calcLightnessCSSvar($unitLabel, $propertyValueModifier)
 	);
 }
@@ -180,6 +195,12 @@
 			$pseudoLabel: "";
 			@content ($stateClass, $stateLabelModifier + global.$colon  , $pseudoLabel );
 			$stateClass: ".active";
+			$pseudoLabel: "";
+			@content ($stateClass, $stateLabelModifier + global.$colon  , $pseudoLabel );
+			$stateClass: ".is-active >";
+			$pseudoLabel: "";
+			@content ($stateClass, $stateLabelModifier + global.$colon  , $pseudoLabel );
+			$stateClass: ".is-active";
 			$pseudoLabel: "";
 			@content ($stateClass, $stateLabelModifier + global.$colon  , $pseudoLabel );
 		} @else {
@@ -338,3 +359,4 @@
 }
 
 @debug ("build complete");
+

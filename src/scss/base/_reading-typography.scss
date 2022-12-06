@@ -8,6 +8,8 @@
         --font_headline-alt: var(--font_accent);
         --font_content: var(--font_copy);
         --font_code: var(--font_mono);
+        --font_headline-color: var(--primary-h) var(--primary-s)  calc(var(--primary-l) + var(--primary-l)*-.37);
+
     }
     
     
@@ -18,7 +20,7 @@
         h4,
         h5,
         h6 {
-            color:  hsla(var(--primary-h) var(--primary-s)  var( --primary-l )/1);
+            color: hsla(var( --font_headline-color));
             font-family:var(--font_headline);
         }
         h1:not(:first-child),

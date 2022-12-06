@@ -1,6 +1,30 @@
-
-
 @mixin link-decorators {
+	:root {
+		--link-color: hsl(
+			var(--accent-h),
+			var(--accent-s),
+			calc(var(--accent-l) + ((var(--accent-l)) * -0.37))
+		);
+		--link-hover-color: hsl(
+			var(--accent-h),
+			var(--accent-s),
+			calc(var(--accent-l) + ((var(--accent-l)) * -0.5))
+		);
+	}
+	:root {
+		$link: blue;
+		$link-hover: green;
+		$link-visited: navy;
+		--link-color-h: hue($link);
+		--link-color-s: saturation($link);
+		--link-color-l: lightness($link);
+		--link-visited-color-h: hue($link-visited);
+		--link-visited-color-s: saturation($link-visited);
+		--link-visited-color-l: lightness($link-visited);
+		--link-hover-color-h: hue($link-hover);
+		--link-hover-color-s: saturation($link-hover);
+		--link-hover-color-l: lightness($link-hover);
+	}
 	%font-awesome-pro {
 		-webkit-font-smoothing: antialiased;
 		display: inline-block;
@@ -11,126 +35,21 @@
 		font-family: "Font Awesome 5 Pro";
 		font-weight: 900;
 	}
-	.icon-before::before {
+	%icon-before::before {
 		margin-right: 0.25em;
 		width: 1.28571429em;
 		text-align: center;
 	}
-	.icon-after::after {
+	%icon-after::after {
 		margin-left: 0.25em;
 		width: 1.28571429em;
 		text-align: center;
 	}
-	%super-script{
-		font-size: clamp(10px, .55em, 14px);
+	%super-script {
+		font-size: clamp(10px, 0.55em, 14px);
 		vertical-align: super;
-		opacity: .7;
-		margin:0 2px !important;
-	}
-	:root{
-	--link-color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.37 )));
-	--link-hover-color: hsl(var(--accent-h), var(--accent-s), calc( var( --accent-l ) + ( ( var( --accent-l )) * -0.50 )));
-	}
-	
-	
-	a {
-		&.link, .reading-typography &{
-			&::after,&::before{
-				@extend %font-awesome-pro;
-			}
-			color: var( --link-color);
-			&:hover {
-				text-decoration: none;
-				color: var(--link-hover-color);
-			}
-			text-decoration: underline;
-		}
-		h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
-			color: inherit;
-		}
-		&::after,&::before{
-			h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
-				@extend %super-script !optional;
-			}
-		}
-		&.link, .reading-typography &{
-			&[href$=".pdf"]::before {
-				content: "\f1c1";
-				@extend .icon-before;
-			}
-			&[href$=".doc"]::before,
-			&[href$=".docx"]::before,
-			&[href$=".txt"]::before {
-				content: "\f1c2";
-				@extend .icon-before;
-			}
-		
-			&[href$=".zip"]::before {
-				content: "\f1c6";
-				@extend .icon-before;
-			}
-		
-			&[href*=".ppt"]::before,
-			&[href*=".pptx"]::before {
-				content: "\f685";
-				@extend .icon-before;
-			}
-			&[href$=".csv"]::before,
-			&[href$=".xls"]::before,
-			&[href$=".xlsx"]::before {
-				content: "\f0ce";
-				@extend .icon-before;
-			}
-		
-			&[href$=".mp4"]::before,
-			&[href$=".mov"]::before {
-				content: "\f03d";
-				@extend .icon-before;
-			}
-		
-			&[target="_blank"]::after,
-			&[href^="http"]::after,
-			&[href^="https"]::after {
-				@extend .icon-after;
-				content: "\f14c";
-			}
-		
-			&[href^="mailto:"]::after {
-				content: "\f1fa";
-				@extend .icon-after;
-			}
-		
-			&[href^="tel:"]::after {
-				content: "\f095";
-				@extend .icon-after;
-			}
-		
-			&[href^="fax:"]::after {
-				content: "\f1ac";
-				@extend .icon-after;
-			}
-		
-			&.website::before{
-				content: "\f0ac";
-			}	
-		}
-		
-	}
-	[aria-label="trademark"]::after{
-		@extend %font-awesome-pro;
-		@extend %super-script;
-		@extend .icon-after;
-		content: "\f25c";
-	}
-	[aria-label="register"]::after{
-		@extend %font-awesome-pro;
-		@extend %super-script;
-		content: "\f25d";
-	}
-	[aria-label="copyright"]::after{
-		@extend %font-awesome-pro;
-		@extend %super-script;
-		content: "\f1f9";
+		opacity: 0.7;
+		margin: 0 2px !important;
 	}
 	a, nav a{ 
 		&, &:hover {
@@ -138,16 +57,187 @@
 			color: inherit;
 		}
 	}
+
+	%link-icons {
+		&::after,
+		&::before {
+			@extend %font-awesome-pro !optional;
+		}
+		color: var(--link-color);
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		&:visited {
+			text-decoration: dotted;
+		}
+		&:hover,
+		&:focus-within {
+			text-decoration: underline;
+			text-decoration-thickness: 2px;
+			text-decoration-color: inherit;
+		}
+
+		// h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+		// 	color: inherit;
+		// }
+		// &::after,&::before{
+		// 	h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+		// 		@extend %super-script !optional;
+		// 	}
+		// }
+
+		&[href$=".pdf"]::before {
+			content: "\f1c1";
+			@extend %icon-before;
+		}
+		&[href$=".doc"]::before,
+		&[href$=".docx"]::before,
+		&[href$=".txt"]::before {
+			content: "\f1c2";
+			@extend %icon-before;
+		}
+
+		&[href$=".zip"]::before {
+			content: "\f1c6";
+			@extend %icon-before;
+		}
+
+		&[href*=".ppt"]::before,
+		&[href*=".pptx"]::before {
+			content: "\f685";
+			@extend %icon-before;
+		}
+		&[href$=".csv"]::before,
+		&[href$=".xls"]::before,
+		&[href$=".xlsx"]::before {
+			content: "\f0ce";
+			@extend %icon-before;
+		}
+
+		&[href$=".mp4"]::before,
+		&[href$=".mov"]::before {
+			content: "\f03d";
+			@extend %icon-before;
+		}
+
+		&[target="_blank"]::after,
+		&[href^="http"]::after,
+		&[href^="htt%s"]::after {
+			@extend %icon-after;
+			content: "\f14c";
+		}
+
+		&[href^="mailto:"]::after {
+			content: "\f1fa";
+			@extend %icon-after;
+		}
+
+		&[href^="tel:"]::after {
+			content: "\f095";
+			@extend %icon-after;
+		}
+
+		&[href^="fax:"]::after {
+			content: "\f1ac";
+			@extend %icon-after;
+		}
+
+		&.website::before {
+			content: "\f0ac";
+		}
+		[aria-label="trademark"]::after {
+			@extend %font-awesome-pro;
+			@extend %super-script;
+			@extend %icon-after;
+			content: "\f25c";
+		}
+		[aria-label="register"]::after {
+			@extend %font-awesome-pro;
+			@extend %super-script;
+			content: "\f25d";
+		}
+		[aria-label="copyright"]::after {
+			@extend %font-awesome-pro;
+			@extend %super-script;
+			content: "\f1f9";
+		}
+	}
+	.expanded-click-area::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		pointer-events: auto;
+		content: "";
+		background-color: transparent;
+	}
+	
+	%link-inherit {
+		color: inherit;
+		text-decoration-color: currentColor;
+		&:hover {
+			color: inherit;
+			text-decoration-color: currentColor;
+		}
+	}
+
+	
+	%link {
+		@extend %link-icons !optional;
+		color: hsla(
+			var(--link-color-h),
+			var(--link-color-s),
+			var(--link-color-l),
+			1
+		);
+		text-decoration-color: hsla(
+			var(--link-color-h),
+			var(--link-color-s),
+			var(--link-color-l),
+			0.25
+		);
+		&:visited {
+			color: hsl(
+				var(--link-visited-color-h),
+				var(--link-visited-color-s),
+				var(--link-visited-color-h)
+			);
+		}
+		&:hover,
+		&:focus-within {
+			color: hsl(
+				var(--link-hover-color-h),
+				var(--link-hover-color-s),
+				var(--link-hover-color-h)
+			);
+		}
+	}
+	
+	%link-light {
+		$link: rgb(132, 132, 255);
+		$link-hover: rgb(106, 255, 106);
+		$link-visited: rgb(53, 53, 255);
+		--link-color-h: hue($link);
+		--link-color-s: saturation($link);
+		--link-color-l: lightness($link);
+		--link-visited-color-h: hue($link-visited);
+		--link-visited-color-s: saturation($link-visited);
+		--link-visited-color-l: lightness($link-visited);
+		--link-hover-color-h: hue($link-hover);
+		--link-hover-color-s: saturation($link-hover);
+		--link-hover-color-l: lightness($link-hover);
+		@extend %link-icons;
+		@extend %link;
+	}
+	.link,.link_dark{
+		@extend %link;
+	}
+	.link_light{
+		@extend %link-light;
+	}
+	.link_icons {
+		@extend %link-icons;
+	}
 }
 
-.expanded-click-area::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: auto;
-    content: '';
-    background-color:transparent;
-}
