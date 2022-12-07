@@ -1,29 +1,38 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+@use "../maps" as maps; 
+
+
 @mixin link-decorators {
 	:root {
-		--link-color: hsl(
-			var(--accent-h),
-			var(--accent-s),
-			calc(var(--accent-l) + ((var(--accent-l)) * -0.37))
+		$link: map.get(maps.$theme-palette, accent );
+		$link-hover: map.get(maps.$theme-palette, accent );
+		$link-visited: map.get(maps.$theme-palette, accent );
+		--link-color-h: #{ math.div( hue($link) , 1deg )};
+		--link-color-s: #{saturation($link)};
+		--link-color-l: #{lightness($link)};
+		--link-color: hsl( 
+			var(--link-color-h)
+			var(--link-color-s)
+			var(--link-color-l)
 		);
+		--link-visited-color-h: #{ math.div( hue($link-visited) , 1deg ) };
+		--link-visited-color-s: #{ saturation($link-visited) * .8 };
+		--link-visited-color-l: #{ lightness($link-visited) * .9 };
+		--link-visited-color: hsl(
+			var(--link-visited-color-h)
+			var(--link-visited-color-s)
+			var(--link-visited-color-l)
+		);
+		--link-hover-color-h: #{ math.div( hue($link-hover) , 1deg )};
+		--link-hover-color-s: #{ saturation($link-hover) * .9 };
+		--link-hover-color-l: #{ lightness($link-hover) * .7 };
 		--link-hover-color: hsl(
-			var(--accent-h),
-			var(--accent-s),
-			calc(var(--accent-l) + ((var(--accent-l)) * -0.5))
+			var(--link-hover-color-h)
+			var(--link-hover-color-s)
+			var(--link-hover-color-l)
 		);
-	}
-	:root {
-		$link: blue;
-		$link-hover: green;
-		$link-visited: navy;
-		--link-color-h: hue($link);
-		--link-color-s: saturation($link);
-		--link-color-l: lightness($link);
-		--link-visited-color-h: hue($link-visited);
-		--link-visited-color-s: saturation($link-visited);
-		--link-visited-color-l: lightness($link-visited);
-		--link-hover-color-h: hue($link-hover);
-		--link-hover-color-s: saturation($link-hover);
-		--link-hover-color-l: lightness($link-hover);
 	}
 	%font-awesome-pro {
 		-webkit-font-smoothing: antialiased;
@@ -64,26 +73,31 @@
 			@extend %font-awesome-pro !optional;
 		}
 		color: var(--link-color);
-		text-decoration: underline;
+		text-decoration-line: underline;
 		text-decoration-thickness: 1px;
+		text-decoration-color: hsla( list.slash( var(--link-color-h) var(--link-color-s) var(--link-color-l), .45 ) );
 		&:visited {
-			text-decoration: dotted;
+			color:var(--link-visited-color);
+			text-decoration-color:  hsla( list.slash( var(--link-visited-color-h) var(--link-visited-color-s) var(--link-visited-color-l), .15 ) );
+			text-decoration-line: underline;
+			text-decoration-style: dotted;
 		}
 		&:hover,
 		&:focus-within {
-			text-decoration: underline;
+			color:var(--link-hover-color);
+			text-decoration-line: underline;
 			text-decoration-thickness: 2px;
 			text-decoration-color: inherit;
 		}
 
-		// h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
-		// 	color: inherit;
-		// }
-		// &::after,&::before{
-		// 	h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
-		// 		@extend %super-script !optional;
-		// 	}
-		// }
+		h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+			color: inherit;
+		}
+		&::after,&::before{
+			h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+				@extend %super-script !optional;
+			}
+		}
 
 		&[href$=".pdf"]::before {
 			content: "\f1c1";
@@ -185,50 +199,22 @@
 	
 	%link {
 		@extend %link-icons !optional;
-		color: hsla(
-			var(--link-color-h),
-			var(--link-color-s),
-			var(--link-color-l),
-			1
-		);
-		text-decoration-color: hsla(
-			var(--link-color-h),
-			var(--link-color-s),
-			var(--link-color-l),
-			0.25
-		);
-		&:visited {
-			color: hsl(
-				var(--link-visited-color-h),
-				var(--link-visited-color-s),
-				var(--link-visited-color-h)
-			);
-		}
-		&:hover,
-		&:focus-within {
-			color: hsl(
-				var(--link-hover-color-h),
-				var(--link-hover-color-s),
-				var(--link-hover-color-h)
-			);
-		}
 	}
 	
 	%link-light {
-		$link: rgb(132, 132, 255);
-		$link-hover: rgb(106, 255, 106);
-		$link-visited: rgb(53, 53, 255);
-		--link-color-h: hue($link);
-		--link-color-s: saturation($link);
-		--link-color-l: lightness($link);
-		--link-visited-color-h: hue($link-visited);
-		--link-visited-color-s: saturation($link-visited);
-		--link-visited-color-l: lightness($link-visited);
-		--link-hover-color-h: hue($link-hover);
-		--link-hover-color-s: saturation($link-hover);
-		--link-hover-color-l: lightness($link-hover);
+		// $link: rgb(132, 132, 255);
+		// $link-hover: rgb(106, 255, 106);
+		// $link-visited: rgb(53, 53, 255);
+		// --link-color-h: hue($link);
+		// --link-color-s: saturation($link);
+		// --link-color-l: lightness($link);
+		// --link-visited-color-h: hue($link-visited);
+		// --link-visited-color-s: saturation($link-visited);
+		// --link-visited-color-l: lightness($link-visited);
+		// --link-hover-color-h: hue($link-hover);
+		// --link-hover-color-s: saturation($link-hover);
+		// --link-hover-color-l: lightness($link-hover);
 		@extend %link-icons;
-		@extend %link;
 	}
 	.link,.link_dark{
 		@extend %link;
@@ -236,7 +222,7 @@
 	.link_light{
 		@extend %link-light;
 	}
-	.link_icons {
+	.link_icons-only {
 		@extend %link-icons;
 	}
 }
