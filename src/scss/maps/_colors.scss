@@ -1,19 +1,25 @@
 @use "sass:map";
-$acc-blue:#1935af;
-$teal: #3182bd;
-$dark-grey: #676a72;
-$orange: #e6550d;
-$purple: #7d0de6;
-$black: #101010;
+$brand:#1935af;
+$primary: #3182bd;
+$secondary: #676a72;
+$accent: #e6550d;
+$highlight: #7d0de6;
+$black: #070707;
 $white: #fdfdfd;
+$alert:red;
+$warning:orange;
+$success:green;
 $contrast-threshold: 60%;
 $theme-palette: (
-    'brand':$acc-blue,
-    'primary': $teal,
-    'secondary': $dark-grey,
-    'accent': $orange,
-    'highlight': $purple,
+    'brand':$brand,
+    'primary': $primary,
+    'secondary': $secondary,
+    'accent': $accent,
+    'highlight': $highlight,
     'black': $black,
     'white': $white,
+    'success': $success,
+    'warning': $warning,
+    'alert': $alert,
     );
 
