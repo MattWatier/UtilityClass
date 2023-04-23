@@ -20,6 +20,16 @@
 		}
 	}
 }
+@mixin containerQueryLoop($breakpoints) {
+	// create mobile first rule
+	// loop through the rules with media queries going up.
+	@content ( '' );
+	@each $breakpointLabel, $value in $breakpoints {
+		@container (min-width: #{$value}) {
+			@content ( global.$colon+$breakpointLabel );
+		}
+	}
+}
 
 @mixin directionModifierLoop($directionsMap, $base) {
 	//create the base all unit version first
@@ -232,6 +242,10 @@
 		@if (map.get($map, responsive)) {
 			$bp: map.get(maps.$units, breakpoints);
 		}
+		$cq: ();
+		@if (map.get($map, containerQuery)) {
+			$cq: map.get(maps.$units, breakpoints);
+		}
 		$unitLoopMode: "basic";
 		@if (map.has-key($map, loopMode)) {
 			$unitLoopMode: map.get($map, loopMode);
@@ -340,6 +354,104 @@
 					}
 				}
 			}
+		}
+		@if (map.get($map, containerQuery)) {
+		@include containerQueryLoop($cq) using ($breakpointLabel) {
+			@include pseudoStateModifierLoop($pseudoStates) using
+				($stateClass, $stateLabelModifier, $pseudoLabelModifier) {
+				@include directionModifierLoop($dir, $base) using
+					($labelDirectionMod, $propertyDirectionMap) {
+					@include propertyValueLoop(
+              $base,
+							map.get($map, unit),
+							$unitLoopMode,
+              $cssVar
+						)
+						using ($unitLabel, $propertyValue, $luminance) {
+						// Error check if there is no base or labelDirectionMod and $unitLabel is a number skip or $unitLabel starts with the letter 'n'
+						@if (
+							$base ==
+								"" and
+								$labelDirectionMod ==
+								"" and
+								(
+									helpers.is-number($unitLabel) or
+										helpers.is-negativeUnitLabel($unitLabel)
+								)
+						) {
+							@if (global.$debug) {
+								@debug (
+									"skip this unit because it would produce an improper class name"+
+										"." + $base + $labelDirectionMod + $separator +
+										$unitLabel
+								);
+							}
+						} @else {
+							@if ($base == "" and $labelDirectionMod != "") {
+								$separator: "_";
+							}
+							.cq_parent #{
+								$stateClass
+								+ "."
+								+ $stateLabelModifier
+								+ $base
+								+ $labelDirectionMod
+								+ $separator
+								+ $unitLabel
+								+ $breakpointLabel
+								+ $pseudoLabelModifier
+								+ $postCSSSelector
+								} {
+								@each $prop in map.get($map, property) {
+									@if (
+										type-of($propertyDirectionMap) == "map"
+									) {
+										$prop-post: "";
+										@if ($prop == "border-radius") {
+											$prop: "border";
+											$prop-post: "-radius";
+										}
+										@if ($prop == "border-width") {
+											$prop: "border";
+											$prop-post: "-width";
+										}
+										@if ($prop == "gap") {
+											$prop: "";
+											$prop-post: "-gap";
+										}
+										@include propertyDirectionMapLoop(
+												$propertyDirectionMap,
+												$type
+											)
+											using ($propertyDirection) {
+											@if (
+												$prop-post ==
+													"-gap" and
+													$propertyDirection ==
+													"-row"
+											) {
+												$propertyDirection: "row";
+											}
+											@if (
+												$prop-post ==
+													"-gap" and
+													$propertyDirection ==
+													"-column"
+											) {
+												$propertyDirection: "column";
+											}
+											#{ $prop + $propertyDirection + $prop-post }: #{$propertyValue};
+										}
+									} @else {
+										#{ $prop }: #{$propertyValue};
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 		}
 	}
 }
