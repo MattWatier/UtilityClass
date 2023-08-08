@@ -7,7 +7,7 @@
 @include base.form-decorators();
 @include base.link-decorators();
 @include base.reading-typography();
-@include base.grid-timing();
+// @include base.grid-timing();
 @include base.gradient();
 @include rootVariables.renderCSSVariablesFromMap(maps.$css-properties);
 

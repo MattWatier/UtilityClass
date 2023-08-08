@@ -7,9 +7,13 @@
 			-webkit-transform: rotate(0deg);
 			transform: rotate(0deg);
 		}
+		&.fa-minus.rotate_0 {
+			-webkit-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
 		@extend .transition_4 !optional;
 	}
-	&.collapsed .a\:rotation,
+	&:not(.collapsed) .a\:rotation,
 	&.show .a\:rotation {
 		&.fa-times {
 			-webkit-transform: rotate(135deg);
@@ -23,5 +27,36 @@
 			-webkit-transform: rotate(90deg);
 			transform: rotate(90deg);
 		}
+		&.fa-minus.rotate_0 {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+		}
+	}
+}
+*[data-bs-toggle="collapse"] {
+
+	&:not(.collapsed) .a\:display_none,
+	&.show .a\:display_none {
+		display:none;
+	}
+	&:not(.collapsed) .a\:inline,
+	&.show .a\:inline {
+		display:inline;
+	}
+	&:not(.collapsed) .a\:inline-block,
+	&.show .a\:inline-block {
+		display:inline-block;
+	}
+	&:not(.collapsed) .a\:block,
+	&.show .a\:block {
+		display:block;
+	}
+	&:not(.collapsed) .a\:flex,
+	&.show .a\:flex {
+		display:flex;
+	}
+	&:not(.collapsed) .a\:grid,
+	&.show .a\:grid {
+		display:grid;
 	}
 }
