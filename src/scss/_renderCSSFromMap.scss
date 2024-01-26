@@ -244,7 +244,7 @@
 		}
 		$cq: ();
 		@if (map.get($map, containerQuery)) {
-			$cq: map.get(maps.$units, breakpoints);
+			$cq: map.get(maps.$units, container-breakpoints);
 		}
 		$unitLoopMode: "basic";
 		@if (map.has-key($map, loopMode)) {
@@ -390,7 +390,7 @@
 							@if ($base == "" and $labelDirectionMod != "") {
 								$separator: "_";
 							}
-							.cq_parent #{
+							.CONTAINER #{
 								$stateClass
 								+ "."
 								+ $stateLabelModifier
