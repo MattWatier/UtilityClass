@@ -3,11 +3,11 @@
 @use "sass:selector";
 @use "sass:color";
 @use "sass:math";
-@use "helpers";
+@use "../helpers";
 @use "modularscale-sass/stylesheets/_modularscale.scss" as *;
-@use "maps";
+@use "../maps";
 @use "sass:meta";
-@use "variables" as global;
+@use "../variables" as global;
 
 
 @mixin breakpointLoop($breakpoints) {
@@ -23,7 +23,6 @@
 @mixin containerQueryLoop($breakpoints) {
 	// create mobile first rule
 	// loop through the rules with media queries going up.
-	@content ( '' );
 	@each $breakpointLabel, $value in $breakpoints {
 		@container (min-width: #{$value}) {
 			@content ( global.$colon+$breakpointLabel );

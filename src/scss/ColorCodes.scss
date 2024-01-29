@@ -1,56 +1,43 @@
-// custom color codes
-:root {
+$custom-colors: (
+  color_1: #432344, // Purple
+  color_2: #34568B, // Dark Blue
+  color_3: #6B5B95, // Dark Violet
+  color_4: #88B04B, // Olive Green
+  color_5: #CE5A57, // Dark Red
+  color_6: #5A7247, // Forest Green
+  color_7: #935529, // Brown Dark
+);
 
-    --custom-color_1-h: 219.4;
-    --custom-color_1-s: 57.26%;
-    --custom-color_1-l: 22.94%;
-
-    --custom-color_2-h: 217.13;
-    --custom-color_2-s: 58.17%;
-    --custom-color_2-l: 28.39%;
-
-    --custom-color_3-h: 214.87;
-    --custom-color_3-s: 59.09%;
-    --custom-color_3-l: 33.85%;
-
-    --custom-color_4-h: 212.6;
-    --custom-color_4-s: 60%;
-    --custom-color_4-l: 39.3%;
-
-    --custom-color_5-h: 210.33;
-    --custom-color_5-s: 60.91%;
-    --custom-color_5-l: 44.76%;
-
-    --custom-color_6-h: 208.07;
-    --custom-color_6-s: 61.83%;
-    --custom-color_6-l: 50.52%;
-
-    --custom-color_7-h: 205.8;
-    --custom-color_7-s: 62.74%;
-    --custom-color_7-l: 56.27%;
+@function hsl-value($color, $component) {
+  @if ($component == 'hue') {
+    @return hue($color);
+  } @else if ($component == 'saturation') {
+    @return saturation($color);
+  } @else if ($component == 'lightness') {
+    @return lightness($color);
+  }
 }
 
+:root {
+  @each $name, $color in $custom-colors {
+    --#{$name}-h: #{hsl-value($color, 'hue')}deg;
+    --#{$name}-s: #{hsl-value($color, 'saturation')};
+    --#{$name}-l: #{hsl-value($color, 'lightness')};
+  }
+}
 
-.bg_color-1{background-color:hsla( var(--custom-color_1-h),var(--custom-color_1-s),var(--custom-color_1-l),1);}
-.bg_color-2{background-color:hsla( var(--custom-color_2-h),var(--custom-color_2-s),var(--custom-color_2-l),1);}
-.bg_color-3{background-color:hsla( var(--custom-color_3-h),var(--custom-color_3-s),var(--custom-color_3-l),1);}
-.bg_color-4{background-color:hsla( var(--custom-color_4-h),var(--custom-color_4-s),var(--custom-color_4-l),1);}
-.bg_color-5{background-color:hsla( var(--custom-color_5-h),var(--custom-color_5-s),var(--custom-color_5-l),1);}
-.bg_color-6{background-color:hsla( var(--custom-color_6-h),var(--custom-color_6-s),var(--custom-color_6-l),1);}
-.bg_color-7{background-color:hsla( var(--custom-color_6-h),var(--custom-color_6-s),var(--custom-color_6-l),1);}
+@each $name, $color in $custom-colors {
+  $index: index(map-keys($custom-colors), $name);
 
-.c_color-1{color:hsla( var(--custom-color_1-h),var(--custom-color_1-s),var(--custom-color_1-l),1);}
-.c_color-2{color:hsla( var(--custom-color_2-h),var(--custom-color_2-s),var(--custom-color_2-l),1);}
-.c_color-3{color:hsla( var(--custom-color_3-h),var(--custom-color_3-s),var(--custom-color_3-l),1);}
-.c_color-4{color:hsla( var(--custom-color_4-h),var(--custom-color_4-s),var(--custom-color_4-l),1);}
-.c_color-5{color:hsla( var(--custom-color_5-h),var(--custom-color_5-s),var(--custom-color_5-l),1);}
-.c_color-6{color:hsla( var(--custom-color_6-h),var(--custom-color_6-s),var(--custom-color_6-l),1);}
-.c_color-7{color:hsla( var(--custom-color_6-h),var(--custom-color_6-s),var(--custom-color_6-l),1);}
+  .bg_color-#{$index} {
+    background-color: hsla(var(--#{$name}-h), var(--#{$name}-s), var(--#{$name}-l), 1);
+  }
 
-.br_color-1{border-color:hsla( var(--custom-color_1-h),var(--custom-color_1-s),var(--custom-color_1-l),1);}
-.br_color-2{border-color:hsla( var(--custom-color_2-h),var(--custom-color_2-s),var(--custom-color_2-l),1);}
-.br_color-3{border-color:hsla( var(--custom-color_3-h),var(--custom-color_3-s),var(--custom-color_3-l),1);}
-.br_color-4{border-color:hsla( var(--custom-color_4-h),var(--custom-color_4-s),var(--custom-color_4-l),1);}
-.br_color-5{border-color:hsla( var(--custom-color_5-h),var(--custom-color_5-s),var(--custom-color_5-l),1);}
-.br_color-6{border-color:hsla( var(--custom-color_6-h),var(--custom-color_6-s),var(--custom-color_6-l),1);}
-.br_color-7{border-color:hsla( var(--custom-color_6-h),var(--custom-color_6-s),var(--custom-color_6-l),1);}
+  .c_color-#{$index} {
+    color: hsla(var(--#{$name}-h), var(--#{$name}-s), var(--#{$name}-l), 1);
+  }
+
+  .br_color-#{$index} {
+    border-color: hsla(var(--#{$name}-h), var(--#{$name}-s), var(--#{$name}-l), 1);
+  }
+}

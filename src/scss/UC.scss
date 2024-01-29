@@ -1,8 +1,8 @@
 //globally importing the modular scale to make development easier;
 @use "sass:map";
 @use "maps";
-@use "_renderCSSVariableFromMap.scss" as rootVariables;
-@use "renderCSSFromMap" as renderMap;
+@use "partials/_renderCSSVariableFromMap.scss" as rootVariables;
+@use "partials/renderCSSFromMap" as renderMap;
 @use "base";
 @include base.form-decorators();
 @include base.link-decorators();
@@ -39,7 +39,7 @@
 //  Adding helper classes for the utility classes. 
 
 
-.cq_parent {
+.CONTAINER {
   
   contain: layout inline-size style;
   container-type: inline-size;

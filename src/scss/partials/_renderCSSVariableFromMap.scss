@@ -4,11 +4,11 @@
 @use "sass:color";
 @use "sass:math";
 @use "sass:string";
-@use "helpers";
+@use "../helpers";
 @use "modularscale-sass/stylesheets/_modularscale.scss" as *;
-@use "maps";
+@use "../maps";
 @use "sass:meta";
-@use "variables" as global;
+@use "../variables" as global;
 
 :root {
 	@extend :root !optional;
