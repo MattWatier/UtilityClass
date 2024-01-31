@@ -1,13 +1,20 @@
 .debug .CONTAINER {
+  --data-label: var(attr(data-label, ""));
+  --grid-area: var(attr(grid-area, ""));
+  --grid-template: var(attr(grid-template, ""));
   position: relative;
-  border: 10px solid transparent;
-  border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="10" viewBox="0 0 100 10"><path d="M 0 10 Q 25 0, 50 10 T 100 10" stroke="black" stroke-width="2" fill="none"/></svg>') 30 stretch;
+  outline: 1px dashed var(--highlight, #e300c1);
 }
 .debug .CONTAINER:before {
   content: "Container: Generic";
+  color: var(--highlight, #e300c1);
+  font-family: var(--font-mono);
+  position: absolute;
+  inset: 3px;
+  font-size: 10px;
 }
-.debug .CONTAINER[data-label] {
-  content: "Container: " attr(data-label);
+.debug .CONTAINER[data-label]:before, .debug .CONTAINER[grid-area]:before, .debug .CONTAINER[dgrid-template]:before {
+  content: "Container: " var(--data-label) " " var(--grid-area) " " var(--grid-template);
 }
 
 /*# sourceMappingURL=Debugs.css.map */
