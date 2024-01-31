@@ -2,6 +2,8 @@
 @use "sass:list";
 @use "../helpers/index" as helper;
 
+
+@mixin scrollbar{
 /*
 
 Scrollbar Mini
@@ -28,32 +30,33 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
 */
 
 /* Let's get this party started */
-.scrollbar-mini{
-    --scroll-bar-radius:var( --scroll-bar-radius, --br_radius );
-    --scroll-bar-background-selected:var(--accent-h) var(--accent-s) var(--accent-l);
-    --scroll-bar-background-not-selected:var(--secondary-h) var(--secondary-s) var(--secondary-l);
-    --scroll-bar-background:var(--black-h) var(--black-s) var(--black-l);
-}
+    .scrollbar-mini{
+        --scroll-bar-radius:var( --scroll-bar-radius, --br_radius );
+        --scroll-bar-background-selected:var(--accent-h) var(--accent-s) var(--accent-l);
+        --scroll-bar-background-not-selected:var(--secondary-h) var(--secondary-s) var(--secondary-l);
+        --scroll-bar-background:var(--black-h) var(--black-s) var(--black-l);
+    }
 
-.scrollbar-mini::-webkit-scrollbar {
-    width: 0.4rem;
-    height: 0.4rem;
-}
-/* Track */
-.scrollbar-mini::-webkit-scrollbar-track {
-    box-shadow: helper.make-shadow(2, 'inset', #000, 0.2);
-    background-color: hsla( list.slash( var(--scroll-bar-background ), .3 )); 
-    //rgba(get-themecolor(shade, -3), 0.1);
-}
-/* Handle */
-.scrollbar-mini::-webkit-scrollbar-thumb {
-    border-radius: var(--scroll-bar-radius);
-    background: hsla( list.slash( var(--scroll-bar-background-selected) , 1 ));
-    box-shadow: helper.make-shadow(2, 'inset', #000, 0.2);
-}
-.scrollbar-mini::-webkit-scrollbar-thumb:window-inactive {
-    background:  hsla( list.slash( var( --scroll-bar-background-not-selected) , .5 ));
-}
-.scrollbar-mini::-webkit-scrollbar-track:window-inactive {
-    background:  hsla( list.slash( var(--scroll-bar-background ), .2 ));
+    .scrollbar-mini::-webkit-scrollbar {
+        width: 0.4rem;
+        height: 0.4rem;
+    }
+    /* Track */
+    .scrollbar-mini::-webkit-scrollbar-track {
+        box-shadow: helper.make-shadow(2, 'inset', #000, 0.2);
+        background-color: hsla( list.slash( var(--scroll-bar-background ), .3 )); 
+        //rgba(get-themecolor(shade, -3), 0.1);
+    }
+    /* Handle */
+    .scrollbar-mini::-webkit-scrollbar-thumb {
+        border-radius: var(--scroll-bar-radius);
+        background: hsla( list.slash( var(--scroll-bar-background-selected) , 1 ));
+        box-shadow: helper.make-shadow(2, 'inset', #000, 0.2);
+    }
+    .scrollbar-mini::-webkit-scrollbar-thumb:window-inactive {
+        background:  hsla( list.slash( var( --scroll-bar-background-not-selected) , .5 ));
+    }
+    .scrollbar-mini::-webkit-scrollbar-track:window-inactive {
+        background:  hsla( list.slash( var(--scroll-bar-background ), .2 ));
+    }
 }

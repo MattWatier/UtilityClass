@@ -47,171 +47,9 @@
   min-height: 0;
 }
 
-.expanded-click-area::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: auto;
-  content: "";
-  background-color: transparent;
-}
-
-.ul_inline-comma,
-.ul_inline-semicolon,
-.ul_inline-pipe {
-  padding: 0 !important;
-  margin: 0 !important;
-  display: inline-flex !important;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: flex-start;
-  justify-items: center;
-  list-style: none !important;
-}
-.ul_inline-comma > li,
-.ul_inline-semicolon > li,
-.ul_inline-pipe > li {
-  flex: 0 1 auto;
-  margin: 0 !important;
-}
-.ul_inline-comma > li:not(:last-child)::after,
-.ul_inline-semicolon > li:not(:last-child)::after,
-.ul_inline-pipe > li:not(:last-child)::after {
-  padding-inline-end: 0.5em;
-  padding-inline-start: 0;
-  opacity: 0.6;
-  margin: 0;
-}
-.ul_inline-comma li.no-after,
-.ul_inline-semicolon li.no-after,
-.ul_inline-pipe li.no-after {
-  padding-inline-end: 0.5em;
-}
-.ul_inline-comma li.no-after::after,
-.ul_inline-semicolon li.no-after::after,
-.ul_inline-pipe li.no-after::after {
-  display: none;
-}
-
-.ul_inline-comma > li:not(:last-child)::after {
-  content: ",";
-}
-
-.ul_inline-semicolon > li:not(:last-child)::after {
-  content: ";";
-}
-
-.ul_inline-pipe > li:not(:last-child)::after {
-  content: "|";
-  padding-inline-start: 0.5em;
-}
-
-*[data-bs-toggle=collapse] {
-  transition: transform 0.5s;
-}
-*[data-bs-toggle=collapse] .a\:rotation.fa-times, *[data-bs-toggle=collapse] .a\:rotation.fa-chevron-up, *[data-bs-toggle=collapse] .a\:rotation.fa-minus.rotate_90 {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-*[data-bs-toggle=collapse] .a\:rotation.fa-minus.rotate_0 {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:rotation.fa-times, *[data-bs-toggle=collapse].show .a\:rotation.fa-times {
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:rotation.fa-chevron-up, *[data-bs-toggle=collapse].show .a\:rotation.fa-chevron-up {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:rotation.fa-minus.rotate_90, *[data-bs-toggle=collapse].show .a\:rotation.fa-minus.rotate_90 {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:rotation.fa-minus.rotate_0, *[data-bs-toggle=collapse].show .a\:rotation.fa-minus.rotate_0 {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:display_none, *[data-bs-toggle=collapse].show .a\:display_none {
-  display: none;
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:inline, *[data-bs-toggle=collapse].show .a\:inline {
-  display: inline;
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:inline-block, *[data-bs-toggle=collapse].show .a\:inline-block {
-  display: inline-block;
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:block, *[data-bs-toggle=collapse].show .a\:block {
-  display: block;
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:flex, *[data-bs-toggle=collapse].show .a\:flex {
-  display: flex;
-}
-*[data-bs-toggle=collapse]:not(.collapsed) .a\:grid, *[data-bs-toggle=collapse].show .a\:grid {
-  display: grid;
-}
-
-/*
-
-Scrollbar Mini
-
-Give a mini scroll bar to a content area. 
-
-Markup:
-<div class="card shadow_2 cell small-6 large-4 max-w_30" >
-    <div class=" font_highlight: border-top-left-square c_white font_3 p_4 texture_dust card-divider bg_primary card-header">
-    This is a header
-    </div>
-    <div class="card-section card-body p_4 scrollbar-mini overflow_auto" style="max-height:300px;">
-        <h4>This is a card.</h4>
-        <p class="font_1">It has an easy to override visual style, and is appropriately subdued.</p>
-        <img src="https://picsum.photos/400/300">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolorem et maxime, officiis nulla vel? Numquam quas voluptatibus, voluptatem fuga saepe animi nemo voluptatum repellendus in natus libero, nobis illum!</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolorem et maxime, officiis nulla vel? Numquam quas voluptatibus, voluptatem fuga saepe animi nemo voluptatum repellendus in natus libero, nobis illum!</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolorem et maxime, officiis nulla vel? Numquam quas voluptatibus, voluptatem fuga saepe animi nemo voluptatum repellendus in natus libero, nobis illum!</p>  
-    </div>
-    <div class="card-divider card-footer br_0 br_solid br-t_1 br_primary"> <a href="#" class="button btn btn-primary">I am so clickable</a></div>
-</div>
-
-Styleguide Recipes.InteractiveExtras.Scrollbar
-*/
-/* Let's get this party started */
-.scrollbar-mini {
-  --scroll-bar-radius:var( --scroll-bar-radius, --br_radius );
-  --scroll-bar-background-selected:var(--accent-h) var(--accent-s) var(--accent-l);
-  --scroll-bar-background-not-selected:var(--secondary-h) var(--secondary-s) var(--secondary-l);
-  --scroll-bar-background:var(--black-h) var(--black-s) var(--black-l);
-}
-
-.scrollbar-mini::-webkit-scrollbar {
-  width: 0.4rem;
-  height: 0.4rem;
-}
-
-/* Track */
-.scrollbar-mini::-webkit-scrollbar-track {
-  box-shadow: inset 1px 1px 4px 0.5px rgba(0, 0, 0, 0.2);
-  background-color: hsla(var(--scroll-bar-background) / 0.3);
-}
-
-/* Handle */
-.scrollbar-mini::-webkit-scrollbar-thumb {
-  border-radius: var(--scroll-bar-radius);
-  background: hsla(var(--scroll-bar-background-selected) / 1);
-  box-shadow: inset 1px 1px 4px 0.5px rgba(0, 0, 0, 0.2);
-}
-
-.scrollbar-mini::-webkit-scrollbar-thumb:window-inactive {
-  background: hsla(var(--scroll-bar-background-not-selected) / 0.5);
-}
-
-.scrollbar-mini::-webkit-scrollbar-track:window-inactive {
-  background: hsla(var(--scroll-bar-background) / 0.2);
+.CONTAINER {
+  contain: layout inline-size style;
+  container-type: inline-size;
 }
 
 :root {
@@ -361,6 +199,68 @@ h1 .link_icons-only, h1 .link_light, h1 .link, h1 :where(.reading-typography) a,
   content: "";
 }
 
+.expanded-click-area::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: transparent;
+}
+
+.ul_inline-comma,
+.ul_inline-semicolon,
+.ul_inline-pipe {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-items: center;
+  list-style: none !important;
+}
+.ul_inline-comma > li,
+.ul_inline-semicolon > li,
+.ul_inline-pipe > li {
+  flex: 0 1 auto;
+  margin: 0 !important;
+}
+.ul_inline-comma > li:not(:last-child)::after,
+.ul_inline-semicolon > li:not(:last-child)::after,
+.ul_inline-pipe > li:not(:last-child)::after {
+  padding-inline-end: 0.5em;
+  padding-inline-start: 0;
+  opacity: 0.6;
+  margin: 0;
+}
+.ul_inline-comma li.no-after,
+.ul_inline-semicolon li.no-after,
+.ul_inline-pipe li.no-after {
+  padding-inline-end: 0.5em;
+}
+.ul_inline-comma li.no-after::after,
+.ul_inline-semicolon li.no-after::after,
+.ul_inline-pipe li.no-after::after {
+  display: none;
+}
+
+.ul_inline-comma > li:not(:last-child)::after {
+  content: ",";
+}
+
+.ul_inline-semicolon > li:not(:last-child)::after {
+  content: ";";
+}
+
+.ul_inline-pipe > li:not(:last-child)::after {
+  content: "|";
+  padding-inline-start: 0.5em;
+}
+
 :root {
   --vertical-space: 1rem;
   --margin-top: ;
@@ -437,18 +337,123 @@ h1 .link_icons-only, h1 .link_light, h1 .link, h1 :where(.reading-typography) a,
 :where(.reading-typography) li::marker {
   color: hsla(var(--primary-h), var(--primary-s), var(--primary-l));
 }
-.background-radial-gradient_custom {
+.radial-gradient {
   --first-color:var(--first-color, var(--primary) );
   --second-color:var(--second-color, var(--brand) );
   --position-start:var(--position-start, top left);
   background-image: radial-gradient(at var(--position-start), var(--first-color), var(--second-color), 100%);
 }
 
-.background-linear-gradient_custom {
+.linear-gradient {
   --first-color:var(--first-color,var(--primary));
   --second-color:var(--second-color,var(--brand));
   --position-start:var(--position-start, top left);
   background-image: linear-gradient(to var(--position-start), var(--first-color), var(--second-color), 100%);
+}
+
+*[data-bs-toggle=collapse] {
+  transition: transform 0.5s;
+}
+*[data-bs-toggle=collapse] .a\:rotation.fa-times, *[data-bs-toggle=collapse] .a\:rotation.fa-chevron-up, *[data-bs-toggle=collapse] .a\:rotation.fa-minus.rotate_90 {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+*[data-bs-toggle=collapse] .a\:rotation.fa-minus.rotate_0 {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:rotation.fa-times, *[data-bs-toggle=collapse].show .a\:rotation.fa-times {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:rotation.fa-chevron-up, *[data-bs-toggle=collapse].show .a\:rotation.fa-chevron-up {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:rotation.fa-minus.rotate_90, *[data-bs-toggle=collapse].show .a\:rotation.fa-minus.rotate_90 {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:rotation.fa-minus.rotate_0, *[data-bs-toggle=collapse].show .a\:rotation.fa-minus.rotate_0 {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:display_none, *[data-bs-toggle=collapse].show .a\:display_none {
+  display: none;
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:inline, *[data-bs-toggle=collapse].show .a\:inline {
+  display: inline;
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:inline-block, *[data-bs-toggle=collapse].show .a\:inline-block {
+  display: inline-block;
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:block, *[data-bs-toggle=collapse].show .a\:block {
+  display: block;
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:flex, *[data-bs-toggle=collapse].show .a\:flex {
+  display: flex;
+}
+*[data-bs-toggle=collapse]:not(.collapsed) .a\:grid, *[data-bs-toggle=collapse].show .a\:grid {
+  display: grid;
+}
+
+/*
+
+Scrollbar Mini
+
+Give a mini scroll bar to a content area. 
+
+Markup:
+<div class="card shadow_2 cell small-6 large-4 max-w_30" >
+    <div class=" font_highlight: border-top-left-square c_white font_3 p_4 texture_dust card-divider bg_primary card-header">
+    This is a header
+    </div>
+    <div class="card-section card-body p_4 scrollbar-mini overflow_auto" style="max-height:300px;">
+        <h4>This is a card.</h4>
+        <p class="font_1">It has an easy to override visual style, and is appropriately subdued.</p>
+        <img src="https://picsum.photos/400/300">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolorem et maxime, officiis nulla vel? Numquam quas voluptatibus, voluptatem fuga saepe animi nemo voluptatum repellendus in natus libero, nobis illum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolorem et maxime, officiis nulla vel? Numquam quas voluptatibus, voluptatem fuga saepe animi nemo voluptatum repellendus in natus libero, nobis illum!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi dolorem et maxime, officiis nulla vel? Numquam quas voluptatibus, voluptatem fuga saepe animi nemo voluptatum repellendus in natus libero, nobis illum!</p>  
+    </div>
+    <div class="card-divider card-footer br_0 br_solid br-t_1 br_primary"> <a href="#" class="button btn btn-primary">I am so clickable</a></div>
+</div>
+
+Styleguide Recipes.InteractiveExtras.Scrollbar
+*/
+/* Let's get this party started */
+.scrollbar-mini {
+  --scroll-bar-radius:var( --scroll-bar-radius, --br_radius );
+  --scroll-bar-background-selected:var(--accent-h) var(--accent-s) var(--accent-l);
+  --scroll-bar-background-not-selected:var(--secondary-h) var(--secondary-s) var(--secondary-l);
+  --scroll-bar-background:var(--black-h) var(--black-s) var(--black-l);
+}
+
+.scrollbar-mini::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+/* Track */
+.scrollbar-mini::-webkit-scrollbar-track {
+  box-shadow: inset 1px 1px 4px 0.5px rgba(0, 0, 0, 0.2);
+  background-color: hsla(var(--scroll-bar-background) / 0.3);
+}
+
+/* Handle */
+.scrollbar-mini::-webkit-scrollbar-thumb {
+  border-radius: var(--scroll-bar-radius);
+  background: hsla(var(--scroll-bar-background-selected) / 1);
+  box-shadow: inset 1px 1px 4px 0.5px rgba(0, 0, 0, 0.2);
+}
+
+.scrollbar-mini::-webkit-scrollbar-thumb:window-inactive {
+  background: hsla(var(--scroll-bar-background-not-selected) / 0.5);
+}
+
+.scrollbar-mini::-webkit-scrollbar-track:window-inactive {
+  background: hsla(var(--scroll-bar-background) / 0.2);
 }
 
 :root {
@@ -39095,7 +39100,7 @@ h1 .link_icons-only, h1 .link_light, h1 .link, h1 :where(.reading-typography) a,
   transition: all 0.35s;
 }
 
-.transition_4 {
+.transition_4, *[data-bs-toggle=collapse] .a\:rotation {
   transition: all 0.5s;
 }
 
@@ -39819,11 +39824,6 @@ h1 .link_icons-only, h1 .link_light, h1 .link, h1 :where(.reading-typography) a,
 
 .z_5 {
   z-index: 9999;
-}
-
-.CONTAINER {
-  contain: layout inline-size style;
-  container-type: inline-size;
 }
 
 .disabled {

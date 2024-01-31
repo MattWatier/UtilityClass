@@ -4,11 +4,15 @@
 @use "partials/_renderCSSVariableFromMap.scss" as rootVariables;
 @use "partials/renderCSSFromMap" as renderMap;
 @use "base";
+@include base.soft-reset();
 @include base.form-decorators();
 @include base.link-decorators();
+@include base.lists();
 @include base.reading-typography();
 // @include base.grid-timing();
 @include base.gradient();
+@include base.rotation();
+@include base.scrollbar();
 @include rootVariables.renderCSSVariablesFromMap(maps.$css-properties);
 
 // setting the default of border width to 0 so it doesn't interfere with the border width and utility classes.
@@ -39,11 +43,7 @@
 //  Adding helper classes for the utility classes. 
 
 
-.CONTAINER {
-  
-  contain: layout inline-size style;
-  container-type: inline-size;
-}
+
 
 .flex_auto{
   @extend .flex-grow_1; 
@@ -55,18 +55,7 @@
 }
 
 
-.disabled {
-  opacity:.5;
-  color: hsl(var(--black-h), var(--black-s), 80%) !important;
-  border-color: hsl(var(--black-h), var(--black-s), 50%) !important;
-  cursor:not-allowed;
-  &[class*="bg"]{
-    background-color: hsl(var(--black-h), var(--black-s), 60%) !important;
-  }
-  .disabled{
-    opacity:1;
-  }
-}
+@include base.disabled();
 
 
 @debug ('build complete');

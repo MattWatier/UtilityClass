@@ -1,3 +1,4 @@
+@mixin rotation {
 *[data-bs-toggle="collapse"] {
 	transition:transform .5s;
 	.a\:rotation {
@@ -59,4 +60,5 @@
 	&.show .a\:grid {
 		display:grid;
 	}
+}
 }
