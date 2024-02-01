@@ -1,0 +1,68 @@
+
+// Grid Templates
+// .grid-template_page .label{ width: 0%; overflow:hidden;}
+.page-wrapper{
+	--app-spacing: .2rem;
+	@media screen and (min-width: 45rem) {
+		--app-spacing: .5rem;
+	}
+	@media screen and (min-width: 64rem) {
+		--app-spacing: .75rem;
+	}
+	@media screen and (min-width: 90rem) {
+		--app-spacing: 1rem;
+	}
+	@media screen and (min-width: 120rem) {
+		--app-spacing: 1.5rem;
+	}
+	margin:var(--app-spacing);
+}
+[grid-template="app-structurea"] {
+	transition: grid-template-columns 1s;
+	grid-template-columns: [menu-area-start] 5.5rem [menu-area-end app-area-start] calc(100% - 5.5rem) [app-area-end];
+	grid-template-rows: [menu-area-start breadcrumb-area-start] auto [breadcrumb-area-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
+	min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
+	max-width: calc(100vw - var(--app-spacing) * 2);
+	
+}
+[grid-template="app-structurea"].expanded {
+	transition: grid-template-columns 1s;
+	grid-template-columns: [menu-area-start] var(--expanded_sideMenu-width, 15rem)  [menu-area-end app-area-start]  calc(100% - var(--expanded_sideMenu-width, 15rem)) [app-area-end];
+	grid-template-rows: [menu-area-start breadcrumb-start] auto [breadcrumb-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
+	max-width: calc(100vw - var(--app-spacing) * 2);
+}
+
+[grid-area="breadcrumb-area"] {
+	grid-area: breadcrumb-area;
+}
+[grid-template="breadcrumb"]{
+    display:grid;
+	grid-template-columns:[button-area-start] 3rem [button-area-end list-area-start] 1fr [list-area-end];
+	grid-template-rows: [button-area-start list-area-start] auto [button-area-end list-area-end];
+	@media screen and (min-width: 45rem) {
+		grid-template-columns: [button-area-start] 7rem [button-area-end list-area-start] 1fr [list-area-end];
+	}
+}
+[grid-template="breadcrumb"] [grid-area="button-area"] {
+	grid-row: button-area;
+    grid-column: button-area;
+}
+[grid-template="breadcrumb"] [grid-area="button-area"]  {
+	grid-area: breadcrumbListArea;
+}
+.grid-area_headerArea {
+	grid-area: headerArea;
+}
+[grid-area='menu-area'] {
+	grid-area: menuArea;
+}
+.grid-area_pageHead {
+	grid-area: pageHead;
+}
+.grid-area_mainArea {
+	grid-area: mainArea;
+}
+
+.grid-area_footerArea {
+	grid-area: footerArea;
+}
