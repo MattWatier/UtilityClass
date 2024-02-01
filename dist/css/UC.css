@@ -338,9 +338,9 @@ h1 .link_icons-only, h1 .link_light, h1 .link, h1 :where(.reading-typography) a,
   color: hsla(var(--primary-h), var(--primary-s), var(--primary-l));
 }
 .radial-gradient {
-  --first-color:var(--first-color, var(--primary) );
-  --second-color:var(--second-color, var(--brand) );
-  --position-start:var(--position-start, top left);
+  --first-color:var(--primary);
+  --second-color: var(--brand);
+  --position-start: top left;
   background-image: radial-gradient(at var(--position-start), var(--first-color), var(--second-color), 100%);
 }
 
