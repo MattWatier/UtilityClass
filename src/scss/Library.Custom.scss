@@ -1,4 +1,4 @@
-@use 'library';
+@use 'library' as library;
 // the gradient
 body {
 	background: hsl(var(--brand-h), var(--brand-s), var(--brand-l));
@@ -109,7 +109,7 @@ html:not([data-scroll="0"]) #navigation_mobile {
 	box-shadow: none;
   }
 
-@import "library/components/_button-ripple.scss";
+
 
 .grid-template_filterAndContent {
 	grid-template-columns: auto 1fr;
@@ -131,3 +131,7 @@ html:not([data-scroll="0"]) #navigation_mobile {
 	font-size: 3em;
 }
 
+@include library.page-wrapper;
+@include library.app-frame;
+@include library.breadcrumb-bar;
+@include library.app-page;

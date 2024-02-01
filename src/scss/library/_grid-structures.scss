@@ -1,4 +1,4 @@
-
+@mixin page-wrapper{
 // Grid Templates
 // .grid-template_page .label{ width: 0%; overflow:hidden;}
 .page-wrapper{
@@ -17,23 +17,27 @@
 	}
 	margin:var(--app-spacing);
 }
-[grid-template="app-structurea"] {
+
+}
+@mixin app-frame{
+[grid-template="app-frame"] {
 	transition: grid-template-columns 1s;
 	grid-template-columns: [menu-area-start] 5.5rem [menu-area-end app-area-start] calc(100% - 5.5rem) [app-area-end];
-	grid-template-rows: [menu-area-start breadcrumb-area-start] auto [breadcrumb-area-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
+	grid-template-rows: [menu-area-start breadcrumb-bar-start] auto [breadcrumb-bar-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
 	min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
 	max-width: calc(100vw - var(--app-spacing) * 2);
 	
 }
-[grid-template="app-structurea"].expanded {
+[grid-template="app-frame"].expanded {
 	transition: grid-template-columns 1s;
 	grid-template-columns: [menu-area-start] var(--expanded_sideMenu-width, 15rem)  [menu-area-end app-area-start]  calc(100% - var(--expanded_sideMenu-width, 15rem)) [app-area-end];
 	grid-template-rows: [menu-area-start breadcrumb-start] auto [breadcrumb-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
 	max-width: calc(100vw - var(--app-spacing) * 2);
 }
-
-[grid-area="breadcrumb-area"] {
-	grid-area: breadcrumb-area;
+}
+@mixin breadcrumb-bar{
+[grid-area="breadcrumb-bar"] {
+	grid-area: breadcrumb-bar;
 }
 [grid-template="breadcrumb"]{
     display:grid;
@@ -50,6 +54,8 @@
 [grid-template="breadcrumb"] [grid-area="button-area"]  {
 	grid-area: breadcrumbListArea;
 }
+}
+@mixin app-page{
 .grid-area_headerArea {
 	grid-area: headerArea;
 }
@@ -65,4 +71,5 @@
 
 .grid-area_footerArea {
 	grid-area: footerArea;
+}
 }

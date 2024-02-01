@@ -1,18 +1,217 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 2 | @forward "grid-structure";
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   src\scss\library\_index.scss 2:1  @use
- *   src\scss\Library.Custom.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 2 \2502  @forward \"grid-structure\";\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\scss\\library\\_index.scss 2:1  @use\a   src\\scss\\Library.Custom.scss 1:1  root stylesheet";
+body {
+  background: hsl(var(--brand-h), var(--brand-s), var(--brand-l));
+  background: radial-gradient(at top right, hsl(var(--secondary-h), var(--secondary-s), calc(var(--secondary-l) * 0.75)), hsl(var(--brand-h), var(--brand-s), var(--brand-l)) 100%);
+  transition: transform 0.5s;
 }
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.overflow_hidden {
+  text-overflow: ellipsis;
+}
+
+html:not([data-scroll="0"]) #navigation_mobile .label {
+  opacity: 0 !important;
+  height: 0;
+}
+
+html:not([data-scroll="0"]) #navigation_mobile {
+  font-size: 0.8em;
+  top: 0;
+  position: sticky;
+  border-radius: 0;
+}
+
+.c_inherit-all:hover, .c_inherit-all {
+  color: inherit;
+}
+
+.disabled .disabled-dark {
+  color: hsl(var(--black-h), var(--black-s), 30%) !important;
+  border-color: hsl(var(--black-h), var(--black-s), 40%) !important;
+}
+
+.button-ripple .button-edge {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  padding: 0.2em;
+}
+.button-ripple .button {
+  width: 1.6em;
+  height: 1.6em;
+  padding: 0.2em;
+}
+
+.bg_transparent {
+  background-color: transparent;
+}
+
+:root {
+  --gutter: 1rem;
+}
+
+.grid-hs {
+  display: grid;
+  grid-template-columns: 10px;
+  grid-template-rows: minmax(150px, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: calc(100% - var(--gutter) * 2);
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+}
+@media screen and (min-width: 45rem) {
+  .grid-hs {
+    grid-auto-columns: calc(80% - var(--gutter) * 2);
+  }
+}
+@media screen and (min-width: 64rem) {
+  .grid-hs {
+    grid-auto-columns: calc(50% - var(--gutter) * 2);
+  }
+}
+@media screen and (min-width: 90rem) {
+  .grid-hs {
+    grid-auto-columns: calc(25% - var(--gutter) * 2);
+  }
+}
+@media screen and (min-width: 120rem) {
+  .grid-hs {
+    grid-auto-columns: calc(20% - var(--gutter) * 2);
+  }
+}
+
+.grid-hs:before {
+  content: "";
+  width: calc(0.5 * var(--gutter));
+}
+
+.grid-hs > li,
+.item {
+  scroll-snap-align: center;
+}
+
+.c_alert {
+  color: var(--bs-danger, red);
+}
+
+.your-class-arrow {
+  scale: 50%;
+}
+
+.splide__arrow.your-class-arrow:disabled {
+  cursor: not-allowed;
+  background-color: hsl(var(--primary-h), calc( var(--primary-s) - ((var(--primary-s)) * 0.9 * .1 ) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.9) ));
+  fill: hsl(var(--black-h), var(--black-s), 85%);
+  box-shadow: none;
+}
+
+.grid-template_filterAndContent {
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "filterArea contentArea";
+}
+
+.grid-area_filterArea {
+  grid-area: filterArea;
+}
+
+.grid-area_contentArea {
+  grid-area: contentArea;
+}
+
+.font-size_up-2x {
+  font-size: 2em;
+}
+
+.font-size_up-3x {
+  font-size: 3em;
+}
+
+.page-wrapper {
+  --app-spacing: .2rem;
+  margin: var(--app-spacing);
+}
+@media screen and (min-width: 45rem) {
+  .page-wrapper {
+    --app-spacing: .5rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .page-wrapper {
+    --app-spacing: .75rem;
+  }
+}
+@media screen and (min-width: 90rem) {
+  .page-wrapper {
+    --app-spacing: 1rem;
+  }
+}
+@media screen and (min-width: 120rem) {
+  .page-wrapper {
+    --app-spacing: 1.5rem;
+  }
+}
+
+[grid-template=app-frame] {
+  transition: grid-template-columns 1s;
+  grid-template-columns: [menu-area-start] 5.5rem [menu-area-end app-area-start] calc(100% - 5.5rem) [app-area-end];
+  grid-template-rows: [menu-area-start breadcrumb-bar-start] auto [breadcrumb-bar-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
+  min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
+  max-width: calc(100vw - var(--app-spacing) * 2);
+}
+
+[grid-template=app-frame].expanded {
+  transition: grid-template-columns 1s;
+  grid-template-columns: [menu-area-start] var(--expanded_sideMenu-width, 15rem) [menu-area-end app-area-start] calc(100% - var(--expanded_sideMenu-width, 15rem)) [app-area-end];
+  grid-template-rows: [menu-area-start breadcrumb-start] auto [breadcrumb-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
+  max-width: calc(100vw - var(--app-spacing) * 2);
+}
+
+[grid-area=breadcrumb-bar] {
+  grid-area: breadcrumb-bar;
+}
+
+[grid-template=breadcrumb] {
+  display: grid;
+  grid-template-columns: [button-area-start] 3rem [button-area-end list-area-start] 1fr [list-area-end];
+  grid-template-rows: [button-area-start list-area-start] auto [button-area-end list-area-end];
+}
+@media screen and (min-width: 45rem) {
+  [grid-template=breadcrumb] {
+    grid-template-columns: [button-area-start] 7rem [button-area-end list-area-start] 1fr [list-area-end];
+  }
+}
+
+[grid-template=breadcrumb] [grid-area=button-area] {
+  grid-row: button-area;
+  grid-column: button-area;
+}
+
+[grid-template=breadcrumb] [grid-area=button-area] {
+  grid-area: breadcrumbListArea;
+}
+
+.grid-area_headerArea {
+  grid-area: headerArea;
+}
+
+[grid-area=menu-area] {
+  grid-area: menuArea;
+}
+
+.grid-area_pageHead {
+  grid-area: pageHead;
+}
+
+.grid-area_mainArea {
+  grid-area: mainArea;
+}
+
+.grid-area_footerArea {
+  grid-area: footerArea;
+}
+
+/*# sourceMappingURL=Library.Custom.css.map */
