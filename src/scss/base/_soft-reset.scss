@@ -8,4 +8,7 @@
         contain: layout inline-size style;
         container-type: inline-size;
       }
+      .overflow_hidden {
+        text-overflow: ellipsis;
+    }
 }

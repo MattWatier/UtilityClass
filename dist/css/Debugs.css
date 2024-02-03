@@ -1,3 +1,7 @@
+.bg_transparent {
+  background-color: transparent;
+}
+
 .debug .CONTAINER {
   --data-label: var(attr(data-label, ""));
   --grid-area: var(attr(grid-area, ""));

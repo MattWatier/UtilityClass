@@ -44,6 +44,9 @@
 
 
 
+.c_alert {
+	color: var(--bs-danger, red);
+}
 
 .flex_auto{
   @extend .flex-grow_1; 

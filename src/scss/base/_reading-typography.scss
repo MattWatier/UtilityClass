@@ -80,6 +80,11 @@
             color:hsla( var(--primary-h)  var(--primary-s) var( --primary-l ))
         }
         a{ @extend .link; }
-        
+        .c_inherit-all {
+            &:hover,
+            & {
+                color: inherit;
+            }
+        }
     }
 }
