@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.bg_transparent {
+  background-color: transparent;
+}
+
 :root {
   --brand-h: 228.8deg;
   --brand-s: 75%;
@@ -40,6 +44,7 @@
   --alert-s: 100%;
   --alert-l: 50%;
   --alert: hsl( var(--alert-h),var(--alert-s),var(--alert-l) );
+  --gutter: 1rem;
 }
 
 * {
@@ -50,6 +55,10 @@
 .CONTAINER {
   contain: layout inline-size style;
   container-type: inline-size;
+}
+
+.overflow_hidden {
+  text-overflow: ellipsis;
 }
 
 :root {
@@ -337,6 +346,10 @@ h1 .link_icons-only, h1 .link_light, h1 .link, h1 :where(.reading-typography) a,
 :where(.reading-typography) li::marker {
   color: hsla(var(--primary-h), var(--primary-s), var(--primary-l));
 }
+:where(.reading-typography) .c_inherit-all:hover, :where(.reading-typography) .c_inherit-all {
+  color: inherit;
+}
+
 .radial-gradient {
   --first-color:var(--primary);
   --second-color: var(--brand);
@@ -468,12 +481,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   --font_mono: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   --font-size_0: 1em;
   --font-size_down-1: 0.8em;
+  --font-size_down-1x: 0.5em;
   --font-size_down-2: 0.64em;
+  --font-size_down-2x: 0.25em;
   --font-size_down-3: 0.512em;
   --font-size_down-4: 0.4096em;
   --font-size_down-5: 0.32768em;
   --font-size_up-1: 1.25em;
+  --font-size_up-1x: 2em;
   --font-size_up-2: 1.5625em;
+  --font-size_up-2x: 3em;
   --font-size_up-3: 1.953125em;
   --font-size_up-4: 2.44140625em;
   --font-size_up-5: 3.0517578125em;
@@ -17850,8 +17867,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   font-size: var(--font-size_down-1);
 }
 
+.font-size_down-1x {
+  font-size: var(--font-size_down-1x);
+}
+
 .font-size_down-2 {
   font-size: var(--font-size_down-2);
+}
+
+.font-size_down-2x {
+  font-size: var(--font-size_down-2x);
 }
 
 .font-size_down-3 {
@@ -17870,8 +17895,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   font-size: var(--font-size_up-1);
 }
 
+.font-size_up-1x {
+  font-size: var(--font-size_up-1x);
+}
+
 .font-size_up-2 {
   font-size: var(--font-size_up-2);
+}
+
+.font-size_up-2x {
+  font-size: var(--font-size_up-2x);
 }
 
 .font-size_up-3 {
@@ -17895,8 +17928,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .font-size_down-1x\:xs {
+    font-size: var(--font-size_down-1x);
+  }
+
   .font-size_down-2\:xs {
     font-size: var(--font-size_down-2);
+  }
+
+  .font-size_down-2x\:xs {
+    font-size: var(--font-size_down-2x);
   }
 
   .font-size_down-3\:xs {
@@ -17915,8 +17956,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .font-size_up-1x\:xs {
+    font-size: var(--font-size_up-1x);
+  }
+
   .font-size_up-2\:xs {
     font-size: var(--font-size_up-2);
+  }
+
+  .font-size_up-2x\:xs {
+    font-size: var(--font-size_up-2x);
   }
 
   .font-size_up-3\:xs {
@@ -17940,8 +17989,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .font-size_down-1x\:sm {
+    font-size: var(--font-size_down-1x);
+  }
+
   .font-size_down-2\:sm {
     font-size: var(--font-size_down-2);
+  }
+
+  .font-size_down-2x\:sm {
+    font-size: var(--font-size_down-2x);
   }
 
   .font-size_down-3\:sm {
@@ -17960,8 +18017,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .font-size_up-1x\:sm {
+    font-size: var(--font-size_up-1x);
+  }
+
   .font-size_up-2\:sm {
     font-size: var(--font-size_up-2);
+  }
+
+  .font-size_up-2x\:sm {
+    font-size: var(--font-size_up-2x);
   }
 
   .font-size_up-3\:sm {
@@ -17985,8 +18050,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .font-size_down-1x\:md {
+    font-size: var(--font-size_down-1x);
+  }
+
   .font-size_down-2\:md {
     font-size: var(--font-size_down-2);
+  }
+
+  .font-size_down-2x\:md {
+    font-size: var(--font-size_down-2x);
   }
 
   .font-size_down-3\:md {
@@ -18005,8 +18078,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .font-size_up-1x\:md {
+    font-size: var(--font-size_up-1x);
+  }
+
   .font-size_up-2\:md {
     font-size: var(--font-size_up-2);
+  }
+
+  .font-size_up-2x\:md {
+    font-size: var(--font-size_up-2x);
   }
 
   .font-size_up-3\:md {
@@ -18030,8 +18111,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .font-size_down-1x\:lg {
+    font-size: var(--font-size_down-1x);
+  }
+
   .font-size_down-2\:lg {
     font-size: var(--font-size_down-2);
+  }
+
+  .font-size_down-2x\:lg {
+    font-size: var(--font-size_down-2x);
   }
 
   .font-size_down-3\:lg {
@@ -18050,8 +18139,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .font-size_up-1x\:lg {
+    font-size: var(--font-size_up-1x);
+  }
+
   .font-size_up-2\:lg {
     font-size: var(--font-size_up-2);
+  }
+
+  .font-size_up-2x\:lg {
+    font-size: var(--font-size_up-2x);
   }
 
   .font-size_up-3\:lg {
@@ -18075,8 +18172,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .font-size_down-1x\:xl {
+    font-size: var(--font-size_down-1x);
+  }
+
   .font-size_down-2\:xl {
     font-size: var(--font-size_down-2);
+  }
+
+  .font-size_down-2x\:xl {
+    font-size: var(--font-size_down-2x);
   }
 
   .font-size_down-3\:xl {
@@ -18095,8 +18200,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .font-size_up-1x\:xl {
+    font-size: var(--font-size_up-1x);
+  }
+
   .font-size_up-2\:xl {
     font-size: var(--font-size_up-2);
+  }
+
+  .font-size_up-2x\:xl {
+    font-size: var(--font-size_up-2x);
   }
 
   .font-size_up-3\:xl {
@@ -18120,8 +18233,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .font-size_down-1x\:xxl {
+    font-size: var(--font-size_down-1x);
+  }
+
   .font-size_down-2\:xxl {
     font-size: var(--font-size_down-2);
+  }
+
+  .font-size_down-2x\:xxl {
+    font-size: var(--font-size_down-2x);
   }
 
   .font-size_down-3\:xxl {
@@ -18140,8 +18261,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .font-size_up-1x\:xxl {
+    font-size: var(--font-size_up-1x);
+  }
+
   .font-size_up-2\:xxl {
     font-size: var(--font-size_up-2);
+  }
+
+  .font-size_up-2x\:xxl {
+    font-size: var(--font-size_up-2x);
   }
 
   .font-size_up-3\:xxl {
@@ -18165,8 +18294,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .CONTAINER .font-size_down-1x\:xs {
+    font-size: var(--font-size_down-1x);
+  }
+
   .CONTAINER .font-size_down-2\:xs {
     font-size: var(--font-size_down-2);
+  }
+
+  .CONTAINER .font-size_down-2x\:xs {
+    font-size: var(--font-size_down-2x);
   }
 
   .CONTAINER .font-size_down-3\:xs {
@@ -18185,8 +18322,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .CONTAINER .font-size_up-1x\:xs {
+    font-size: var(--font-size_up-1x);
+  }
+
   .CONTAINER .font-size_up-2\:xs {
     font-size: var(--font-size_up-2);
+  }
+
+  .CONTAINER .font-size_up-2x\:xs {
+    font-size: var(--font-size_up-2x);
   }
 
   .CONTAINER .font-size_up-3\:xs {
@@ -18210,8 +18355,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .CONTAINER .font-size_down-1x\:sm {
+    font-size: var(--font-size_down-1x);
+  }
+
   .CONTAINER .font-size_down-2\:sm {
     font-size: var(--font-size_down-2);
+  }
+
+  .CONTAINER .font-size_down-2x\:sm {
+    font-size: var(--font-size_down-2x);
   }
 
   .CONTAINER .font-size_down-3\:sm {
@@ -18230,8 +18383,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .CONTAINER .font-size_up-1x\:sm {
+    font-size: var(--font-size_up-1x);
+  }
+
   .CONTAINER .font-size_up-2\:sm {
     font-size: var(--font-size_up-2);
+  }
+
+  .CONTAINER .font-size_up-2x\:sm {
+    font-size: var(--font-size_up-2x);
   }
 
   .CONTAINER .font-size_up-3\:sm {
@@ -18255,8 +18416,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .CONTAINER .font-size_down-1x\:md {
+    font-size: var(--font-size_down-1x);
+  }
+
   .CONTAINER .font-size_down-2\:md {
     font-size: var(--font-size_down-2);
+  }
+
+  .CONTAINER .font-size_down-2x\:md {
+    font-size: var(--font-size_down-2x);
   }
 
   .CONTAINER .font-size_down-3\:md {
@@ -18275,8 +18444,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .CONTAINER .font-size_up-1x\:md {
+    font-size: var(--font-size_up-1x);
+  }
+
   .CONTAINER .font-size_up-2\:md {
     font-size: var(--font-size_up-2);
+  }
+
+  .CONTAINER .font-size_up-2x\:md {
+    font-size: var(--font-size_up-2x);
   }
 
   .CONTAINER .font-size_up-3\:md {
@@ -18300,8 +18477,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_down-1);
   }
 
+  .CONTAINER .font-size_down-1x\:lg {
+    font-size: var(--font-size_down-1x);
+  }
+
   .CONTAINER .font-size_down-2\:lg {
     font-size: var(--font-size_down-2);
+  }
+
+  .CONTAINER .font-size_down-2x\:lg {
+    font-size: var(--font-size_down-2x);
   }
 
   .CONTAINER .font-size_down-3\:lg {
@@ -18320,8 +18505,16 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     font-size: var(--font-size_up-1);
   }
 
+  .CONTAINER .font-size_up-1x\:lg {
+    font-size: var(--font-size_up-1x);
+  }
+
   .CONTAINER .font-size_up-2\:lg {
     font-size: var(--font-size_up-2);
+  }
+
+  .CONTAINER .font-size_up-2x\:lg {
+    font-size: var(--font-size_up-2x);
   }
 
   .CONTAINER .font-size_up-3\:lg {
@@ -39826,6 +40019,10 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   z-index: 9999;
 }
 
+.c_alert {
+  color: var(--bs-danger, red);
+}
+
 .disabled {
   opacity: 0.5;
   color: hsl(var(--black-h), var(--black-s), 80%) !important;
@@ -39837,6 +40034,11 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
 }
 .disabled .disabled {
   opacity: 1;
+}
+
+.disabled .disabled-dark {
+  color: hsl(var(--black-h), var(--black-s), 30%) !important;
+  border-color: hsl(var(--black-h), var(--black-s), 40%) !important;
 }
 
 /*# sourceMappingURL=UC.css.map */

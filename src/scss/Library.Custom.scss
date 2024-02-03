@@ -1,71 +1,5 @@
 @use 'library' as library;
-// the gradient
-body {
-	background: hsl(var(--brand-h), var(--brand-s), var(--brand-l));
-	background: radial-gradient(
-		at top right,
-		hsl(var(--secondary-h), var(--secondary-s), calc(var(--secondary-l) * 0.75)),
-		hsl(var(--brand-h), var(--brand-s), var(--brand-l)) 100%
-	);
-	// padding: clamp(8px, 1vw, 16px);
-	transition: transform 0.5s;
-}
-
-
-.nowrap {
-	white-space: nowrap;
-}
-.overflow_hidden {
-	text-overflow: ellipsis;
-}
-
-html:not([data-scroll="0"]) #navigation_mobile .label {
-	opacity: 0 !important;
-	height: 0;
-}
-html:not([data-scroll="0"]) #navigation_mobile {
-	font-size: 0.8em;
-	top: 0;
-	position: sticky;
-	border-radius: 0;
-}
-// Needs to move to the UC
-.c_inherit-all {
-	&:hover,
-	& {
-		color: inherit;
-	}
-}
-
-.disabled .disabled-dark {
-	color: hsl(var(--black-h), var(--black-s), 30%) !important;
-	border-color: hsl(var(--black-h), var(--black-s), 40%) !important;
-}
-
-// Footer of the card. This is the circle button for play
-.button-ripple {
-	.button-edge {
-		position: relative;
-		width: 2em;
-		height: 2em;
-		padding: 0.2em;
-	}
-	.button {
-		width: 1.6em;
-		height: 1.6em;
-		padding: 0.2em;
-	}
-}
-
-.bg_transparent {
-	background-color: transparent;
-}
-
 // Gallery of cards.
-:root {
-	--gutter: 1rem;
-}
-
 .grid-hs {
 	display: grid;
 	grid-template-columns: 10px;
@@ -97,9 +31,7 @@ html:not([data-scroll="0"]) #navigation_mobile {
 	scroll-snap-align: center;
 }
 
-.c_alert {
-	color: var(--bs-danger, red);
-}
+
 .your-class-arrow{scale:50%}
 .splide__arrow.your-class-arrow:disabled{
 	cursor: not-allowed;
@@ -123,15 +55,9 @@ html:not([data-scroll="0"]) #navigation_mobile {
 	grid-area: contentArea;
 }
 
-// Save Stars
-.font-size_up-2x{
-	font-size: 2em;
-}
-.font-size_up-3x{
-	font-size: 3em;
-}
 
 @include library.page-wrapper;
 @include library.app-frame;
 @include library.breadcrumb-bar;
 @include library.app-page;
+@include library.mobile-navigation;

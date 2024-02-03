@@ -18,6 +18,7 @@
 		--#{$color}-l: #{color.lightness($value)};
 		--#{$color}: hsl( var(--#{$color}-h),var(--#{$color}-s),var(--#{$color}-l) );
 	}
+	--gutter: 1rem;
 }
 
 @mixin renderCSSVariablesFromMap($cssPropertiesMap) {

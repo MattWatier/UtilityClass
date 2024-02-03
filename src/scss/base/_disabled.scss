@@ -11,4 +11,9 @@
       opacity:1;
     }
   }
+  .disabled .disabled-dark {
+    color: hsl(var(--black-h), var(--black-s), 30%) !important;
+    border-color: hsl(var(--black-h), var(--black-s), 40%) !important;
+  }
+  
 }

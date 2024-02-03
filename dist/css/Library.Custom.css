@@ -1,38 +1,3 @@
-body {
-  background: hsl(var(--brand-h), var(--brand-s), var(--brand-l));
-  background: radial-gradient(at top right, hsl(var(--secondary-h), var(--secondary-s), calc(var(--secondary-l) * 0.75)), hsl(var(--brand-h), var(--brand-s), var(--brand-l)) 100%);
-  transition: transform 0.5s;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
-
-.overflow_hidden {
-  text-overflow: ellipsis;
-}
-
-html:not([data-scroll="0"]) #navigation_mobile .label {
-  opacity: 0 !important;
-  height: 0;
-}
-
-html:not([data-scroll="0"]) #navigation_mobile {
-  font-size: 0.8em;
-  top: 0;
-  position: sticky;
-  border-radius: 0;
-}
-
-.c_inherit-all:hover, .c_inherit-all {
-  color: inherit;
-}
-
-.disabled .disabled-dark {
-  color: hsl(var(--black-h), var(--black-s), 30%) !important;
-  border-color: hsl(var(--black-h), var(--black-s), 40%) !important;
-}
-
 .button-ripple .button-edge {
   position: relative;
   width: 2em;
@@ -43,14 +8,6 @@ html:not([data-scroll="0"]) #navigation_mobile {
   width: 1.6em;
   height: 1.6em;
   padding: 0.2em;
-}
-
-.bg_transparent {
-  background-color: transparent;
-}
-
-:root {
-  --gutter: 1rem;
 }
 
 .grid-hs {
@@ -93,10 +50,6 @@ html:not([data-scroll="0"]) #navigation_mobile {
   scroll-snap-align: center;
 }
 
-.c_alert {
-  color: var(--bs-danger, red);
-}
-
 .your-class-arrow {
   scale: 50%;
 }
@@ -120,14 +73,6 @@ html:not([data-scroll="0"]) #navigation_mobile {
 
 .grid-area_contentArea {
   grid-area: contentArea;
-}
-
-.font-size_up-2x {
-  font-size: 2em;
-}
-
-.font-size_up-3x {
-  font-size: 3em;
 }
 
 .page-wrapper {
@@ -158,7 +103,7 @@ html:not([data-scroll="0"]) #navigation_mobile {
 [grid-template=app-frame] {
   transition: grid-template-columns 1s;
   grid-template-columns: [menu-area-start] 5.5rem [menu-area-end app-area-start] calc(100% - 5.5rem) [app-area-end];
-  grid-template-rows: [menu-area-start breadcrumb-bar-start] auto [breadcrumb-bar-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
+  grid-template-rows: [menu-area-start breadcrumb-bar-start] auto [breadcrumb-bar-end page-area-start] auto [page-area-end footer-area] auto [footer-area menu-area-end];
   min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
   max-width: calc(100vw - var(--app-spacing) * 2);
 }
@@ -166,8 +111,16 @@ html:not([data-scroll="0"]) #navigation_mobile {
 [grid-template=app-frame].expanded {
   transition: grid-template-columns 1s;
   grid-template-columns: [menu-area-start] var(--expanded_sideMenu-width, 15rem) [menu-area-end app-area-start] calc(100% - var(--expanded_sideMenu-width, 15rem)) [app-area-end];
-  grid-template-rows: [menu-area-start breadcrumb-start] auto [breadcrumb-end main-area-start] auto [main-area-end footer-area] auto [footer-area menu-area-end];
+  grid-template-rows: [menu-area-start breadcrumb-start] auto [breadcrumb-end page-area-start] auto [page-area-end footer-area] auto [footer-area menu-area-end];
   max-width: calc(100vw - var(--app-spacing) * 2);
+}
+
+[grid-template=app-frame] [grid-area=menu-area] {
+  grid-area: menuArea;
+}
+
+[grid-template=app-frame] [grid-area=page-area] {
+  grid-area: menuArea;
 }
 
 [grid-area=breadcrumb-bar] {
@@ -194,24 +147,33 @@ html:not([data-scroll="0"]) #navigation_mobile {
   grid-area: breadcrumbListArea;
 }
 
-.grid-area_headerArea {
-  grid-area: headerArea;
+[grid-template=page-area] {
+  display: grid;
+  grid-template-rows: [header-start] auto [header-end main-content-start] auto [main-content-end content-aside-start] auto [content-aside-end];
 }
 
-[grid-area=menu-area] {
-  grid-area: menuArea;
+[grid-template=page-area] [grid-area=header] {
+  grid-row: header;
 }
 
-.grid-area_pageHead {
-  grid-area: pageHead;
+[grid-template=page-area] [grid-area=main-content] {
+  grid-row: main-content;
 }
 
-.grid-area_mainArea {
-  grid-area: mainArea;
+[grid-template=page-area] [grid-area=content-aside] {
+  grid-row: content-aside;
 }
 
-.grid-area_footerArea {
-  grid-area: footerArea;
+html:not([data-scroll="0"]) #navigation_mobile .label {
+  opacity: 0 !important;
+  height: 0;
+}
+
+html:not([data-scroll="0"]) #navigation_mobile {
+  font-size: 0.8em;
+  top: 0;
+  position: sticky;
+  border-radius: 0;
 }
 
 /*# sourceMappingURL=Library.Custom.css.map */
