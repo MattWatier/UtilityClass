@@ -137,22 +137,27 @@
 
 [grid-template=breadcrumb] {
   display: grid;
-  grid-template-columns: [back-btn-start] 3rem [back-btn-end breakcrumb-list-start] 1fr [breakcrumb-list-end];
-  grid-template-rows: [back-btn-start breakcrumb-list-start] auto [back-btn-end breakcrumb-list-end];
+  grid-template-columns: [toggle-start] 1px [toggle-end back-btn-start] 3rem [back-btn-end breakcrumb-list-start] 1fr [breakcrumb-list-end];
+  grid-template-rows: [breadcrumb-start] auto [breakcrumb-end];
 }
 @media screen and (min-width: 45rem) {
   [grid-template=breadcrumb] {
-    grid-template-columns: [back-btn-start] 7rem [back-btn-end breakcrumb-list-start] 1fr [breakcrumb-list-end];
+    grid-template-columns: [toggle-start] 1px [toggle-endback-btn-start] 7rem [back-btn-end breakcrumb-list-start] 1fr [breakcrumb-list-end];
   }
 }
 
+[grid-template=breadcrumb] [grid-area=toggle] {
+  grid-row: breadcrumb;
+  grid-column: toggle;
+}
+
 [grid-template=breadcrumb] [grid-area=back-btn] {
-  grid-row: back-btn;
+  grid-row: breadcrumb;
   grid-column: back-btn;
 }
 
 [grid-template=breadcrumb] [grid-area=breadcrumb-list] {
-  grid-row: breakcrumb-list;
+  grid-row: breakcrumb;
   grid-column: breakcrumb-list;
 }
 
