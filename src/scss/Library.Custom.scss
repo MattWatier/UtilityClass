@@ -37,9 +37,8 @@
 	cursor: not-allowed;
 	background-color:hsl(var(--primary-h), calc( var(--primary-s) - ((var(--primary-s)) * 0.9 * .1 ) ), calc( var(--primary-l) + ((100% - var(--primary-l)) * 0.9) ));
 	fill: hsl(var(--black-h),var(--black-s),85%);
-
 	box-shadow: none;
-  }
+}
 
 
 
@@ -61,3 +60,4 @@
 @include library.breadcrumb-bar;
 @include library.app-page;
 @include library.mobile-navigation;
+@include library.button-ripple;

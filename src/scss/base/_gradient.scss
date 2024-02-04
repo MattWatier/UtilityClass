@@ -3,12 +3,14 @@
 		--first-color:var(--primary);
 		--second-color: var(--brand);
 		--position-start: top left;
-		background-image:radial-gradient(at var(--position-start),var(--first-color), var(--second-color), 100%);
+		background-color: var(--first-color);
+		background-image:radial-gradient(at var(--position-start, top left),var(--first-color), var(--second-color), 100%);
 	}
 	.linear-gradient{
 		--first-color:var(--first-color,var(--primary));
 		--second-color:var(--second-color,var(--brand));
-		--position-start:var(--position-start, top left);
-		background-image:linear-gradient(to var(--position-start),var(--first-color), var(--second-color), 100%);
+		--position-start:top left;
+		background-color: var(--first-color);
+		background-image:linear-gradient(to var(--position-start, top left),var(--first-color), var(--second-color), 100%);
 	}
 }
