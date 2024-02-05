@@ -27,7 +27,7 @@
 		display:grid;
 		transition: grid-template-columns 1s;
 		grid-template-columns: [app-start app-menu-start] var(--primary-menu-width) [app-menu-end app-page-start]  calc(100% - var(--primary-menu-width)) [app-page-end app-end];
-		grid-template-rows: [app-start menu-mobile-start] auto [menu-mobile-end app-menu-start breadcrumb-start] auto [breadcrumb-end main-area-start app-page-start] auto [main-area-end footer-area] auto [footer-area app-page-end app-menu-end app-end];
+		grid-template-rows: [app-start menu-mobile-start] auto [menu-mobile-end app-menu-start breadcrumb-start branding-start] auto [breadcrumb-end branding-end main-area-start app-page-start] 1fr [main-area-end footer-area] auto [footer-area app-page-end app-menu-end app-end];
 		min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
 		max-width: calc(100vw - var(--app-spacing) * 2);
 		
@@ -36,7 +36,7 @@
 		--primary-menu-width_expanded:15rem;
 		transition: grid-template-columns 1s;
 		grid-template-columns: [app-start app-menu-start] var(--primary-menu-width_expanded)  [app-menu-end app-page-start]  calc(100% - var(--primary-menu-width_expanded)) [app-page-end app-end];
-		grid-template-rows: [app-start menu-mobile-start ] auto [menu-mobile-end breadcrumb-start app-menu-start] auto [breadcrumb-end main-area-start app-page-start ] auto [main-area-end footer-area] auto [footer-area app-menu-end app-page-end app-end app-menu-start];
+		grid-template-rows: [app-start menu-mobile-start ] auto [menu-mobile-end breadcrumb-start branding-start app-menu-start] auto [breadcrumb-end branding-end main-area-start app-page-start ] auto [main-area-end footer-area] auto [footer-area app-menu-end app-page-end app-end app-menu-end];
 		max-width: calc(100vw - var(--app-spacing) * 2);
 	}
 	
@@ -47,6 +47,10 @@
 		grid-area: app-page;
 	}
 	[grid-area='app-breadcrumb'] {
+		grid-column: app-page;
+		grid-row: breadcrumb;
+	}
+	[grid-area='branding'] {
 		grid-column: app-page;
 		grid-row: breadcrumb;
 	}

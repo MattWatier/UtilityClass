@@ -1,45 +1,112 @@
-@mixin debug-container{
- 
-.debug .CONTAINER{
-    --data-label: var(attr(data-label, ''));
-    --grid-area: var(attr(grid-area, ''));
-    --grid-template: var(attr(grid-template, ''));
+@mixin debug-container {
+  .debug .CONTAINER {
+    --data-label: var(attr(data-label, ""));
+    --grid-area: var(attr(grid-area, ""));
+    --grid-template: var(attr(grid-template, ""));
 
     position: relative;
     outline: 1px dashed var(--highlight, #e300c1);
-    &:before{
-        content: 'Container: Generic';
-        color: var(--highlight, #e300c1);
-        font-family: var(--font-mono);
-        position: absolute;
-        inset:3px;
-        font-size: 10px;
+    &:before {
+      content: "Container: Generic";
+      color: var(--highlight, #e300c1);
+      font-family: var(--font-mono);
+      position: absolute;
+      inset: 3px;
+      font-size: 10px;
     }
-    &[data-label]:before, &[grid-area]:before, &[dgrid-template]:before{
-        content: 'Container: ' var(--data-label) ' ' var(--grid-area) ' ' var(--grid-template) ;
+    &[data-label]:before,
+    &[grid-area]:before,
+    &[dgrid-template]:before {
+      content: "Container: " var(--data-label) " " var(--grid-area) " "
+        var(--grid-template);
     }
-}   
+  }
 }
 
-@mixin grid-container{
- 
-    .debug .grid{
-        --data-label: var(attr(data-label, ''));
-        --grid-area: var(attr(grid-area, ''));
-        --grid-template: var(attr(grid-template, ''));
-    
-        position: relative;
-        outline: 1px dashed var(--accent, #00e3c1);
-        &:before{
-            content: 'Container: Generic';
-            color: var(--accent, #00e3c1);
-            font-family: var(--font-mono);
-            position: absolute;
-            inset:3px;
-            font-size: 10px;
-        }
-        & [data-label]:before, & [grid-area]:before, &[dgrid-template]:before{
-            content: 'Container: ' var(--data-label) ' ' var(--grid-area) ' ' var(--grid-template) ;
-        }
-    }   
+@mixin grid-container {
+  .debug .grid {
+    --data-label: var(attr(data-label, ""));
+    --grid-area: var(attr(grid-area, ""));
+    --grid-template: var(attr(grid-template, ""));
+
+    position: relative;
+    outline: 1px dashed var(--accent, #00e3c1);
+    &:before {
+      content: "Container: Generic";
+      color: var(--accent, #00e3c1);
+      font-family: var(--font-mono);
+      position: absolute;
+      inset: 3px;
+      font-size: 10px;
     }
+    & [data-label]:before,
+    & [grid-area]:before,
+    &[dgrid-template]:before {
+      content: "Container: " var(--data-label) " " var(--grid-area) " "
+        var(--grid-template);
+    }
+  }
+}
+
+@mixin temp{
+    :root{
+        --debug-container-color:#1eff05;
+        --debug-grid-template-color:#ce5d00;
+        --debug-grid-area-color:#ff02ff;
+        --label-shader-color:#00000088;
+      }
+      .debug .CONTAINER {
+        --data-label: var(attr(data-label), "");
+        --grid-area: var(attr(grid-area), "");
+        --grid-template: var(attr(grid-template), "");
+        position: relative;
+        outline: 3px dotted var(--debug-container-color);
+        isolation:isolate;
+      }
+      .debug .CONTAINER:before,.debug .grid[data-label]:before, .debug *[grid-template]:before, .debug [grid-area]:before {
+        color: var(--debug-container-color);
+        font-family: var(--font-mono);
+        position: absolute;
+        top: 3px;
+        left:3px;
+        font-size: 10px;
+        z-index: 9999;
+        background-color: var(--label-shader-color);
+        padding:2px;
+      }
+      .debug .CONTAINER[data-label]:before{
+        content: "Container: " var(--data-label);
+      }
+      
+      .debug .grid,.debug .grid[data-label], .debug *[grid-template] {
+        --data-label: var(attr(data-label), "");
+        --grid-area: var(attr(grid-area), "");
+        --grid-template: var(attr(grid-template), "");
+        position: relative;
+        outline: 3px outline var(--debug-grid-template-color);
+      }
+      .debug *[grid-template] {
+    
+        outline: 3px double var(--debug-grid-template-color);
+      }
+      .debug .grid:before, .debug *[grid-template]:before, .debug [grid-area]:before {
+        color:var(--debug-grid-template-color);
+        content: "Grid: " var(--data-label) " " var(--grid-area) " " var(--grid-template);
+      }
+      .debug .grid[data-label]:before, .debug *[grid-template]:before, .debug [grid-area]:before {
+        color:var(--debug-grid-template-color);
+        content: "Grid: " var(--data-label) " " var(--grid-area) " " var(--grid-template);
+      }
+      .debug [grid-area]{
+        --data-label: var(attr(data-label), "");
+        --grid-area: var(attr(grid-area), "");
+        --grid-template: var(attr(grid-template), "");
+        position: relative;
+        outline: 3px dashed var(--debug-grid-area-color);
+      }
+    
+      .debug [grid-area]:before{
+        color: var(--debug-grid-area-color);
+        content: "Grid Area: " var(--data-label) " " var(--grid-area) " " var(--grid-template);
+      }
+}
