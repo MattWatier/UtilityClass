@@ -129,7 +129,7 @@
 
 [grid-area=app-content] {
   grid-column: app-page;
-  grid-row: main-content;
+  grid-row: app-content;
 }
 
 [grid-area=app-mobile-menu] {

@@ -27,17 +27,17 @@
 		display:grid;
 		transition: grid-template-columns 1s;
 		grid-template-columns: 
-		[app-start app-menu-start]
-		var(--primary-menu-width)
-		[app-menu-end app-page-start]
-		calc(100% - var(--primary-menu-width))
-		[app-page-end app-end];
+			[app-start app-menu-start]
+			var(--primary-menu-width)
+			[app-menu-end app-page-start]
+			calc(100% - var(--primary-menu-width))
+			[app-page-end app-end];
 		grid-template-rows: 
-		[app-start menu-mobile-start] auto 
-		[menu-mobile-end app-menu-start breadcrumb-start branding-start app-page-start] auto 
-		[breadcrumb-end branding-end app-content-start] 1fr 
-		[app-content-end footer-area-start] auto 
-		[footer-area-end app-page-end app-menu-end app-page-end app-end];
+			[app-start menu-mobile-start] auto 
+			[menu-mobile-end app-menu-start breadcrumb-start branding-start app-page-start] auto 
+			[breadcrumb-end branding-end app-content-start] 1fr 
+			[app-content-end footer-area-start] auto 
+			[footer-area-end app-page-end app-menu-end app-page-end app-end];
 		min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
 		max-width: calc(100vw - var(--app-spacing) * 2);
 		
@@ -67,7 +67,7 @@
 	}
 	[grid-area='app-content'] {
 		grid-column: app-page;
-		grid-row: main-content;
+		grid-row: app-content;
 	}
 	[grid-area='app-mobile-menu'] {
 		grid-column: app;
