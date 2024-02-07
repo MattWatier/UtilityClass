@@ -29,7 +29,7 @@ $css-properties:(
 'font-size':('direction':null,'name':'font','property':('font-size',),responsive:true,'containerQuery':true,'unit':('font-size',),cssVar:true),
 'font-weight':('direction':null,'name':'font','property':('font-weight',),'states':true,'unit':('font-weight',),),
 'grid-gap':('direction':"direction-grid",'name':'gap','property':('gap',),responsive:true,'containerQuery':true,'unit':('size-positive',),),
-'grid-template': ( "direction": "direction-grid-lines", "name": "grid", "property": ( "grid-template", ), "responsive": true,'containerQuery':true,"unit": ( "grid-template", ),),
+'grid-template': ( "direction": "direction-grid-lines", "name": "", "property": ( "grid-template", ), "responsive": true,'containerQuery':true,"unit": ( "grid-template", ),),
 '12col-width':('direction':null,'name':'w-col','property':('width',),'unit':('12col-grid',),),
 'grid-col-start': (direction:null, name:'col-start','property':('grid-column-start',),'unit':('grid-start','grid-steps',),responsive:true),
 'grid-col-end': (direction:null, name:'col-end','property':('grid-column-end',),'unit':('grid-steps','grid-end'),responsive:true),

@@ -20827,541 +20827,541 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     row-gap: 64rem;
   }
 }
-.grid-columns_1 {
+.columns_1 {
   grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
 }
 
-.grid-columns_2 {
+.columns_2 {
   grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
 }
 
-.grid-columns_3 {
+.columns_3 {
   grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
 }
 
-.grid-columns_4 {
+.columns_4 {
   grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
 }
 
-.grid-columns_5 {
+.columns_5 {
   grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
 }
 
-.grid-columns_6 {
+.columns_6 {
   grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
 }
 
-.grid-rows_1 {
+.rows_1 {
   grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
 }
 
-.grid-rows_2 {
+.rows_2 {
   grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
 }
 
-.grid-rows_3 {
+.rows_3 {
   grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
 }
 
-.grid-rows_4 {
+.rows_4 {
   grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
 }
 
-.grid-rows_5 {
+.rows_5 {
   grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
 }
 
-.grid-rows_6 {
+.rows_6 {
   grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
 }
 
 @media screen and (min-width: 10rem) {
-  .grid-columns_1\:xs {
+  .columns_1\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-columns_2\:xs {
+  .columns_2\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-columns_3\:xs {
+  .columns_3\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-columns_4\:xs {
+  .columns_4\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-columns_5\:xs {
+  .columns_5\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-columns_6\:xs {
+  .columns_6\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_1\:xs {
+  .rows_1\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-rows_2\:xs {
+  .rows_2\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-rows_3\:xs {
+  .rows_3\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-rows_4\:xs {
+  .rows_4\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-rows_5\:xs {
+  .rows_5\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_6\:xs {
+  .rows_6\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @media screen and (min-width: 20rem) {
-  .grid-columns_1\:sm {
+  .columns_1\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-columns_2\:sm {
+  .columns_2\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-columns_3\:sm {
+  .columns_3\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-columns_4\:sm {
+  .columns_4\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-columns_5\:sm {
+  .columns_5\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-columns_6\:sm {
+  .columns_6\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_1\:sm {
+  .rows_1\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-rows_2\:sm {
+  .rows_2\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-rows_3\:sm {
+  .rows_3\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-rows_4\:sm {
+  .rows_4\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-rows_5\:sm {
+  .rows_5\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_6\:sm {
+  .rows_6\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @media screen and (min-width: 45rem) {
-  .grid-columns_1\:md {
+  .columns_1\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-columns_2\:md {
+  .columns_2\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-columns_3\:md {
+  .columns_3\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-columns_4\:md {
+  .columns_4\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-columns_5\:md {
+  .columns_5\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-columns_6\:md {
+  .columns_6\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_1\:md {
+  .rows_1\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-rows_2\:md {
+  .rows_2\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-rows_3\:md {
+  .rows_3\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-rows_4\:md {
+  .rows_4\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-rows_5\:md {
+  .rows_5\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_6\:md {
+  .rows_6\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @media screen and (min-width: 64rem) {
-  .grid-columns_1\:lg {
+  .columns_1\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-columns_2\:lg {
+  .columns_2\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-columns_3\:lg {
+  .columns_3\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-columns_4\:lg {
+  .columns_4\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-columns_5\:lg {
+  .columns_5\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-columns_6\:lg {
+  .columns_6\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_1\:lg {
+  .rows_1\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-rows_2\:lg {
+  .rows_2\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-rows_3\:lg {
+  .rows_3\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-rows_4\:lg {
+  .rows_4\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-rows_5\:lg {
+  .rows_5\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_6\:lg {
+  .rows_6\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @media screen and (min-width: 90rem) {
-  .grid-columns_1\:xl {
+  .columns_1\:xl {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-columns_2\:xl {
+  .columns_2\:xl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-columns_3\:xl {
+  .columns_3\:xl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-columns_4\:xl {
+  .columns_4\:xl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-columns_5\:xl {
+  .columns_5\:xl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-columns_6\:xl {
+  .columns_6\:xl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_1\:xl {
+  .rows_1\:xl {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-rows_2\:xl {
+  .rows_2\:xl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-rows_3\:xl {
+  .rows_3\:xl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-rows_4\:xl {
+  .rows_4\:xl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-rows_5\:xl {
+  .rows_5\:xl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_6\:xl {
+  .rows_6\:xl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @media screen and (min-width: 120rem) {
-  .grid-columns_1\:xxl {
+  .columns_1\:xxl {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-columns_2\:xxl {
+  .columns_2\:xxl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-columns_3\:xxl {
+  .columns_3\:xxl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-columns_4\:xxl {
+  .columns_4\:xxl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-columns_5\:xxl {
+  .columns_5\:xxl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-columns_6\:xxl {
+  .columns_6\:xxl {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_1\:xxl {
+  .rows_1\:xxl {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .grid-rows_2\:xxl {
+  .rows_2\:xxl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .grid-rows_3\:xxl {
+  .rows_3\:xxl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .grid-rows_4\:xxl {
+  .rows_4\:xxl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .grid-rows_5\:xxl {
+  .rows_5\:xxl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .grid-rows_6\:xxl {
+  .rows_6\:xxl {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @container (min-width: 10rem) {
-  .CONTAINER .grid-columns_1\:xs {
+  .CONTAINER .columns_1\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_2\:xs {
+  .CONTAINER .columns_2\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_3\:xs {
+  .CONTAINER .columns_3\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_4\:xs {
+  .CONTAINER .columns_4\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_5\:xs {
+  .CONTAINER .columns_5\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_6\:xs {
+  .CONTAINER .columns_6\:xs {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_1\:xs {
+  .CONTAINER .rows_1\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_2\:xs {
+  .CONTAINER .rows_2\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_3\:xs {
+  .CONTAINER .rows_3\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_4\:xs {
+  .CONTAINER .rows_4\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_5\:xs {
+  .CONTAINER .rows_5\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_6\:xs {
+  .CONTAINER .rows_6\:xs {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @container (min-width: 20rem) {
-  .CONTAINER .grid-columns_1\:sm {
+  .CONTAINER .columns_1\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_2\:sm {
+  .CONTAINER .columns_2\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_3\:sm {
+  .CONTAINER .columns_3\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_4\:sm {
+  .CONTAINER .columns_4\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_5\:sm {
+  .CONTAINER .columns_5\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_6\:sm {
+  .CONTAINER .columns_6\:sm {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_1\:sm {
+  .CONTAINER .rows_1\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_2\:sm {
+  .CONTAINER .rows_2\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_3\:sm {
+  .CONTAINER .rows_3\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_4\:sm {
+  .CONTAINER .rows_4\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_5\:sm {
+  .CONTAINER .rows_5\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_6\:sm {
+  .CONTAINER .rows_6\:sm {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @container (min-width: 45rem) {
-  .CONTAINER .grid-columns_1\:md {
+  .CONTAINER .columns_1\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_2\:md {
+  .CONTAINER .columns_2\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_3\:md {
+  .CONTAINER .columns_3\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_4\:md {
+  .CONTAINER .columns_4\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_5\:md {
+  .CONTAINER .columns_5\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_6\:md {
+  .CONTAINER .columns_6\:md {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_1\:md {
+  .CONTAINER .rows_1\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_2\:md {
+  .CONTAINER .rows_2\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_3\:md {
+  .CONTAINER .rows_3\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_4\:md {
+  .CONTAINER .rows_4\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_5\:md {
+  .CONTAINER .rows_5\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_6\:md {
+  .CONTAINER .rows_6\:md {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
 @container (min-width: 64rem) {
-  .CONTAINER .grid-columns_1\:lg {
+  .CONTAINER .columns_1\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_2\:lg {
+  .CONTAINER .columns_2\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_3\:lg {
+  .CONTAINER .columns_3\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_4\:lg {
+  .CONTAINER .columns_4\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_5\:lg {
+  .CONTAINER .columns_5\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-columns_6\:lg {
+  .CONTAINER .columns_6\:lg {
     grid-template-columns: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_1\:lg {
+  .CONTAINER .rows_1\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_2\:lg {
+  .CONTAINER .rows_2\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_3\:lg {
+  .CONTAINER .rows_3\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_4\:lg {
+  .CONTAINER .rows_4\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_5\:lg {
+  .CONTAINER .rows_5\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) [all-end];
   }
 
-  .CONTAINER .grid-rows_6\:lg {
+  .CONTAINER .rows_6\:lg {
     grid-template-rows: [all-start] var(--col-1, 1fr) var(--col-2, 1fr) var(--col-3, 1fr) var(--col-4, 1fr) var(--col-5, 1fr) var(--col-5, 1fr) [all-end];
   }
 }
