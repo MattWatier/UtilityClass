@@ -160,7 +160,7 @@
 
 [grid-template=page] {
   display: grid;
-  grid-template-rows: [page-start header-start] auto [header-end content-primary-start page-content-start] auto [content-primary-end content-secondary-start] auto [content-secondary-end page-content-end footer-start] auto [page-end footer-end];
+  grid-template-rows: [page-start header-start] auto [header-end content-primary-start page-content-start] auto [content-primary-end split-content-secondary-start] auto [split-content-secondary-end page-content-end footer-start] auto [page-end footer-end];
 }
 
 [grid-template=page] [grid-area=header] {
@@ -176,7 +176,7 @@
 }
 
 [grid-template=page] [grid-area=content-secondary] {
-  grid-row: content-secondary;
+  grid-row: split-content-secondary;
 }
 
 [grid-template=page] [grid-area=page-footer] {

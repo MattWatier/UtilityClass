@@ -6,7 +6,7 @@
 	],
 	"settings": {
 		"liveServer.settings.port": 5501,
-		"workbench.colorTheme": "Abyss",
+		"workbench.colorTheme": "Visual Studio Dark",
 		"workbench.preferredDarkColorTheme": "Visual Studio Dark"
 	}
 }

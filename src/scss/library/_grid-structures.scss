@@ -20,7 +20,7 @@
 
 }
 @mixin app-frame{
-	[grid-template="app-frame"] {
+	[grid-template='app-frame'] {
 		--app-spacing: var(--app-spacing: .2rem);
 		--primary-menu-width:5.5rem;
 		display:grid;
@@ -40,7 +40,7 @@
 	}
 
 	@media screen and (min-width: 45rem){
-	[grid-template="app-frame"] {
+	[grid-template='app-frame'] {
 		grid-template-columns: 
 			[app-start app-menu-start]
 			var(--primary-menu-width)
@@ -50,7 +50,7 @@
 		}
 	}
 
-	[grid-template="app-frame"].expanded {
+	[grid-template='app-frame'].expanded {
 		--primary-menu-width:var(--primary-menu-width-expanded,15rem);
 	}
 	
@@ -79,7 +79,7 @@
 	}
 }
 @mixin breadcrumb-bar{
-	[grid-template="breadcrumb"]{
+	[grid-template='breadcrumb']{
 		display:grid;
 		grid-template-columns:[back-btn-start] 3rem [back-btn-end breakcrumb-list-start] 1fr [breakcrumb-list-end];
 		grid-template-rows: [breadcrumb-start] auto [breakcrumb-end];
@@ -88,11 +88,11 @@
 		}
 	}
 
-	[grid-template="breadcrumb"] [grid-area="back-btn"] {
+	[grid-template='breadcrumb'] [grid-area='back-btn'] {
 		grid-row: breadcrumb;
 		grid-column: back-btn;
 	}	
-	[grid-template="breadcrumb"] [grid-area="breadcrumb-list"]  {
+	[grid-template='breadcrumb'] [grid-area='breadcrumb-list']  {
 		grid-row: breakcrumb;
 		grid-column: breakcrumb-list;
 	}
@@ -103,8 +103,8 @@
 		grid-template-rows:
 		[page-start header-start]auto
 		[header-end content-primary-start page-content-start] auto
-		[content-primary-end content-secondary-start ]auto
-		[content-secondary-end page-content-end footer-start]auto
+		[content-primary-end split-content-secondary-start ]auto
+		[split-content-secondary-end page-content-end footer-start]auto
 		[page-end footer-end]
 	}	
 	[grid-template='page'] [grid-area='header'] {
@@ -117,7 +117,7 @@
 		grid-row: split-content-primary;
 	}
 	[grid-template='page'] [grid-area='content-secondary'] {
-		grid-row: content-secondary;
+		grid-row: split-content-secondary;
 	}
 	[grid-template='page'] [grid-area='page-footer'] {
 		grid-row: footer;
@@ -134,4 +134,76 @@
 		grid-column: bucket;
 	}
 	
+}
+@mixin ripple-card{
+	[grid-template='ripple-card']{
+		--ripple-edge-width:2em;
+		--card-highlight-wdith:.5em;
+		--labels-height:calc(.65em + .5rem);
+		grid-template-columns:
+		[card-start ripple-edge-left-start card-active-highlight-left-start]
+		var(--card-highlight-wdith)
+		[card-active-highlight-left-end]
+		calc( var(--ripple-edge-width) - var(--card-highlight-wdith)) 
+		[card-content-start ripple-edge-left-end] 
+		1fr 
+		[card-content-end ripple-edge-right-start] 
+		var(--ripple-edge-width)  
+		[card-active-highlight-right-start]
+		var(--card-highlight-wdith)
+		[card-active-highlight-right-end ripple-edge-right-end card-end];
+		grid-template-rows:[card-start card-content-start] auto [card-end card-content-end];
+	}
+
+	[grid-template='ripple-card'] {
+		&> [grid-area] {
+			grid-row:card-content;
+		}
+		&> [grid-area="active-highlight"],&> [grid-area="ripple"] {
+			grid-row:card;
+		}
+	}
+	[grid-template='ripple-card'] > [grid-area="active-highlight"] {
+		grid-row:card;
+	}
+	[grid-template='ripple-card']:has([grid-area="labels"]){
+		grid-template-rows:
+		[card-start labels-start] 
+		var(--labels-height)
+		[labels-end card-content]
+		auto
+		[card-end card-content];
+
+	}
+	[grid-area='primary-content']{
+		grid-column: card-content;
+	}
+	[grid-template='ripple-card'],[grid-template='ripple-card'][layout='ripple-right']{
+		& [grid-area='ripple']{
+			grid-column: ripple-edge-right;
+		}
+		& [grid-area='active-highlight']{
+			grid-column: card-active-highlight-left;
+		}
+
+		& [grid-area='secondary-content']{
+			grid-column: card-active-highlight-left-end / card-cotent-start;
+			padding-block-end:var(--card-highlight-wdith);
+		}
+
+	}
+	[grid-template='ripple-card'][layout='ripple-left']{
+		& [grid-area='ripple']{
+			grid-column: ripple-edge-left;
+		}
+		& [grid-area='active-highlight']{
+			grid-column: card-active-highlight-right;
+		}
+		& [grid-area='secondary-content']{
+			grid-column: card-cotent-end / card-active-highlight-right-start;
+			padding-block-start:var(--card-highlight-wdith);
+		}
+	}
+	
+
 }
