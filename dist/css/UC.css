@@ -22757,111 +22757,111 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
     grid-row-end: -1;
   }
 }
-.rows_all {
+.row_all {
   grid-row: all;
 }
 
 @media screen and (min-width: 10rem) {
-  .rows_all\:xs {
+  .row_all\:xs {
     grid-row: all;
   }
 }
 @media screen and (min-width: 20rem) {
-  .rows_all\:sm {
+  .row_all\:sm {
     grid-row: all;
   }
 }
 @media screen and (min-width: 45rem) {
-  .rows_all\:md {
+  .row_all\:md {
     grid-row: all;
   }
 }
 @media screen and (min-width: 64rem) {
-  .rows_all\:lg {
+  .row_all\:lg {
     grid-row: all;
   }
 }
 @media screen and (min-width: 90rem) {
-  .rows_all\:xl {
+  .row_all\:xl {
     grid-row: all;
   }
 }
 @media screen and (min-width: 120rem) {
-  .rows_all\:xxl {
+  .row_all\:xxl {
     grid-row: all;
   }
 }
 @container (min-width: 10rem) {
-  .CONTAINER .rows_all\:xs {
+  .CONTAINER .row_all\:xs {
     grid-row: all;
   }
 }
 @container (min-width: 20rem) {
-  .CONTAINER .rows_all\:sm {
+  .CONTAINER .row_all\:sm {
     grid-row: all;
   }
 }
 @container (min-width: 45rem) {
-  .CONTAINER .rows_all\:md {
+  .CONTAINER .row_all\:md {
     grid-row: all;
   }
 }
 @container (min-width: 64rem) {
-  .CONTAINER .rows_all\:lg {
+  .CONTAINER .row_all\:lg {
     grid-row: all;
   }
 }
-.columns_all {
+.column_all {
   grid-column: all;
 }
 
 @media screen and (min-width: 10rem) {
-  .columns_all\:xs {
+  .column_all\:xs {
     grid-column: all;
   }
 }
 @media screen and (min-width: 20rem) {
-  .columns_all\:sm {
+  .column_all\:sm {
     grid-column: all;
   }
 }
 @media screen and (min-width: 45rem) {
-  .columns_all\:md {
+  .column_all\:md {
     grid-column: all;
   }
 }
 @media screen and (min-width: 64rem) {
-  .columns_all\:lg {
+  .column_all\:lg {
     grid-column: all;
   }
 }
 @media screen and (min-width: 90rem) {
-  .columns_all\:xl {
+  .column_all\:xl {
     grid-column: all;
   }
 }
 @media screen and (min-width: 120rem) {
-  .columns_all\:xxl {
+  .column_all\:xxl {
     grid-column: all;
   }
 }
 @container (min-width: 10rem) {
-  .CONTAINER .columns_all\:xs {
+  .CONTAINER .column_all\:xs {
     grid-column: all;
   }
 }
 @container (min-width: 20rem) {
-  .CONTAINER .columns_all\:sm {
+  .CONTAINER .column_all\:sm {
     grid-column: all;
   }
 }
 @container (min-width: 45rem) {
-  .CONTAINER .columns_all\:md {
+  .CONTAINER .column_all\:md {
     grid-column: all;
   }
 }
 @container (min-width: 64rem) {
-  .CONTAINER .columns_all\:lg {
+  .CONTAINER .column_all\:lg {
     grid-column: all;
   }
 }
