@@ -13994,11 +13994,11 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
 }
 
 .float_left {
-  float: start;
+  float: left;
 }
 
 .float_right {
-  float: end;
+  float: right;
 }
 
 .c_brand {

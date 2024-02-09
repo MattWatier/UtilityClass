@@ -298,6 +298,9 @@ ul[data-element=button-ripple--wrapper] {
 [data-element-option=inline-start] ul[data-element=button-ripple--wrapper] {
   margin-inline-end: -1em;
 }
+[data-element-option=inline-end] ul[data-element=button-ripple--wrapper] {
+  float: right;
+}
 
 [data-element=button-ripple--button-edge] {
   background-color: hsl(var(--brand-h), var(--brand-s), calc(var(--brand-l) + ((100% - var(--brand-l)) * 0)));
