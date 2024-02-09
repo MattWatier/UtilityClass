@@ -35,6 +35,12 @@
 			padding-block-start: 1em;
 			flex-direction: column;
 		}
+		&[data-element-option="inline-end"] {
+			float:inline-end;
+		}
+		&[data-element-option="inline-start"] & {
+			float:inline-start;
+		}
 	}
 
 	ul[data-element="button-ripple--wrapper"] {
@@ -67,13 +73,6 @@
 
 		[data-element-option="inline-start"] & {
 			margin-inline-end: -1em;
-			float:inline-start;
-		}
-		[data-element-option="inline-end"] & {
-			float:inline-end;
-		}
-		[data-element-option="inline-end"] & {
-			float:right;
 		}
 	}
 

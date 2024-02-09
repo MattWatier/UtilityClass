@@ -281,6 +281,12 @@ html:not([data-scroll="0"]) #navigation_mobile {
   padding-block-start: 1em;
   flex-direction: column;
 }
+[data-element=button-ripple][data-element-option=inline-end] {
+  float: inline-end;
+}
+[data-element=button-ripple][data-element-option=inline-start] [data-element=button-ripple] {
+  float: inline-start;
+}
 
 ul[data-element=button-ripple--wrapper] {
   display: flex;
@@ -306,13 +312,6 @@ ul[data-element=button-ripple--wrapper] {
 }
 [data-element-option=inline-start] ul[data-element=button-ripple--wrapper] {
   margin-inline-end: -1em;
-  float: inline-start;
-}
-[data-element-option=inline-end] ul[data-element=button-ripple--wrapper] {
-  float: inline-end;
-}
-[data-element-option=inline-end] ul[data-element=button-ripple--wrapper] {
-  float: right;
 }
 
 [data-element=button-ripple--button-edge] {
