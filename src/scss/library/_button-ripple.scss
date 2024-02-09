@@ -72,6 +72,9 @@
 		[data-element-option="inline-end"] & {
 			float:inline-end;
 		}
+		[data-element-option="inline-end"] & {
+			float:right;
+		}
 	}
 
 	[data-element="button-ripple--button-edge"] {
