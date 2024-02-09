@@ -46,6 +46,7 @@
 
 		[data-element-option$="end"] & {
 			align-items: end;
+			
 		}
 
 		[data-element-option$="start"] & {
@@ -66,6 +67,10 @@
 
 		[data-element-option="inline-start"] & {
 			margin-inline-end: -1em;
+			float:inline-start;
+		}
+		[data-element-option="inline-end"] & {
+			float:inline-end;
 		}
 	}
 

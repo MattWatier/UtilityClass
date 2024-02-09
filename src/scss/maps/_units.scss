@@ -42,7 +42,7 @@ $units: (
 	ease: ( linear: linear, out-in: ease, in: ease-in, out: ease-out, in-out: ease-in-out,),
 	flex-direction: ( row: row, column: column, row-reverse: row-reverse, column-reverse: column-reverse,),
 	flex-wrap: ( nowrap: nowrap, wrap: wrap, wrap_reverse: wrap-reverse,),
-	float: ( none: none, left: start, right: end,),
+	float: ( none: none, left: left, right: right,),
 	font-family: (
 		// Accent: A modern serif stack for a stylish and updated look, suitable for headers or special sections.
 		accent:#{ 'Merriweather', 'Book Antiqua', Palatino, 'Palatino Linotype', 'DejaVu Serif', 'Bitstream Vera Serif', 'Liberation Serif', serif},
