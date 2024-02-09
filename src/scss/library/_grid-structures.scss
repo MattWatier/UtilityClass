@@ -81,20 +81,25 @@
 @mixin breadcrumb-bar{
 	[grid-template='breadcrumb']{
 		display:grid;
-		grid-template-columns:[back-btn-start] 3rem [back-btn-end breakcrumb-list-start] 1fr [breakcrumb-list-end];
-		grid-template-rows: [breadcrumb-start] auto [breakcrumb-end];
+		grid-template-columns:[back-btn-start] 3rem [back-btn-end breadcrumb-list-start] 1fr [breadcrumb-list-end];
+		grid-template-rows: [all-start breadcrumb-start] auto [all-end breadcrumb-end];
 		@media screen and (min-width: 45rem) {
-			grid-template-columns:[back-btn-start] 7rem [back-btn-end breakcrumb-list-start] 1fr [breakcrumb-list-end];
+			grid-template-columns:[back-btn-start] 7rem [back-btn-end breadcrumb-list-start] 1fr [breadcrumb-list-end];
 		}
 	}
-
+	[grid-template='breadcrumb'] [grid-area='back-btn'],[grid-template='breadcrumb'] [grid-area='breadcrumb-list'] {
+		display: grid;
+		justify-content: stretch;
+		align-items: center;
+	}
 	[grid-template='breadcrumb'] [grid-area='back-btn'] {
 		grid-row: breadcrumb;
 		grid-column: back-btn;
+
 	}	
 	[grid-template='breadcrumb'] [grid-area='breadcrumb-list']  {
-		grid-row: breakcrumb;
-		grid-column: breakcrumb-list;
+		grid-column: breadcrumb-list;
+		grid-row: breadcrumb;
 	}
 }
 @mixin app-page{
@@ -140,22 +145,22 @@
 	[grid-template='ripple-card']{
 		--ripple-edge-width: calc(2.0em + .5rem);
 		--card-highlight-wdith:.5em;
-		--flags-height:calc(.65em + .5rem);
+		--flags-height:calc(.65em + .75rem);
 		display:grid;
 		position:relative;
 		isolation: isolate;
 		grid-template-columns:
-		[card-start ripple-edge-left-start card-active-highlight-left-start]
+		[card-start ripple-edge-inlineStart-start card-active-highlight-inlineStart-start]
 		var(--card-highlight-wdith)
-		[card-active-highlight-left-end]
+		[card-active-highlight-inlineStart-end]
 		calc( var(--ripple-edge-width) - var(--card-highlight-wdith)) 
-		[card-content-start ripple-edge-left-end] 
+		[card-content-start ripple-edge-inlineStart-end] 
 		1fr 
-		[card-content-end ripple-edge-right-start] 
+		[card-content-end ripple-edge-inlineEnd-start] 
 		var(--ripple-edge-width)  
-		[card-active-highlight-right-start]
+		[card-active-highlight-inlineEnd-start]
 		var(--card-highlight-wdith)
-		[card-active-highlight-right-end ripple-edge-right-end card-end];
+		[card-active-highlight-inlineEnd-end ripple-edge-inlineEnd-end card-end];
 		grid-template-rows:[card-start card-content-start] auto [card-end card-content-end];
 	}
 
@@ -184,37 +189,44 @@
 		grid-column: card-content;
 	}
 	// column designs
-	[grid-template='ripple-card'],[grid-template='ripple-card'][layout='ripple-right']{
+	[grid-template='ripple-card'],[grid-template='ripple-card'][layout='ripple-inline-end']{
 		[grid-area='ripple']{
-			grid-column: ripple-edge-right;
+			grid-column: ripple-edge-inlineEnd;
 		}
 		[grid-area='active-highlight']{
-			grid-column: card-active-highlight-left;
+			grid-column: card-active-highlight-inlineStart;
 		}
 
 		[grid-area='content-secondary']{
-			grid-column-start: card-active-highlight-left-end;
+			grid-column-start: card-active-highlight-inlineStart-end;
 			grid-column-end: card-content-start;
 			padding-inline-end:var(--card-highlight-wdith);
 		}
 		[grid-area="flags"]{
 			grid-row:flags;
-			grid-column:card-content;
+			grid-column-start:card-active-highlight-inlineStart-end;
+			grid-column-end:card-content-end;
 
 		}
 
 	}
-	[grid-template='ripple-card'][layout='ripple-left']{
+	[grid-template='ripple-card'][layout='ripple-inline-start']{
 		[grid-area='ripple']{
-			grid-column: ripple-edge-left;
+			grid-column: ripple-edge-inlineStart;
 		}
 		[grid-area='active-highlight']{
-			grid-column: card-active-highlight-right;
+			grid-column: card-active-highlight-inlineEnd;
 		}
 		[grid-area='content-secondary']{
 			grid-column-start: card-content-end; 
-			grid-column-end: card-active-highlight-right-start;
+			grid-column-end: card-active-highlight-inlineEnd-start;
 			padding-inline-start:var(--card-highlight-wdith);
+		}
+		[grid-area="flags"]{
+			grid-row:flags;
+			grid-column-start:card-content-start;
+			grid-column-end:card-active-highlight-inlineEnd-start;
+
 		}
 	}
 	
