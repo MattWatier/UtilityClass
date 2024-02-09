@@ -195,6 +195,64 @@ html:not([data-scroll="0"]) #navigation_mobile {
   border-radius: 0;
 }
 
+[grid-template=ripple-card] {
+  --ripple-edge-width: calc(2.0em + .5rem);
+  --card-highlight-wdith:.5em;
+  --labels-height:calc(.65em + .5rem);
+  display: grid;
+  position: relative;
+  isolation: isolate;
+  grid-template-columns: [card-start ripple-edge-left-start card-active-highlight-left-start] var(--card-highlight-wdith) [card-active-highlight-left-end] calc( var(--ripple-edge-width) - var(--card-highlight-wdith)) [card-content-start ripple-edge-left-end] 1fr [card-content-end ripple-edge-right-start] var(--ripple-edge-width) [card-active-highlight-right-start] var(--card-highlight-wdith) [card-active-highlight-right-end ripple-edge-right-end card-end];
+  grid-template-rows: [card-start card-content-start] auto [card-end card-content-end];
+}
+
+[grid-template=ripple-card] > [grid-area] {
+  grid-row: card-content;
+}
+[grid-template=ripple-card] > [grid-area=active-highlight], [grid-template=ripple-card] > [grid-area=ripple] {
+  grid-row: card;
+}
+
+[grid-template=ripple-card] > [grid-area=active-highlight] {
+  grid-column: card;
+}
+
+[grid-template=ripple-card]:has([grid-area=labels]) {
+  grid-template-rows: [card-start labels-start] var(--labels-height) [labels-end card-content] auto [card-end card-content];
+}
+
+[grid-area=content-primary] {
+  grid-column: card-content;
+}
+
+[grid-template=ripple-card] [grid-area=ripple], [grid-template=ripple-card][layout=ripple-right] [grid-area=ripple] {
+  grid-column: ripple-edge-right;
+}
+[grid-template=ripple-card] [grid-area=active-highlight], [grid-template=ripple-card][layout=ripple-right] [grid-area=active-highlight] {
+  grid-column: card-active-highlight-left;
+}
+[grid-template=ripple-card] [grid-area=content-secondary], [grid-template=ripple-card][layout=ripple-right] [grid-area=content-secondary] {
+  grid-column-start: card-active-highlight-left-end;
+  grid-column-end: card-cotent-start;
+  padding-inline-end: var(--card-highlight-wdith);
+}
+[grid-template=ripple-card] [grid-area=labels], [grid-template=ripple-card][layout=ripple-right] [grid-area=labels] {
+  grid-row: labels;
+  grid-column: card-content;
+}
+
+[grid-template=ripple-card][layout=ripple-left] [grid-area=ripple] {
+  grid-column: ripple-edge-left;
+}
+[grid-template=ripple-card][layout=ripple-left] [grid-area=active-highlight] {
+  grid-column: card-active-highlight-right;
+}
+[grid-template=ripple-card][layout=ripple-left] [grid-area=content-secondary] {
+  grid-column-start: card-content-end;
+  grid-column-end: card-active-highlight-right-start;
+  padding-inline-start: var(--card-highlight-wdith);
+}
+
 [data-element=button-ripple] {
   background-color: hsl(var(--brand-h), var(--brand-s), calc(var(--brand-l) + ((100% - var(--brand-l)) * 0)));
   display: flex;
