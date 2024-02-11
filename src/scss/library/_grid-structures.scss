@@ -107,7 +107,7 @@
 		display:grid;
 		grid-template-rows:
 		[page-start header-start]auto
-		[header-end content-primary-start page-content-start] auto
+		[header-end content-primary-start page-content-start] 1fr
 		[content-primary-end split-content-secondary-start ]auto
 		[split-content-secondary-end page-content-end footer-start]auto
 		[page-end footer-end]

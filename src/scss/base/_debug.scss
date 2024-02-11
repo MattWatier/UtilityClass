@@ -1,5 +1,5 @@
 @mixin debug-container {
-  .debug .CONTAINER {
+  .debug .CQ_ROOT {
     --data-label: var(attr(data-label, ""));
     --grid-area: var(attr(grid-area, ""));
     --grid-template: var(attr(grid-template, ""));
@@ -55,7 +55,7 @@
         --debug-grid-area-color:#ff02ff;
         --label-shader-color:#00000088;
       }
-      .debug .CONTAINER {
+      .debug .CQ_ROOT {
         --data-label: var(attr(data-label), "");
         --grid-area: var(attr(grid-area), "");
         --grid-template: var(attr(grid-template), "");
@@ -63,7 +63,7 @@
         outline: 3px dotted var(--debug-container-color);
         isolation:isolate;
       }
-      .debug .CONTAINER:before,.debug .grid[data-label]:before, .debug *[grid-template]:before, .debug [grid-area]:before {
+      .debug .CQ_ROOT:before,.debug .grid[data-label]:before, .debug *[grid-template]:before, .debug [grid-area]:before {
         color: var(--debug-container-color);
         font-family: var(--font-mono);
         position: absolute;
@@ -74,7 +74,7 @@
         background-color: var(--label-shader-color);
         padding:2px;
       }
-      .debug .CONTAINER[data-label]:before{
+      .debug .CQ_ROOT[data-label]:before{
         content: "Container: " var(--data-label);
       }
       

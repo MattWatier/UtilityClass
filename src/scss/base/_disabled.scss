@@ -1,19 +1,12 @@
 @mixin disabled {
 .disabled {
-    opacity:.5;
-    color: hsl(var(--black-h), var(--black-s), 80%) !important;
-    border-color: hsl(var(--black-h), var(--black-s), 50%) !important;
-    cursor:not-allowed;
-    &[class*="bg"]{
-      background-color: hsl(var(--black-h), var(--black-s), 60%) !important;
-    }
+    filter: grayscale(90%) contrast(60%) brightness(150%);
+opacity: .5;
     .disabled{
       opacity:1;
     }
   }
   .disabled .disabled-dark {
-    color: hsl(var(--black-h), var(--black-s), 30%) !important;
-    border-color: hsl(var(--black-h), var(--black-s), 40%) !important;
-  }
-  
+    filter: grayscale(100%) contrast(60%) brightness(50%);
+  } 
 }

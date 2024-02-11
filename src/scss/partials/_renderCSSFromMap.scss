@@ -389,7 +389,7 @@
 							@if ($base == "" and $labelDirectionMod != "") {
 								$separator: "_";
 							}
-							.CONTAINER #{
+							.CQ_ROOT #{
 								$stateClass
 								+ "."
 								+ $stateLabelModifier

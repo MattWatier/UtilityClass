@@ -2,14 +2,14 @@
   background-color: transparent;
 }
 
-.debug .CONTAINER {
+.debug .CQ_ROOT {
   --data-label: var(attr(data-label, ""));
   --grid-area: var(attr(grid-area, ""));
   --grid-template: var(attr(grid-template, ""));
   position: relative;
   outline: 1px dashed var(--highlight, #e300c1);
 }
-.debug .CONTAINER:before {
+.debug .CQ_ROOT:before {
   content: "Container: Generic";
   color: var(--highlight, #e300c1);
   font-family: var(--font-mono);
@@ -17,7 +17,7 @@
   inset: 3px;
   font-size: 10px;
 }
-.debug .CONTAINER[data-label]:before, .debug .CONTAINER[grid-area]:before, .debug .CONTAINER[dgrid-template]:before {
+.debug .CQ_ROOT[data-label]:before, .debug .CQ_ROOT[grid-area]:before, .debug .CQ_ROOT[dgrid-template]:before {
   content: "Container: " var(--data-label) " " var(--grid-area) " " var(--grid-template);
 }
 

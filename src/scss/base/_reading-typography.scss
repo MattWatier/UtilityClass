@@ -11,7 +11,10 @@
         --font_headline-color: var(--primary-h) var(--primary-s)  calc(var(--primary-l) + var(--primary-l)*-.37);
 
     }
-    
+    .reading-typography{
+        font-size: 1em;
+        --foo:boo;
+    }
     
     :where(.reading-typography){
        :where(h1,
