@@ -26,7 +26,7 @@ $css-properties:(
 'font-color':(direction:null,'loopMode':'color',name:'c',property:('color',),responsive:false,'states':true,unit:('decimal-negative','decimal-positive'),),
 'font-family':(direction:null,name:'font',property:('font-family',),unit:('font-family',),cssVar:true),
 'font-size-adjust':(direction:null,name:'font-size',property:('font-size',),responsive:true, containerQuery:true,unit:('font-size-adjust',),cssVar:true),
-'font-size':(direction:null,name:'font',property:('font-size',),responsive:false,containerQuery:true,unit:('font-size',),cssVar:true),
+'font-size':(direction:null,name:'font',property:('font-size',),responsive:true,containerQuery:true,unit:('font-size',),cssVar:true),
 'font-weight':(direction:null,name:'font',property:('font-weight',),'states':true,unit:('font-weight',),),
 'grid-gap':(direction:"direction-grid",name:'gap',property:('gap',),responsive:true,containerQuery:true,unit:('size-positive',),),
 'grid-template': ( "direction": "direction-grid-lines", "name": "", "property": ( "grid-template", ), "responsive": true,containerQuery:true,"unit": ( "grid-template", ),),

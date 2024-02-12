@@ -23,6 +23,7 @@
 @mixin containerQueryLoop($breakpoints) {
 	// create mobile first rule
 	// loop through the rules with media queries going up.
+	@content ( '' );
 	@each $breakpointLabel, $value in $breakpoints {
 		@container (min-width: #{$value}) {
 			@content ( global.$colon+$breakpointLabel );
