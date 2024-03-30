@@ -852,6 +852,10 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   aspect-ratio: 2 / 3;
 }
 
+.aspect-ratio_8x11 {
+  aspect-ratio: 85 / 110;
+}
+
 @media screen and (min-width: 10rem) {
   .aspect-ratio_1x1\:xs {
     aspect-ratio: 1 / 1;
@@ -879,6 +883,10 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
 
   .aspect-ratio_1x2\:xs {
     aspect-ratio: 2 / 3;
+  }
+
+  .aspect-ratio_8x11\:xs {
+    aspect-ratio: 85 / 110;
   }
 }
 @media screen and (min-width: 20rem) {
@@ -909,6 +917,10 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   .aspect-ratio_1x2\:sm {
     aspect-ratio: 2 / 3;
   }
+
+  .aspect-ratio_8x11\:sm {
+    aspect-ratio: 85 / 110;
+  }
 }
 @media screen and (min-width: 45rem) {
   .aspect-ratio_1x1\:md {
@@ -937,6 +949,10 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
 
   .aspect-ratio_1x2\:md {
     aspect-ratio: 2 / 3;
+  }
+
+  .aspect-ratio_8x11\:md {
+    aspect-ratio: 85 / 110;
   }
 }
 @media screen and (min-width: 64rem) {
@@ -967,6 +983,10 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   .aspect-ratio_1x2\:lg {
     aspect-ratio: 2 / 3;
   }
+
+  .aspect-ratio_8x11\:lg {
+    aspect-ratio: 85 / 110;
+  }
 }
 @media screen and (min-width: 90rem) {
   .aspect-ratio_1x1\:xl {
@@ -996,6 +1016,10 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   .aspect-ratio_1x2\:xl {
     aspect-ratio: 2 / 3;
   }
+
+  .aspect-ratio_8x11\:xl {
+    aspect-ratio: 85 / 110;
+  }
 }
 @media screen and (min-width: 120rem) {
   .aspect-ratio_1x1\:xxl {
@@ -1024,6 +1048,10 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
 
   .aspect-ratio_1x2\:xxl {
     aspect-ratio: 2 / 3;
+  }
+
+  .aspect-ratio_8x11\:xxl {
+    aspect-ratio: 85 / 110;
   }
 }
 .bg-blend_normal {
