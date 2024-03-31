@@ -17,8 +17,7 @@
     &[data-label]:before,
     &[grid-area]:before,
     &[dgrid-template]:before {
-      content: "Container: " var(--data-label) " " var(--grid-area) " "
-        var(--grid-template);
+      content: "Container: " attr(data-label) " " attr(grid-area) " " attr(grid-template);
     }
   }
 }
@@ -41,9 +40,8 @@
     }
     & [data-label]:before,
     & [grid-area]:before,
-    &[dgrid-template]:before {
-      content: "Container: " var(--data-label) " " var(--grid-area) " "
-        var(--grid-template);
+    &[grid-template]:before {
+      content: "Container: " attr(data-label) " " attr(grid-area) " " attr(grid-template);
     }
   }
 }
@@ -75,7 +73,7 @@
         padding:2px;
       }
       .debug .CQ_ROOT[data-label]:before{
-        content: "Container: " var(--data-label);
+        content: "Container: " attr(data-label);
       }
       
       .debug .grid,.debug .grid[data-label], .debug *[grid-template] {
@@ -91,11 +89,11 @@
       }
       .debug .grid:before, .debug *[grid-template]:before, .debug [grid-area]:before {
         color:var(--debug-grid-template-color);
-        content: "Grid: " var(--data-label) " " var(--grid-area) " " var(--grid-template);
+        content: "Grid: " attr(data-label) " " attr(grid-area) " " attr(grid-template);
       }
       .debug .grid[data-label]:before, .debug *[grid-template]:before, .debug [grid-area]:before {
         color:var(--debug-grid-template-color);
-        content: "Grid: " var(--data-label) " " var(--grid-area) " " var(--grid-template);
+        content: "Grid: " attr(data-label) " " attr(grid-area) " " attr(grid-template);
       }
       .debug [grid-area]{
         --data-label: var(attr(data-label), "");
@@ -107,6 +105,6 @@
     
       .debug [grid-area]:before{
         color: var(--debug-grid-area-color);
-        content: "Grid Area: " var(--data-label) " " var(--grid-area) " " var(--grid-template);
+        content: "Grid Area: " attr(data-label) " " attr(grid-area) " " attr(grid-template);
       }
 }
