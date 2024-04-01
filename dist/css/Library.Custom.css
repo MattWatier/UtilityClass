@@ -274,10 +274,11 @@ html:not([data-scroll="0"]) #navigation_mobile {
   position: relative;
 }
 
-[grid-template=bucket] > [grid-area=bucket-inset] > [grid-area=bucket-content] {
+[grid-template=bucket] > [grid-area=bucket-inset] [grid-area=bucket-content] {
   position: absolute;
   inset: 0;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 [data-element=button-ripple] {
