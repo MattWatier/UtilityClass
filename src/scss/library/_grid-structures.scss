@@ -187,9 +187,7 @@
 
 	}
 	
-	[grid-area='content-primary']{
-		grid-column: card-content;
-	}
+
 	// column designs
 	[grid-template='ripple-card'],[grid-template='ripple-card'][layout='ripple-inline-end']{
 		[grid-area='ripple']{

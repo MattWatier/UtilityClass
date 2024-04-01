@@ -2,12 +2,12 @@
   background-color: transparent;
 }
 
-.debug [grid-area], .debug [grid-template], .debug .CQ_ROOT, .debug {
+.debug [grid-template], .debug [grid-area], .debug {
   position: relative;
   border: var(--_style, 1px dashed) var(--_color, limegreen);
   margin: 1.5rem 0 0;
 }
-.debug [grid-area]::before, .debug [grid-template]::before, .debug .CQ_ROOT::before, .debug::before {
+.debug [grid-template]::before, .debug [grid-area]::before, .debug::before {
   color: var(--_color, limegreen);
   font-family: var(--font-mono);
   position: absolute;
@@ -27,13 +27,13 @@
   --_label: "DEBUG: ";
 }
 
-.debug .CQ_ROOT {
-  --_style: 3px double;
-  --_color: magenta;
+.debug [grid-area] {
+  --_style: 1px dashed;
+  --_color: orangered;
   --_data-label:": " attr(data-label) ":";
-  --_grid-template: attr(grid-template);
+  --_grid-template: " grid-template:" attr(grid-template);
   --_grid-area: attr(grid-area);
-  --_label: "CQ_ROOT: ";
+  --_label: "Grid-Area: ";
 }
 
 .debug [grid-template] {
@@ -44,15 +44,6 @@
   --_grid-area: attr(grid-area);
   --_label: "Grid-Template: ";
   padding-left: 0.5rem;
-}
-
-.debug [grid-area] {
-  --_style: 1px dashed;
-  --_color: orangered;
-  --_data-label:": " attr(data-label) ":";
-  --_grid-template: " grid-template:" attr(grid-template);
-  --_grid-area: attr(grid-area);
-  --_label: "Grid-Area: ";
 }
 
 .debug .CQ_ROOT {

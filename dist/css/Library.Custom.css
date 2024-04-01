@@ -227,10 +227,6 @@ html:not([data-scroll="0"]) #navigation_mobile {
   grid-template-rows: [card-start flags-start] var(--flags-height) [flags-end card-content] auto [card-end card-content];
 }
 
-[grid-area=content-primary] {
-  grid-column: card-content;
-}
-
 [grid-template=ripple-card] [grid-area=ripple], [grid-template=ripple-card][layout=ripple-inline-end] [grid-area=ripple] {
   grid-column: ripple-edge-inlineEnd;
 }
