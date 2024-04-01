@@ -129,16 +129,23 @@
 	}
 }
 @mixin scroll-bucket{
-	[grid-template='bucket']{
+    [grid-template='bucket']{
 		display:grid;
 		grid-template-columns:
 		[bucket-start]auto[bucket-end];
 		grid-template-rows:[bucket-start]auto[bucket-end];
+   		overflow: hidden;
+		min-height: 20ch;
+	
 	}	
-	[grid-template='bucket'] [grid-area='bucket-inset'] {
+	[grid-template='bucket']>[grid-area='bucket-inset'] {
 		grid-area: bucket;
 		position: relative;
-		overflow: scroll;
+	}
+  	[grid-template='bucket']>[grid-area='bucket-inset']>[grid-area='bucket-content']{
+		position: absolute;
+   		inset:0;
+		overflow: auto;
 	}
 	
 }

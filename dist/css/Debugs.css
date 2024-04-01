@@ -31,8 +31,8 @@
   --_style: 1px dashed;
   --_color: orangered;
   --_data-label:": " attr(data-label) ":";
-  --_grid-template: " grid-template:" attr(grid-template);
-  --_grid-area: attr(grid-area);
+  --_grid-template: " " attr(grid-template);
+  --_grid-area: " " attr(grid-area);
   --_label: "Grid-Area: ";
 }
 
@@ -40,7 +40,7 @@
   --_style: 1px dashed;
   --_color: rgb(19, 123, 251);
   --_data-label:": " attr(data-label) ":";
-  --_grid-template: " grid-template:" attr(grid-template);
+  --_grid-template: "  " attr(grid-template);
   --_grid-area: attr(grid-area);
   --_label: "Grid-Template: ";
   padding-left: 0.5rem;
