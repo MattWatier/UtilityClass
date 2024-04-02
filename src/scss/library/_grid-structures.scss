@@ -21,7 +21,7 @@
 }
 @mixin app-frame{
 	[grid-template='app-frame'] {
-		--app-spacing: var(--app-spacing: .2rem);
+		--app-spacing: var(--app-spacing, .2rem);
 		--primary-menu-width:5.5rem;
 		display:grid;
 		transition: grid-template-columns 1s;

@@ -89,7 +89,7 @@
 }
 
 [grid-template=app-frame] {
-  --app-spacing: var(--app-spacing: .2rem);
+  --app-spacing: var(--app-spacing, .2rem);
   --primary-menu-width:5.5rem;
   display: grid;
   transition: grid-template-columns 1s;
@@ -275,6 +275,7 @@ html:not([data-scroll="0"]) #navigation_mobile {
 }
 
 [grid-template=bucket] > [grid-area=bucket-inset] [grid-area=bucket-content] {
+  position: absolute;
   inset: 0;
   overflow-y: auto;
   overflow-x: hidden;
