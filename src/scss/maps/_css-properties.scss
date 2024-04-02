@@ -41,6 +41,8 @@ $css-properties:(
 'grid-col-end-span': (direction:null, name:'col-end-span',property:('grid-column-end',),unit:('grid-span'),responsive:true),
 'grid-row-start-span': (direction:null, name:'row-start-span',property:('grid-row-start',),unit:('grid-span',),responsive:true),
 'grid-row-end-span': (direction:null, name:'row-end-span',property:('grid-row-end',),unit:('grid-span'),responsive:true),
+'row-area': (direction:null, name:'row',property:('grid-row',),unit:('grid-area-position'),responsive:true,containerQuery:true),
+'column-area': (direction:null, name:'column',property:('grid-column',),unit:('grid-area-position'),responsive:true,containerQuery:true),
 'height-viewport':(direction:null,name:'h',property:('height',),unit:('height-viewport',),),
 'inset':(direction:'direction-edge',name:'',property:('inset',),responsive:true,unit:('unset','auto','size-negative','size-positive',),),
 'isolation':(direction:null,name:'isolation',property:('isolation',),responsive:false,unit:('unset','auto','isolate',),),
