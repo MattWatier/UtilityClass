@@ -265,11 +265,11 @@
 		--content-padding: .5rem;
 		--sidebar-width: 100%;
 		--min-content-width:40rem;
-		@media (width > calc(40rem + 1rem + 300px)) {
+		@container (width > calc(40rem + 1rem + 300px)) {
 			--content-padding: 1rem;
 			--sidebar-width: 300px;
 		}
-		@media (width > calc(40rem + (2rem + 300px) * 2)) {
+		@container (width > calc(40rem + (2rem + 300px) * 2)) {
 			--content-padding: 2rem;
 			--sidebar-width: 300px;
 		}
@@ -294,7 +294,7 @@
 			[sidebar-primary-end] var(--content-padding) 
 			[ all-end];
 	
-		@media (width > calc(40rem + 1rem + 300px)) {
+		@container (width > calc(40rem + 1rem + 300px)) {
 			grid-template-columns:
 				[ all-start sidebar-primary-start sidebar-secondary-start] var(--content-padding) 
 				[content-start] var(--sidebar-width) 
@@ -308,7 +308,7 @@
 				[sidebar-secondary-end all-end];
 		}
 	
-		@media (width > calc(40rem + (2rem + 300px) * 2)) {
+		@container (width > calc(40rem + (2rem + 300px) * 2)) {
 			grid-template-columns:
 				[ all-start sidebar-primary-start] var(--content-padding) 
 				[content-start] var(--sidebar-width) 
@@ -325,7 +325,7 @@
 	
 		&
 		[template-option="reverse"] {
-			@media (width > calc(40rem + 1rem + 300px)) {
+			@container (width > calc(40rem + 1rem + 300px)) {
 				grid-template-columns:
 					[ all-start sidebar-secondary-start] var(--content-padding) 
 					[content-start center-start] 1fr 
@@ -335,7 +335,7 @@
 					[all-end sidebar-primary-end sidebar-secondary-end];
 			}
 	
-			@media (width > calc(40rem + (2rem + 300px) * 2)) {
+			@container (width > calc(40rem + (2rem + 300px) * 2)) {
 				grid-template-columns:
 					[ all-start sidebar-secondary-start] var(--content-padding) 
 					[content-start] var(--sidebar-width) 
@@ -366,7 +366,10 @@
 			grid-row: sidebar-secondary;
 		}
 	}
-	
+	[grid-area=full-content]{
+		grid-column: all;
+		grid-row:all;
+	}
 	
 	[grid-area="content"] {
 		grid-column: content;
@@ -420,7 +423,7 @@
 		[grid-area="sidebar-primary"]) {
 		@extend %center;
 	
-		@media (width < calc(40rem + (2rem + 300px) * 2)) and (width > calc(40rem + (1rem + 300px) * 1))  {
+		@container (width < calc(40rem + (2rem + 300px) * 2)) and (width > calc(40rem + (1rem + 300px) * 1))  {
 			
 			[grid-area="sidebar-secondary"] {
 				grid-column-start: center-start;

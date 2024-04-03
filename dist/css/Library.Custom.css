@@ -160,13 +160,13 @@
   --sidebar-width: 100%;
   --min-content-width:40rem;
 }
-@media (width > calc(40rem + 1rem + 300px)) {
+@container (width > calc(40rem + 1rem + 300px)) {
   :root {
     --content-padding: 1rem;
     --sidebar-width: 300px;
   }
 }
-@media (width > calc(40rem + (2rem + 300px) * 2)) {
+@container (width > calc(40rem + (2rem + 300px) * 2)) {
   :root {
     --content-padding: 2rem;
     --sidebar-width: 300px;
@@ -181,24 +181,24 @@
   grid-template-columns: [all-start sidebar-secondary-start sidebar-primary-start] var(--content-padding) [content-start center-start] 1fr [content-end center-end] var(--content-padding) [all-end sidebar-secondary-end sidebar-primary-end];
   grid-template-rows: [all-end] var(--content-padding) [center-start content-start] auto [center-end content-end sidebar-secondary-start] auto [sidebar-secondary-end sidebar-primary-start] auto [sidebar-primary-end] var(--content-padding) [all-end];
 }
-@media (width > calc(40rem + 1rem + 300px)) {
+@container (width > calc(40rem + 1rem + 300px)) {
   [grid-template=content-layout] {
     grid-template-columns: [all-start sidebar-primary-start sidebar-secondary-start] var(--content-padding) [content-start] var(--sidebar-width) [sidebar-primary-end] var(--content-padding) [center-start] 1fr [center-end content-end] var(--content-padding) [all-end sidebar-secondary-end];
     grid-template-rows: [all-start content-start center-start sidebar-primary-start] auto [content-end sidebar-secondary-start center-end sidebar-primary-end] auto [sidebar-secondary-end all-end];
   }
 }
-@media (width > calc(40rem + (2rem + 300px) * 2)) {
+@container (width > calc(40rem + (2rem + 300px) * 2)) {
   [grid-template=content-layout] {
     grid-template-columns: [all-start sidebar-primary-start] var(--content-padding) [content-start] var(--sidebar-width) [sidebar-primary-end] var(--content-padding) [center-start] 1fr [center-end] var(--content-padding) [sidebar-secondary-start] var(--sidebar-width) [content-end] var(--content-padding) [all-end sidebar-secondary-end];
     grid-template-rows: [all-start content-start center-start sidebar-primary-start sidebar-secondary-start] auto [all-end content-end center-end sidebar-primary-end sidebar-secondary-end];
   }
 }
-@media (width > calc(40rem + 1rem + 300px)) {
+@container (width > calc(40rem + 1rem + 300px)) {
   [grid-template=content-layout] [template-option=reverse] {
     grid-template-columns: [all-start sidebar-secondary-start] var(--content-padding) [content-start center-start] 1fr [center-end] var(--content-padding) [sidebar-primary-start] var(--sidebar-width) [content-end] var(--content-padding) [all-end sidebar-primary-end sidebar-secondary-end];
   }
 }
-@media (width > calc(40rem + (2rem + 300px) * 2)) {
+@container (width > calc(40rem + (2rem + 300px) * 2)) {
   [grid-template=content-layout] [template-option=reverse] {
     grid-template-columns: [all-start sidebar-secondary-start] var(--content-padding) [content-start] var(--sidebar-width) [sidebar-secondary-end] var(--content-padding) [center-start] 1fr [center-end] var(--content-padding) [sidebar-primary-start] var(--sidebar-width) [content-end] var(--content-padding) [all-end sidebar-primary-end];
     grid-template-rows: [all-start content-start center-start sidebar-primary-start sidebar-secondary-start] auto [all-end content-end center-end sidebar-primary-end sidebar-secondary-end];
@@ -212,6 +212,11 @@
 [grid-template=content-layout] > [grid-area=sidebar-secondary] {
   grid-column: sidebar-secondary;
   grid-row: sidebar-secondary;
+}
+
+[grid-area=full-content] {
+  grid-column: all;
+  grid-row: all;
 }
 
 [grid-area=content] {
@@ -236,7 +241,7 @@
   grid-row: center;
 }
 
-@media (width < calc(40rem + (2rem + 300px) * 2)) and (width > calc(40rem + (1rem + 300px) * 1)) {
+@container (width < calc(40rem + (2rem + 300px) * 2)) and (width > calc(40rem + (1rem + 300px) * 1)) {
   [grid-template=content-layout]:has([grid-area=sidebar-secondary]):has([grid-area=sidebar-primary]) [grid-area=sidebar-secondary] {
     grid-column-start: center-start;
   }
