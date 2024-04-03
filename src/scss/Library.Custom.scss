@@ -57,8 +57,9 @@
 
 @include library.page-wrapper;
 @include library.app-frame;
-@include library.breadcrumb-bar;
 @include library.app-page;
+@include library.page-layout;
+@include library.breadcrumb-bar;
 @include library.mobile-navigation;
 @include library.ripple-card;
 @include library.scroll-bucket;
