@@ -323,8 +323,7 @@
 				[all-end content-end center-end sidebar-primary-end sidebar-secondary-end];
 		}
 	
-		&
-		[template-option="reverse"] {
+		&[template-option="reverse"] {
 			@container (width > calc(40rem + 1rem + 300px)) {
 				grid-template-columns:
 					[ all-start sidebar-secondary-start] var(--content-padding) 
