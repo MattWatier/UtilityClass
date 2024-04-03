@@ -63,29 +63,36 @@
   grid-area: contentArea;
 }
 
-.page-wrapper {
+:root {
   --app-spacing: .2rem;
-  margin: var(--app-spacing);
 }
 @media screen and (min-width: 45rem) {
-  .page-wrapper {
+  :root {
     --app-spacing: .5rem;
   }
 }
 @media screen and (min-width: 64rem) {
-  .page-wrapper {
+  :root {
     --app-spacing: .75rem;
   }
 }
 @media screen and (min-width: 90rem) {
-  .page-wrapper {
+  :root {
     --app-spacing: 1rem;
   }
 }
 @media screen and (min-width: 120rem) {
-  .page-wrapper {
+  :root {
     --app-spacing: 1.5rem;
   }
+}
+
+.page-wrapper#website {
+  -app-spacing: 0;
+}
+
+.page-wrapper {
+  margin: var(--app-spacing);
 }
 
 [grid-template=app-frame] {
@@ -105,6 +112,25 @@
   }
 }
 [grid-template=app-frame].expanded {
+  --primary-menu-width:var(--primary-menu-width-expanded,15rem);
+}
+
+#website [grid-template=app-frame] {
+  --app-spacing: var(--app-spacing, .2rem);
+  --primary-menu-width:5.5rem;
+  display: grid;
+  transition: grid-template-columns 1s;
+  grid-template-columns: [app-start app-menu-start app-page-start] 1fr [app-page-end app-end app-menu-end];
+  grid-template-rows: [app-start branding-start] auto [branding-end app-menu-start] auto [app-menu-end app-page-start app-content-start] 1fr [app-page-end breadcrumb-start] auto [app-content-end breadcrumb-end footer-area-start] auto [footer-area-end app-end] auto;
+  min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
+  max-width: calc(100vw - var(--app-spacing) * 2);
+}
+@media screen and (min-width: 45rem) {
+  #website [grid-template=app-frame] {
+    grid-template-columns: [app-start app-menu-start app-page-start] 1fr [app-page-end app-end app-menu-end];
+  }
+}
+#website [grid-template=app-frame].expanded {
   --primary-menu-width:var(--primary-menu-width-expanded,15rem);
 }
 
