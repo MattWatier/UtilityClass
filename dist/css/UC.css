@@ -21938,326 +21938,326 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
   }
 }
 .columns_1 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
 }
 
 .columns_2 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
 }
 
 .columns_3 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
 }
 
 .columns_4 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
 }
 
 .columns_5 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
 }
 
 .columns_6 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
 }
 
 @media screen and (min-width: 10rem) {
   .columns_1\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .columns_2\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .columns_3\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .columns_4\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .columns_5\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .columns_6\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @media screen and (min-width: 20rem) {
   .columns_1\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .columns_2\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .columns_3\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .columns_4\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .columns_5\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .columns_6\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @media screen and (min-width: 45rem) {
   .columns_1\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .columns_2\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .columns_3\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .columns_4\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .columns_5\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .columns_6\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @media screen and (min-width: 65rem) {
   .columns_1\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .columns_2\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .columns_3\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .columns_4\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .columns_5\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .columns_6\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @media screen and (min-width: 80rem) {
   .columns_1\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .columns_2\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .columns_3\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .columns_4\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .columns_5\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .columns_6\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @media screen and (min-width: 120rem) {
   .columns_1\:xxl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .columns_2\:xxl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .columns_3\:xxl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .columns_4\:xxl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .columns_5\:xxl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .columns_6\:xxl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 .CQ_ROOT .columns_1 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
 }
 
 .CQ_ROOT .columns_2 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
 }
 
 .CQ_ROOT .columns_3 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
 }
 
 .CQ_ROOT .columns_4 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
 }
 
 .CQ_ROOT .columns_5 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
 }
 
 .CQ_ROOT .columns_6 {
-  grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+  grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
 }
 
 @container (min-width: 10rem) {
   .CQ_ROOT .columns_1\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .CQ_ROOT .columns_2\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .CQ_ROOT .columns_3\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .CQ_ROOT .columns_4\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .CQ_ROOT .columns_5\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .CQ_ROOT .columns_6\:xs {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @container (min-width: 20rem) {
   .CQ_ROOT .columns_1\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .CQ_ROOT .columns_2\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .CQ_ROOT .columns_3\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .CQ_ROOT .columns_4\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .CQ_ROOT .columns_5\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .CQ_ROOT .columns_6\:sm {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @container (min-width: 45rem) {
   .CQ_ROOT .columns_1\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .CQ_ROOT .columns_2\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .CQ_ROOT .columns_3\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .CQ_ROOT .columns_4\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .CQ_ROOT .columns_5\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .CQ_ROOT .columns_6\:md {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @container (min-width: 65rem) {
   .CQ_ROOT .columns_1\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .CQ_ROOT .columns_2\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .CQ_ROOT .columns_3\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .CQ_ROOT .columns_4\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .CQ_ROOT .columns_5\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .CQ_ROOT .columns_6\:lg {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 @container (min-width: 80rem) {
   .CQ_ROOT .columns_1\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first all-end];
   }
 
   .CQ_ROOT .columns_2\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second all-end];
   }
 
   .CQ_ROOT .columns_3\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third all-end];
   }
 
   .CQ_ROOT .columns_4\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth all-end];
   }
 
   .CQ_ROOT .columns_5\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth all-end];
   }
 
   .CQ_ROOT .columns_6\:xl {
-    grid-template-colummns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
+    grid-template-columns: [all-start first] var(--col-1, 1fr) [first step second] var(--col-2, 1fr) [second step third] var(--col-3, 1fr) [third step fourth] var(--col-4, 1fr) [fourth step fifth] var(--col-5, 1fr) [fifth step sixth] var(--col-5, 1fr) [sixth all-end];
   }
 }
 .rows_1 {

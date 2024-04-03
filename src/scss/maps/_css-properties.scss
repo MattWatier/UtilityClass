@@ -30,7 +30,7 @@ $css-properties:(
 'font-weight':(direction:null,name:'font',property:('font-weight',),'states':true,unit:('font-weight',),),
 'grid-gap':(direction:"direction-grid",name:'gap',property:('gap',),responsive:true,containerQuery:true,unit:('size-positive',),),
 // 'grid-template': ( "direction": "direction-grid-lines", "name": "", "property": ( "grid-template", ), "responsive": true,containerQuery:true,"unit": ( "grid-template", ),),
-'grid-template-columns': ( "direction": null, "name": "columns", "property": ( "grid-template-colummns", ), "responsive": true,containerQuery:true,"unit": ( "grid-template-columns", ),),
+'grid-template-columns': ( "direction": null, "name": "columns", "property": ( "grid-template-columns", ), "responsive": true,containerQuery:true,"unit": ( "grid-template-columns", ),),
 'grid-template': ( "direction": null, "name": "rows", "property": ( "grid-template-rows", ), "responsive": true,containerQuery:true,"unit": ( "grid-template-rows", ),),
 
 
