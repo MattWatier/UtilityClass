@@ -88,7 +88,10 @@
 }
 
 .page-wrapper#website {
-  -app-spacing: 0;
+  --app-spacing:0;
+  --max-page-width:80rem;
+  max-width: --max-page-width;
+  margin-inline: auto;
 }
 
 .page-wrapper {
@@ -101,7 +104,7 @@
   display: grid;
   transition: grid-template-columns 1s;
   grid-template-columns: [app-start app-menu-start app-page-start] 1fr [app-page-end app-end app-menu-end];
-  grid-template-rows: [app-start app-menu-start breadcrumb-start branding-start app-page-start] auto [breadcrumb-end branding-end app-content-start] 1fr [app-content-end footer-area-start] auto [footer-area-end app-page-end app-menu-end app-page-end app-end];
+  grid-template-rows: [app-start app-menu-start breadcrumb-start branding-start app-content-start] auto [breadcrumb-end branding-end app-page-start] 1fr [app-content-end footer-area-start] auto [footer-area-end app-page-end app-menu-end app-page-end app-end];
   min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
   max-width: calc(100vw - var(--app-spacing) * 2);
 }
