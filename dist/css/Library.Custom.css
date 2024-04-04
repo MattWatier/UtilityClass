@@ -632,12 +632,12 @@ ul[data-element=button-ripple--wrapper] {
 [grid-template=hero-banner] [grid-area] {
   z-index: 1;
 }
-[grid-template=hero-banner] [grid-area=background] {
+[grid-template=hero-banner] [grid-area=hero-background] {
   grid-row: all;
   grid-column: all;
   z-index: -1;
 }
-[grid-template=hero-banner] [grid-area=background] [data-item=responsive-hero-image] {
+[grid-template=hero-banner] [grid-area=hero-background] [data-item=responsive-hero-image] {
   position: absolute;
   inset: 0;
   background-position: left center;
