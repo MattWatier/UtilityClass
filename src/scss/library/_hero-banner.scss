@@ -1,95 +1,96 @@
+@use "../helpers/getValue" as get;
 
 @mixin hero-banner{
 
     [grid-template]{
         display:grid;
       }
-      [grid-template="hero-image-cta"]{
-        --container-padding:  #{get-css-size(padding, 3)}; 
+      [grid-template="hero-banner"]{
+        --container-padding: get.get-unit-value(size-positive, 4);
         --hero-overlay-color: var(--acc);
         --hero-overlay-opacity:.85;
-        --breadcrumb-height: 2.5rem;
+        --hero-breadcrumb-height: 2.5rem;
         grid-template-columns: 
-          [all-start breadcrumb-start title-start] var(--container-padding, 0) 
-          [content-start cta-start ] 1fr 
-          [ cta-end title-end content-end] var(--container-padding, 0) 
-          [all-end breadcrumb-end];
+          [all-start hero-breadcrumb-start hero-title-start] var(--container-padding, 0) 
+          [hero-content-start hero-cta-start ] 1fr 
+          [ hero-cta-end hero-title-end hero-content-end] var(--container-padding, 0) 
+          [all-end hero-breadcrumb-end];
         grid-template-rows:
-            [all-start breadcrumb-start] minmax(var(--breadcrumb-height, 2.5rem), min-content)
-            [breadcrumb-end ] var(--container-padding, 0)
-            [title-start content-start] auto 
-            [title-end] calc( var(--container-padding, 0)* .5)
-            [cta-start] auto
-            [cta-end content-end] var(--container-padding, 0)
+            [all-start hero-breadcrumb-start] minmax(var(--hero-breadcrumb-height, 2.5rem), min-hero-content)
+            [hero-breadcrumb-end ] var(--container-padding, 0)
+            [hero-title-start hero-content-start] auto 
+            [hero-title-end] calc( var(--container-padding, 0)* .5)
+            [hero-cta-start] auto
+            [hero-cta-end hero-content-end] var(--container-padding, 0)
             [all-end];
         @media (width > 45rem) {
-          --container-padding:  #{get-css-size(padding, 4)};
-          // rows_2:md columns_4:md --row-1:2.5rem; --row-2:min-content  
+          --container-padding:  get.get-unit-value(size-positive, 4);
+          // rows_2:md columns_4:md --row-1:2.5rem; --row-2:min-hero-content  
           grid-template-rows: 
-            [all-start breadcrumb-start] var(--breadcrumb-height, 2.5rem) 
-            [breadcrumb-end] calc( var(--container-padding, 0)* .5)
-            [title-start cta-start content-start] auto 
-            [title-end cta-end content-end] var(--container-padding, 0) 
+            [all-start hero-breadcrumb-start] var(--hero-breadcrumb-height, 2.5rem) 
+            [hero-breadcrumb-end] calc( var(--container-padding, 0)* .5)
+            [hero-title-start hero-cta-start hero-content-start] auto 
+            [hero-title-end hero-cta-end hero-content-end] var(--container-padding, 0) 
             [all-end];
           grid-template-columns: 
-            [all-start breadcrumb-start title-start] var(--container-padding, 0)
-            [content-start ] 1fr
-            [title-end] var(--container-padding, 0)
-            [cta-start] 1fr 
-            [cta-end content-end] var(--container-padding, 0)
-            [all-end breadcrumb-end];
+            [all-start hero-breadcrumb-start hero-title-start] var(--container-padding, 0)
+            [hero-content-start ] 1fr
+            [hero-title-end] var(--container-padding, 0)
+            [hero-cta-start] 1fr 
+            [hero-cta-end hero-content-end] var(--container-padding, 0)
+            [all-end hero-breadcrumb-end];
         }
         @media (width > 65rem)  {
-          --container-padding:  #{get-css-size(padding, 5)};  
+          --container-padding:  get.get-unit-value(size-positive, 5); 
           grid-template-columns: 
-          [all-start breadcrumb-start title-start]  var(--container-padding, 0)
-          [content-start ] 3fr
-          [title-end] 1fr
-          [cta-start] 3fr
-          [cta-end content-end] var(--container-padding, 0) 
-          [all-end breadcrumb-end];
-          // class="hero relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 m-x_n4  overflow_hidden " style="--hero-overlay-opacity:.9; --row-1:2.5rem; --row-2:min-content;"
+          [all-start hero-breadcrumb-start hero-title-start]  var(--container-padding, 0)
+          [hero-content-start ] 3fr
+          [hero-title-end] 1fr
+          [hero-cta-start] 3fr
+          [hero-cta-end hero-content-end] var(--container-padding, 0) 
+          [all-end hero-breadcrumb-end];
+          // class="hero relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 m-x_n4  overflow_hidden " style="--hero-overlay-opacity:.9; --row-1:2.5rem; --row-2:min-hero-content;"
           
         }
         &[template-option="micro"]{
           grid-template-columns: 
-          [all-start title-start] var(--container-padding, 0) 
-          [content-start cta-start ] 1fr 
-          [cta-end title-end content-end] var(--container-padding, 0) 
+          [all-start hero-title-start] var(--container-padding, 0) 
+          [hero-content-start hero-cta-start ] 1fr 
+          [hero-cta-end hero-title-end hero-content-end] var(--container-padding, 0) 
           [all-end];
           grid-template-rows:
               [all-start] var(--container-padding, 0)
-              [title-start content-start] auto 
-              [title-end] calc( var(--container-padding, 0)* .5)
-              [cta-start] auto
-              [cta-end content-end] var(--container-padding, 0)
+              [hero-title-start hero-content-start] auto 
+              [hero-title-end] calc( var(--container-padding, 0)* .5)
+              [hero-cta-start] auto
+              [hero-cta-end hero-content-end] var(--container-padding, 0)
               [all-end];
               @media (width > 45rem) { 
                 grid-template-rows: 
                   [all-start] calc( var(--container-padding, 0)* .5)
-                  [title-start cta-start content-start] auto 
-                  [title-end cta-end content-end] calc( var(--container-padding, 0)* .5)
+                  [hero-title-start hero-cta-start hero-content-start] auto 
+                  [hero-title-end hero-cta-end hero-content-end] calc( var(--container-padding, 0)* .5)
                   [all-end];
                 grid-template-columns: 
-                  [all-start title-start] var(--container-padding, 0)
-                  [content-start ] 1fr
-                  [title-end] var(--container-padding, 0)
-                  [cta-start] min-content
-                  [cta-end content-end] var(--container-padding, 0)
+                  [all-start hero-title-start] var(--container-padding, 0)
+                  [hero-content-start ] 1fr
+                  [hero-title-end] var(--container-padding, 0)
+                  [hero-cta-start] min-hero-content
+                  [hero-cta-end hero-content-end] var(--container-padding, 0)
                   [all-end ];
               }
               @media (width > 65rem) { 
                 grid-template-columns: 
-                  [all-start title-start] var(--container-padding, 0)
-                  [content-start ] 1fr
-                  [title-end] var(--container-padding, 0)
-                  [cta-start] min-content
-                  [cta-end content-end] var(--container-padding, 0)
+                  [all-start hero-title-start] var(--container-padding, 0)
+                  [hero-content-start ] 1fr
+                  [hero-title-end] var(--container-padding, 0)
+                  [hero-cta-start] min-hero-content
+                  [hero-cta-end hero-content-end] var(--container-padding, 0)
                   [all-end ];
               }
           }
       }
-      [grid-template=hero-image-cta]{
+      [grid-template=hero-banner]{
         overflow: clip;
         isolation: isolate;
         [grid-area]{z-index: 1;}
@@ -98,20 +99,20 @@
           grid-column: all;
           z-index: -1;
         }
-        [grid-area="breadcrumb"]
+        [grid-area="hero-breadcrumb"]
         {
-          grid-row: breadcrumb;
-          grid-column: breadcrumb;
+          grid-row: hero-breadcrumb;
+          grid-column: hero-breadcrumb;
       
         }
-        [grid-area="title"]{
+        [grid-area="hero-title"]{
       
-          grid-row: title;
-          grid-column: title;
+          grid-row: hero-title;
+          grid-column: hero-title;
         }
-        [grid-area="cta"]{
-          grid-row: cta;
-          grid-column: cta;
+        [grid-area="hero-cta"]{
+          grid-row: hero-cta;
+          grid-column: hero-cta;
         }
       }
       
@@ -131,7 +132,7 @@
         }
       }
       
-      [data-item="hero-image-breadcrumb-nav"],[data-item="cta-callout"],[data-item="hero-title"] span{
+      [data-item="hero-image-hero-breadcrumb-nav"],[data-item="hero-cta-callout"],[data-item="hero-title"] span{
         @extend %after-background-transparency;
       }
       
@@ -163,11 +164,11 @@
         }
       }
       
-      [data-item="hero-image-breadcrumb-nav"]::after{
-        border-end-end-radius: var(--br_radius, .25rem);
+      [data-item="hero-image-hero-breadcrumb-nav"]::after{
+        border-end-end-radius: get.get-unit-value(radius,radius);
       }
-      [data-item="cta-callout"]::after{
-        border-radius:  var(--br_radius, .25rem);
+      [data-item="hero-cta-callout"]::after{
+        border-radius:  get.get-unit-value(radius,radius);
       }
       
 

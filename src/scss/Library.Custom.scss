@@ -1,4 +1,8 @@
+@use "sass:map";
+@use "maps";
+@use "helpers";
 @use 'library' as library;
+
 // Gallery of cards.
 .grid-hs {
 	display: grid;

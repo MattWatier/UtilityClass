@@ -39,8 +39,8 @@
 			1fr
 			[app-page-end app-end app-menu-end ];
 		grid-template-rows: 
-			[app-start app-menu-start breadcrumb-start branding-start app-content-start] auto 
-			[breadcrumb-end branding-end app-page-start] 1fr 
+			[app-start app-menu-start breadcrumb-start app-branding-start app-content-start] auto 
+			[breadcrumb-end app-branding-end app-page-start] 1fr 
 			[app-content-end footer-area-start] auto 
 			[footer-area-end app-page-end app-menu-end app-page-end app-end];
 		min-height: calc(100vh - (2 * clamp(8px, 1vw, 16px)));
@@ -74,8 +74,8 @@
 				1fr
 				[app-page-end app-end app-menu-end ];
 			grid-template-rows: 
-			[app-start branding-start] auto 
-			[branding-end app-menu-start] auto 
+			[app-start app-branding-start] auto 
+			[app-branding-end app-menu-start] auto 
 			[app-menu-end app-page-start app-content-start]	1fr 
 			[app-page-end breadcrumb-start] auto 
 			[app-content-end  breadcrumb-end footer-area-start] auto 
@@ -87,8 +87,8 @@
 		[grid-template='app-frame'][grid-option="sticky_nav"] {
 			grid-template-rows: 
 			[app-start app-menu-start] auto
-			[app-menu-end branding-start] auto 
-			[branding-end app-page-start app-content-start]	1fr 
+			[app-menu-end app-branding-start] auto 
+			[app-branding-end app-page-start app-content-start]	1fr 
 			[app-page-end breadcrumb-start] auto 
 			[app-content-end  breadcrumb-end footer-area-start] auto 
 			[footer-area-end app-end] auto;
@@ -129,7 +129,7 @@
 	}
 	[grid-area='app-branding'] {
 		grid-column: app-page;
-		grid-row: branding;
+		grid-row: app-branding;
 	}
 	[grid-area='app-footer'] {
 		grid-column: app-page;
