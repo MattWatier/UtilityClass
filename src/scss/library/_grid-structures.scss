@@ -84,7 +84,19 @@
 			max-width: calc(100vw - var(--app-spacing) * 2);
 			
 		}
-	
+		[grid-template='app-frame'][grid-option="sticky_nav"] {
+			grid-template-rows: 
+			[app-start app-menu-start]
+			[app-menu-end branding-start] auto 
+			[branding-end app-page-start app-content-start]	1fr 
+			[app-page-end breadcrumb-start] auto 
+			[app-content-end  breadcrumb-end footer-area-start] auto 
+			[footer-area-end app-end] auto;
+			> [grid-area="app-menu"]{
+				position: sticky;
+				top:0;
+			}
+		}
 		@media screen and (min-width: 45rem){
 		[grid-template='app-frame'] {
 			grid-template-columns: 

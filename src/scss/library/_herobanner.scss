@@ -1,0 +1,173 @@
+@mixin hero-banner{
+
+    [grid-template]{
+        display:grid;
+      }
+      [grid-template="hero-image-cta"]{
+        --container-padding:  #{get-css-size(padding, 3)}; 
+        --hero-overlay-color: var(--acc);
+        --hero-overlay-opacity:.85;
+        --breadcrumb-height: 2.5rem;
+        grid-template-columns: 
+          [all-start breadcrumb-start title-start] var(--container-padding, 0) 
+          [content-start cta-start ] 1fr 
+          [ cta-end title-end content-end] var(--container-padding, 0) 
+          [all-end breadcrumb-end];
+        grid-template-rows:
+            [all-start breadcrumb-start] minmax(var(--breadcrumb-height, 2.5rem), min-content)
+            [breadcrumb-end ] var(--container-padding, 0)
+            [title-start content-start] auto 
+            [title-end] calc( var(--container-padding, 0)* .5)
+            [cta-start] auto
+            [cta-end content-end] var(--container-padding, 0)
+            [all-end];
+        @media #{$medium-up-cq} {
+          --container-padding:  #{get-css-size(padding, 4)};
+          // rows_2:md columns_4:md --row-1:2.5rem; --row-2:min-content  
+          grid-template-rows: 
+            [all-start breadcrumb-start] var(--breadcrumb-height, 2.5rem) 
+            [breadcrumb-end] calc( var(--container-padding, 0)* .5)
+            [title-start cta-start content-start] auto 
+            [title-end cta-end content-end] var(--container-padding, 0) 
+            [all-end];
+          grid-template-columns: 
+            [all-start breadcrumb-start title-start] var(--container-padding, 0)
+            [content-start ] 1fr
+            [title-end] var(--container-padding, 0)
+            [cta-start] 1fr 
+            [cta-end content-end] var(--container-padding, 0)
+            [all-end breadcrumb-end];
+        }
+        @media #{$large-up-cq} {
+          --container-padding:  #{get-css-size(padding, 5)};  
+          grid-template-columns: 
+          [all-start breadcrumb-start title-start]  var(--container-padding, 0)
+          [content-start ] 3fr
+          [title-end] 1fr
+          [cta-start] 3fr
+          [cta-end content-end] var(--container-padding, 0) 
+          [all-end breadcrumb-end];
+          // class="hero relative isolation_isolate grid rows_3 rows_2:md columns_4:md columns_5:lg columns_2 m-t_n4 m-x_n4  overflow_hidden " style="--hero-overlay-opacity:.9; --row-1:2.5rem; --row-2:min-content;"
+          
+        }
+        &[template-option="micro"]{
+          grid-template-columns: 
+          [all-start title-start] var(--container-padding, 0) 
+          [content-start cta-start ] 1fr 
+          [cta-end title-end content-end] var(--container-padding, 0) 
+          [all-end];
+          grid-template-rows:
+              [all-start] var(--container-padding, 0)
+              [title-start content-start] auto 
+              [title-end] calc( var(--container-padding, 0)* .5)
+              [cta-start] auto
+              [cta-end content-end] var(--container-padding, 0)
+              [all-end];
+              @media #{$medium-up-cq} { 
+                grid-template-rows: 
+                  [all-start] calc( var(--container-padding, 0)* .5)
+                  [title-start cta-start content-start] auto 
+                  [title-end cta-end content-end] calc( var(--container-padding, 0)* .5)
+                  [all-end];
+                grid-template-columns: 
+                  [all-start title-start] var(--container-padding, 0)
+                  [content-start ] 1fr
+                  [title-end] var(--container-padding, 0)
+                  [cta-start] min-content
+                  [cta-end content-end] var(--container-padding, 0)
+                  [all-end ];
+              }
+              @media #{$large-up-cq} { 
+                grid-template-columns: 
+                  [all-start title-start] var(--container-padding, 0)
+                  [content-start ] 1fr
+                  [title-end] var(--container-padding, 0)
+                  [cta-start] min-content
+                  [cta-end content-end] var(--container-padding, 0)
+                  [all-end ];
+              }
+          }
+      }
+      [grid-template=hero-image-cta]{
+        overflow: clip;
+        isolation: isolate;
+        [grid-area]{z-index: 1;}
+        [grid-area="background"]{
+          grid-row: all;
+          grid-column: all;
+          z-index: -1;
+        }
+        [grid-area="breadcrumb"]
+        {
+          grid-row: breadcrumb;
+          grid-column: breadcrumb;
+      
+        }
+        [grid-area="title"]{
+      
+          grid-row: title;
+          grid-column: title;
+        }
+        [grid-area="cta"]{
+          grid-row: cta;
+          grid-column: cta;
+        }
+      }
+      
+      
+      %after-background-transparency{
+        position: relative;
+        isolation: isolate;
+        &::after{
+          content:'';
+          background-color: var(--hero-overlay-color);
+          opacity: var(--hero-overlay-opacity);
+          background-blend-mode: multiply;
+          mix-blend-mode: multiply;
+          inset:0px;
+          position: absolute;
+          z-index: -1;
+        }
+      }
+      
+      [data-item="hero-image-breadcrumb-nav"],[data-item="cta-callout"],[data-item="hero-title"] span{
+        @extend %after-background-transparency;
+      }
+      
+      [data-item="hero-title"]{
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction:row;
+        padding-inline-start: 1rem;
+        overflow:clip;
+      
+        &::before{
+            content:'';
+            background-color: var(--hero-overlay-color);
+            opacity: var(--hero-overlay-opacity);
+            background-blend-mode: multiply;
+            inset:0 auto 0 -1rem;
+            position: absolute;
+            z-index: -1;
+            width: 2rem;
+        }
+        span{
+            flex: 0 1 auto;
+            color: inherit;
+            padding-block: 0.125em;
+            padding-inline: 0 0.25em;
+            position: relative;
+            isolation: isolate;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+        }
+      }
+      
+      [data-item="hero-image-breadcrumb-nav"]::after{
+        border-end-end-radius: $border_radius;
+      }
+      [data-item="cta-callout"]::after{
+        border-radius:  $border_radius;
+      }
+      
+
+}
