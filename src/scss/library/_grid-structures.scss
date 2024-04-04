@@ -20,7 +20,7 @@
 }
 .page-wrapper#website{
 	--app-spacing:0;
-	--max-page-width:80rem;
+	--max-page-width:70rem;
 	max-width: var(--max-page-width, 75rem );
 	margin-inline:auto;
 }
@@ -86,7 +86,7 @@
 		}
 		[grid-template='app-frame'][grid-option="sticky_nav"] {
 			grid-template-rows: 
-			[app-start app-menu-start]
+			[app-start app-menu-start] auto
 			[app-menu-end branding-start] auto 
 			[branding-end app-page-start app-content-start]	1fr 
 			[app-page-end breadcrumb-start] auto 
@@ -95,6 +95,7 @@
 			> [grid-area="app-menu"]{
 				position: sticky;
 				top:0;
+				z-index:100;
 			}
 		}
 		@media screen and (min-width: 45rem){
