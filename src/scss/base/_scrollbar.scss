@@ -35,6 +35,7 @@ Styleguide Recipes.InteractiveExtras.Scrollbar
         --scroll-bar-background-selected:var(--accent-h) var(--accent-s) var(--accent-l);
         --scroll-bar-background-not-selected:var(--secondary-h) var(--secondary-s) var(--secondary-l);
         --scroll-bar-background:var(--black-h) var(--black-s) var(--black-l);
+        overscroll-behavior: contain;
     }
 
     .scrollbar-mini::-webkit-scrollbar {
