@@ -1,5 +1,7 @@
 @use "modularscale-sass/stylesheets/_modularscale.scss" as *;
-@use "../helpers" as helper;
+// @use "../helpers" as helper;
+@use "../helpers/stripunit" as helper-strip-unit;
+@use "../helpers/makeshadow" as helper-makeshadow;
 @use "sass:math";
 @use "sass:list";
 $base-font-size: 16px;
@@ -27,8 +29,8 @@ $units: (
 	blend: ( normal: normal, multiply: multiply, screen: screen, overlay: overlay, darken: darken, lighten: lighten, color-dodge: color-dodge, color-burn: color-burn, hard-light: hard-light, soft-light: soft-light, difference: difference, exclusion: exclusion, hue: hue, saturation: saturation, color: color, luminosity: luminosity,),
 	border-style: ( none: none, solid: solid, dashed: dashed, dotted: dotted,),
 	border-width: ( 0: 0px, 1: 1px, 2: 3px, 3: 0.25rem, 4: 0.5rem, 5: 1rem,),
-	breakpoints: (  xs: 10rem, sm: 20rem, md: 45rem, lg: 64rem, xl: 90rem, xxl: 120rem,),
-	container-breakpoints: (  xs: 10rem, sm: 20rem, md: 30rem, lg: 45rem, xl: 70rem,),
+	breakpoints: (  xs: 10rem, sm: 20rem, md: 45rem, lg: 65rem, xl: 80rem, xxl: 120rem,),
+	container-breakpoints: (  xs: 10rem, sm: 20rem, md: 45rem, lg: 65rem, xl: 80rem,),
 	cursor: ( not-allowed:not-allowed, pointer:pointer,),
 	decimal-negative: ( n1: -.15, n2: -.37, n3: -.60, n4: -.78, n5: -.90,),
 	decimal-positive: ( 0: 0, 1: .15, 2: .37, 3: .6, 4: .78, 5: .9,),
@@ -52,22 +54,30 @@ $units: (
 		mono:#{'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace},
 	  ),
 	  
-	font-size-adjust: ( 0: 1em, down-1:helper.strip-unit(ms(-1)) * 1em,down-1x:.5em, down-2:helper.strip-unit(ms(-2)) * 1em, down-2x:.25em, down-3:helper.strip-unit(ms(-3)) * 1em, down-4:helper.strip-unit(ms(-4)) * 1em, down-5:helper.strip-unit(ms(-5)) * 1em, up-1:helper.strip-unit(ms(1)) * 1em, up-1x:2em, up-2:helper.strip-unit(ms(2)) * 1em, up-2x:3em,up-3:helper.strip-unit(ms(3)) * 1em, up-4:helper.strip-unit(ms(4)) * 1em, up-5:helper.strip-unit(ms(5)) * 1em,),
+	font-size-adjust: ( 0: 1em, down-1:helper-strip-unit.strip-unit(ms(-1)) * 1em,down-1x:.5em, down-2:helper-strip-unit.strip-unit(ms(-2)) * 1em, down-2x:.25em, down-3:helper-strip-unit.strip-unit(ms(-3)) * 1em, down-4:helper-strip-unit.strip-unit(ms(-4)) * 1em, down-5:helper-strip-unit.strip-unit(ms(-5)) * 1em, up-1:helper-strip-unit.strip-unit(ms(1)) * 1em, up-1x:2em, up-2:helper-strip-unit.strip-unit(ms(2)) * 1em, up-2x:3em,up-3:helper-strip-unit.strip-unit(ms(3)) * 1em, up-4:helper-strip-unit.strip-unit(ms(4)) * 1em, up-5:helper-strip-unit.strip-unit(ms(5)) * 1em,),
 	font-size: ( n5: ms(-5), n4: ms(-4), n3: ms(-3), n2: ms(-2), n1: ms(-1), 0: ms(0), 1: ms(1), 2: ms(2), 3: ms(3), 4: ms(4), 5: ms(5), 6: ms(6), 7: ms(7), 8: ms(8), 9: ms(9), 10: ms(10),),
 	font-weight: ( light: 100, regular: 400, medium: 500, bold: 700, xbold: 900,),
 	grid-end:(end:all-end),
 	grid-span:(2:span 2, 3:span 3, 4:span 4, 5:span 5, 6:span 6,),
 	grid-steps:(2:step 1, 3:step 2, 4:step 3, 5:step 4, 6:step 5, n2:step -2, n3:step -3, n4:step -4, n5:step -5,),
 	grid-start:(start:all-start),
-	grid-template: ( 
-		1: [all-start] var(--col-1,1fr) [all-end], 
-		2: [all-start]  var(--col-1,1fr)[step] var(--col-2,1fr) [all-end], 
-		3: [all-start] var(--col-1,1fr) [step] var(--col-2,1fr) [step] var(--col-3,1fr) [all-end], 
-		4: [all-start] var(--col-1,1fr) [step] var(--col-2,1fr) [step] var(--col-3,1fr) [step]	var(--col-4,1fr) [all-end], 
-		5: [all-start]  var(--col-1,1fr)[step]  var(--col-2,1fr) [step] var(--col-3,1fr) [step]	var(--col-4,1fr) 	[step]	var(--col-5,1fr) [all-end], 
-		6: [all-start] var(--col-1,1fr) [step]  var(--col-2,1fr) [step]  var(--col-3,1fr)  [step]	var(--col-4,1fr)[step]  	var(--col-5,1fr) [step] var(--col-5,1fr) [all-end],
+	grid-template-columns: ( 
+		1: [all-start first] var(--col-1,1fr) [first all-end], 
+		2: [all-start first] var(--col-1,1fr)[first step second] var(--col-2,1fr) 	[second all-end], 
+		3: [all-start first] var(--col-1,1fr) [first step second] var(--col-2,1fr) 	[second step third]	var(--col-3,1fr) 	[third all-end], 
+		4: [all-start first] var(--col-1,1fr) [first step second] var(--col-2,1fr) 	[second step third]	var(--col-3,1fr) 	[third step fourth]		var(--col-4,1fr) 	[fourth all-end], 
+		5: [all-start first]  var(--col-1,1fr)[first step second]  var(--col-2,1fr) [second step third]	var(--col-3,1fr) 	[third step fourth]		var(--col-4,1fr) 	[fourth step fifth]		var(--col-5,1fr) [fifth all-end], 
+		6: [all-start first] var(--col-1,1fr) [first step second]  var(--col-2,1fr) [second step third]	var(--col-3,1fr)  	[third step fourth]		var(--col-4,1fr)	[fourth step fifth]  	var(--col-5,1fr) [fifth step sixth] var(--col-5,1fr) [sixth all-end],
 		),
-
+	grid-template-rows: ( 
+		1: [all-start first] var(--row-1,min-content) [first all-end], 
+		2: [all-start first] var(--row-1,min-content)[first step second] var(--row-2,min-content) 	[second all-end], 
+		3: [all-start first] var(--row-1,min-content) [first step second] var(--row-2,min-content) 	[second step third]	var(--row-3,min-content) 	[third all-end], 
+		4: [all-start first] var(--row-1,min-content) [first step second] var(--row-2,min-content) 	[second step third]	var(--row-3,min-content) 	[third step fourth]		var(--row-4,min-content) 	[fourth all-end], 
+		5: [all-start first]  var(--row-1,min-content)[first step second]  var(--row-2,min-content) [second step third]	var(--row-3,min-content) 	[third step fourth]		var(--row-4,min-content) 	[fourth step fifth]		var(--row-5,min-content) [fifth all-end], 
+		6: [all-start first] var(--row-1,min-content) [first step second]  var(--row-2,min-content) [second step third]	var(--row-3,min-content)  	[third step fourth]		var(--row-4,min-content)	[fourth step fifth]  	var(--row-5,min-content) [fifth step sixth] var(--row-5,min-content) [sixth all-end],
+		),
+	grid-area-position:(first:list.slash(first,first) ,second:list.slash(second,second) ,third:list.slash(third,third) ,fourth:list.slash(fourth,fourth) ,fifth:list.slash(fifth,fifth) ,sixth:list.slash(sixth,sixth) ),
 	height-viewport: ( auto: auto, 0: 0vh, 10: 10vh, 20: 20vh, 30: 30vh, 40: 40vh, 50: 50vh, 60: 60vh, 70: 70vh, 80: 80vh, 90: 90vh, 100: 100vh, 0lh: 1em, 1lh: 1.25em, 2lh: 1.45em, 3lh: 1.65em, 4lh: 1.75em, 5lh: 2.5em,),
 	hover: ( dark: -30%, light: 30%,),
 	isolate:(isolate:isolate),
@@ -82,7 +92,7 @@ $units: (
 	percent-positive: ( 0: 0%, 1: 15%, 2: 37%, 3: 60%, 4: 78%, 5: 90%,),
 	percent: ( 0: 0%, 1: 15%, 2: 37%, 3: 60%, 4: 78%, 5: 90%, n1: -10%, n2: -25%, n3: -45%, n4: -58%, n5: -75%,),
 	position: ( initial: initial, inherit: inherit, relative: relative, absolute: absolute, fixed: fixed, sticky: sticky),
-	radius: ( square: 0px, radius: $global-border-radius, round: $global-border-round, circle: 100%,),
+	radius: ( square: 0px, radius: $global-border-radius,radius-plus: $global-border-radius * 1.5, round: $global-border-round, circle: 100%,),
 	rich-shadow: ( 
 		emboss-light: 'inset 2px 2px 3px 0px rgb(17 18 18 / 10%), inset -2px -2px 3px 0px rgb(255 253 248 / 12%), inset 1px 1px 2px 1px rgb(0 0 0 / 11%)', emboss-bold: 'inset 2px 2px 3px 1px rgb(17 18 18 / 13%), inset -2px -3px 3px 1px rgb(255 253 248 / 22%), inset 1px 1px 2px 1px rgb(0 0 0 / 27%), inset 1px 1px 4px 2px rgb(0 0 0 / 16%)',
 		bevel-light: '-2px -2px 2px rgba(255, 255, 255, .05 ), -2px -2px 3px rgba(255, 255, 255, .14 ), 2px 3.5px 5.5px rgba(0, 0, 0, .07), 0 6.4px 9.1px rgba(0, 0, 0, .02), 0 16px 9px rgb(0, 0, 0, .02)',
@@ -91,7 +101,7 @@ $units: (
 		overlap-bold:'-1px -2px 4px rgba(0,0,0,.08), 0 1px 10px hsla(0, 0%, 0%, 0.06), 0 3px 4px rgba(0,0,0,.5), 1px 5px 5px rgba(0,0,0,.03)',),
 	rotation:(45:rotate(45deg),90:rotate(90deg),135:rotate(135deg),180:rotate(180deg),225:rotate(225deg),315:rotate(315deg),),
 	scale: ( X-0: scaleX(0), X-100: scaleX(1), Y-0: scaleY(0), Y-100: scaleY(1), 0: scale(0, 0), 100: scale(1, 1),),
-	shadow: ( 0: helper.make-shadow(3, 'drop', #000, 0.4), 1: helper.make-shadow(1, 'drop', #000, 0.1), 2: helper.make-shadow(2, 'drop', #000, 0.2), 3: helper.make-shadow(3, 'drop', #000, 0.3), 4: helper.make-shadow(3.5, 'drop', #000, 0.5), 5: helper.make-shadow(4, 'drop', #000, 0.65), n1: helper.make-shadow(1, 'inset', #000, 0.1), n2: helper.make-shadow(2, 'inset', #000, 0.2), n3: helper.make-shadow(3, 'inset', #000, 0.3), n4: helper.make-shadow(3.5, 'inset', #000, 0.5), n5: helper.make-shadow(4, 'inset', #000, 0.65),),
+	shadow: ( 0: helper-makeshadow.make-shadow(3, 'drop', #000, 0.4), 1: helper-makeshadow.make-shadow(1, 'drop', #000, 0.1), 2: helper-makeshadow.make-shadow(2, 'drop', #000, 0.2), 3: helper-makeshadow.make-shadow(3, 'drop', #000, 0.3), 4: helper-makeshadow.make-shadow(3.5, 'drop', #000, 0.5), 5: helper-makeshadow.make-shadow(4, 'drop', #000, 0.65), n1: helper-makeshadow.make-shadow(1, 'inset', #000, 0.1), n2: helper-makeshadow.make-shadow(2, 'inset', #000, 0.2), n3: helper-makeshadow.make-shadow(3, 'inset', #000, 0.3), n4: helper-makeshadow.make-shadow(3.5, 'inset', #000, 0.5), n5: helper-makeshadow.make-shadow(4, 'inset', #000, 0.65),),
 	size-negative: ( n10: -64 * $basicSizeMultiplier, n9: -32 * $basicSizeMultiplier, n8: -16 * $basicSizeMultiplier, n7: -8 * $basicSizeMultiplier, n6: -4 * $basicSizeMultiplier, n5: -2 * $basicSizeMultiplier, n4: -1 * $basicSizeMultiplier, n3: -0.5 * $basicSizeMultiplier, n2: -0.25 * $basicSizeMultiplier, n1: -1px,),
 	size-positive: ( 0: 0, 1: 1px, 2: 0.25 * $basicSizeMultiplier, 3: 0.5 * $basicSizeMultiplier, 4: 1 * $basicSizeMultiplier, 5: 2 * $basicSizeMultiplier, 6: 4 * $basicSizeMultiplier, 7: 8 * $basicSizeMultiplier, 8: 16 * $basicSizeMultiplier, 9: 32 * $basicSizeMultiplier, 10: 64 * $basicSizeMultiplier,),
 	states: ( a:active, h:hover	),

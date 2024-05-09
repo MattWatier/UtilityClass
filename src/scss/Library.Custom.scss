@@ -1,4 +1,8 @@
+@use "sass:map";
+@use "maps";
+@use "helpers";
 @use 'library' as library;
+
 // Gallery of cards.
 .grid-hs {
 	display: grid;
@@ -57,9 +61,11 @@
 
 @include library.page-wrapper;
 @include library.app-frame;
-@include library.breadcrumb-bar;
 @include library.app-page;
+@include library.content-layout;
+@include library.breadcrumb-bar;
 @include library.mobile-navigation;
 @include library.ripple-card;
 @include library.scroll-bucket;
 @include library.button-ripple;
+@include library.hero-banner;

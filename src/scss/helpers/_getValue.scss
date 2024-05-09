@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "../maps/_css-properties.scss" as css-properties;
+@use "../maps/_units.scss" as units;
+
+
+// Function to get a unit value from the units map imported with a namespace
+@function get-unit-value($category, $key) {
+  // Check if the category exists in the units map
+  @if map.has-key(units.$units, $category) {
+    $category-map: map.get(units.$units, $category);
+    // Check if the key exists in the category's map
+    @if map.has-key($category-map, $key) {
+      // Return the value associated with the key
+      @return map.get($category-map, $key);
+    } @else {
+      // Key does not exist in the category's map
+      @error "Key '#{$key}' not found in the '#{$category}' category of the units map.";
+    }
+  } @else {
+    // Category does not exist in the units map
+    @error "Category '#{$category}' not found in the units map.";
+  }
+}

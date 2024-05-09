@@ -29,7 +29,11 @@ $css-properties:(
 'font-size':(direction:null,name:'font',property:('font-size',),responsive:true,containerQuery:true,unit:('font-size',),cssVar:true),
 'font-weight':(direction:null,name:'font',property:('font-weight',),'states':true,unit:('font-weight',),),
 'grid-gap':(direction:"direction-grid",name:'gap',property:('gap',),responsive:true,containerQuery:true,unit:('size-positive',),),
-'grid-template': ( "direction": "direction-grid-lines", "name": "", "property": ( "grid-template", ), "responsive": true,containerQuery:true,"unit": ( "grid-template", ),),
+// 'grid-template': ( "direction": "direction-grid-lines", "name": "", "property": ( "grid-template", ), "responsive": true,containerQuery:true,"unit": ( "grid-template", ),),
+'grid-template-columns': ( "direction": null, "name": "columns", "property": ( "grid-template-columns", ), "responsive": true,containerQuery:true,"unit": ( "grid-template-columns", ),),
+'grid-template': ( "direction": null, "name": "rows", "property": ( "grid-template-rows", ), "responsive": true,containerQuery:true,"unit": ( "grid-template-rows", ),),
+
+
 '12col-width':(direction:null,name:'w-col',property:('width',),unit:('12col-grid',),),
 'grid-rows': (direction:null, name:'row',property:('grid-row',),unit:('all'),responsive:true, containerQuery:true,),
 'grid-columns': (direction:null, name:'column',property:('grid-column',),unit:('all'),responsive:true, containerQuery:true,),
@@ -41,6 +45,8 @@ $css-properties:(
 'grid-col-end-span': (direction:null, name:'col-end-span',property:('grid-column-end',),unit:('grid-span'),responsive:true),
 'grid-row-start-span': (direction:null, name:'row-start-span',property:('grid-row-start',),unit:('grid-span',),responsive:true),
 'grid-row-end-span': (direction:null, name:'row-end-span',property:('grid-row-end',),unit:('grid-span'),responsive:true),
+'row-area': (direction:null, name:'row',property:('grid-row',),unit:('grid-area-position'),responsive:true,containerQuery:true),
+'column-area': (direction:null, name:'column',property:('grid-column',),unit:('grid-area-position'),responsive:true,containerQuery:true),
 'height-viewport':(direction:null,name:'h',property:('height',),unit:('height-viewport',),),
 'inset':(direction:'direction-edge',name:'',property:('inset',),responsive:true,unit:('unset','auto','size-negative','size-positive',),),
 'isolation':(direction:null,name:'isolation',property:('isolation',),responsive:false,unit:('unset','auto','isolate',),),
